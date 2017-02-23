@@ -1,0 +1,31 @@
+﻿Build started 23/02/2017 20:38:41.
+     1>Project "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\ProjectFiles\DissertationLevel.vcxproj" on node 3 (Rebuild target(s)).
+     1>Rebuild:
+         "C:\Program Files\Epic Games\4.12\Engine\Build\BatchFiles\Rebuild.bat" DissertationLevelEditor Win64 Development "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\DissertationLevel.uproject" -waitmutex
+         Cleaning DissertationLevelEditor Binaries...
+         Compiling game modules for hot reload
+         Creating makefile for hot reloading DissertationLevelEditor (no existing makefile)
+         Compiling game modules for hot reload
+         Performing full C++ include scan (no include cache file)
+         Parsing headers for DissertationLevelEditor
+           Running UnrealHeaderTool "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\DissertationLevel.uproject" "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\DissertationLevelEditor\Development\DissertationLevelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+         Reflection code generated for DissertationLevelEditor in 4.623543 seconds
+         Performing 11 actions (4 in parallel)
+         [2/11] Resource PCLaunch.rc
+         [3/11] Resource ModuleVersionResource.rc.inl
+         PCH.DissertationLevel.h.cpp
+         BTService_CheckForPlayer.cpp
+         DissertationLevelGameMode.cpp
+         DissertationLevelCharacter.cpp
+         DissertationLevel.cpp
+         EnemyCharacter.cpp
+         EnemyAIController.cpp
+         DissertationLevel.generated.cpp
+         [11/11] Link UE4Editor-DissertationLevel-6372.dll
+            Creating library E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-6372.lib and object E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-6372.exp
+         Total build time: 87.43 seconds
+     1>Done Building Project "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\ProjectFiles\DissertationLevel.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:01:31.32

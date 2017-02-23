@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\DissertationLevel.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{DDBAC913-E000-4348-9FA1-12931E8A7CE5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\DissertationLevel.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\DissertationLevelEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{0C8CEBFF-897B-4C78-A838-121CB4B1FA78}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\DissertationLevel">
+      <UniqueIdentifier>{F26DAE55-75A0-44EA-8B14-D296B32EDD49}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\DissertationLevel\DissertationLevel.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DissertationLevel\DissertationLevel.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DissertationLevel\DissertationLevelCharacter.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DissertationLevel\DissertationLevelCharacter.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DissertationLevel\DissertationLevelGameMode.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DissertationLevel\DissertationLevelGameMode.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DissertationLevel\BTService_CheckForPlayer.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\DissertationLevel\BTService_CheckForPlayer.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DissertationLevel\EnemyCharacter.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+    <None Include="..\..\Source\DissertationLevel\DissertationLevel.Build.cs">
+      <Filter>Source\DissertationLevel</Filter>
+    </None>
+    <ClInclude Include="..\..\Source\DissertationLevel\EnemyCharacter.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\DissertationLevel\EnemyAIController.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\DissertationLevel\EnemyAIController.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\DissertationLevel\BTTask_MoveToPlayer.h">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\DissertationLevel\BTTask_MoveToPlayer.cpp">
+      <Filter>Source\DissertationLevel</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
