@@ -125,3 +125,17 @@ void ADissertationLevelCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 	}
 }
+
+
+// Called when the game starts or when spawned
+void ADissertationLevelCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	//Start Character at random position
+	FVector randPos = GetActorLocation();
+	randPos.X = FMath::RandRange(-1000.0f, 1000.0f);
+	randPos.Y = FMath::RandRange(-1000.0f, 1000.0f);
+
+	SetActorLocation(randPos);
+}

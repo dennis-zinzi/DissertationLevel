@@ -26,6 +26,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
 protected:
 
 	/** Called for forwards/backward input */
