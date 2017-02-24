@@ -29,7 +29,7 @@ void UBTService_CheckForPlayer::TickNode(UBehaviorTreeComponent& OwnerComp, uint
 		if(PlayerChar){
 			OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Object>(EnemyPC->GetEnemyKeyID(), PlayerChar);
 
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Blue, "AI is ready");
+			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Blue, "AI is ready");
 		}
 	}
 }

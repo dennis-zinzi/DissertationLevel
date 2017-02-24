@@ -19,15 +19,42 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent *BehaviorComp;
 
+
 	public:
 		AEnemyAIController();
 		virtual void Possess(APawn *InPawn) override;
 
-		inline uint8 GetEnemyKeyID() const{
+		void SetPlayerCaught(APawn *Pawn);
+
+		FORCEINLINE uint8 GetEnemyKeyID() const{
 			return EnemyKeyID;
 		}
 
+		FORCEINLINE uint8 GetPatrolPointKeyID() const{
+			return PatrolPointKeyID;
+		}
+
+		FORCEINLINE TArray<AActor*> GetPatrolPoints() const{
+			return PatrolPoints;
+		}
+
+		FORCEINLINE int32 GetCurrentPatrolPoint() const{
+			return CurrentPatrolPoint;
+		}
+
+		FORCEINLINE void SetCurrentPatrolPoint(int32 point){
+			CurrentPatrolPoint = point;
+		}
+
 	private:
+		//Blackboard keys
 		uint8 EnemyKeyID;
+		uint8 PatrolPointKeyID;
+
+		//Patrol Points Array
+		TArray<AActor*> PatrolPoints;
+
+		//Current Patrol Point
+		int32 CurrentPatrolPoint;
 	
 };

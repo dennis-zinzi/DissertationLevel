@@ -7,6 +7,7 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyAllTypes.h"
 #include "EnemyCharacter.h"
+#include "EnemyPatrolPoint.h"
 
 #include "EnemyAIController.h"
 
@@ -14,6 +15,8 @@
 AEnemyAIController::AEnemyAIController(){
 	BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComp"));
 	BehaviorComp = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorComp"));
+
+	CurrentPatrolPoint = 0;
 }
 
 void AEnemyAIController::Possess(APawn *InPawn){
@@ -24,10 +27,23 @@ void AEnemyAIController::Possess(APawn *InPawn){
 	if(Char && Char->AIBehavior){
 		BlackboardComp->InitializeBlackboard(*Char->AIBehavior->BlackboardAsset);
 
-		//Get KEyID from Blackboard
+		//Get Player KeyID from Blackboard
 		EnemyKeyID = BlackboardComp->GetKeyID("Target");
 
+		//Get Patrol Point KeyID from Blackboard
+		PatrolPointKeyID = BlackboardComp->GetKeyID("LocationToGo");
+
+		//Populate patrol point array
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyPatrolPoint::StaticClass(), PatrolPoints);
+
 		BehaviorComp->StartTree(*Char->AIBehavior);
+	}
+}
+
+
+void AEnemyAIController::SetPlayerCaught(APawn * Pawn){
+	if(BlackboardComp){
+		BlackboardComp->SetValue<UBlackboardKeyType_Object>(EnemyKeyID, Pawn);
 	}
 }
 
