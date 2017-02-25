@@ -23,6 +23,8 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 			OwnerComp.GetBlackboardComponent()->GetValue<UBlackboardKeyType_Object>(EnemyPC->GetEnemyKeyID())
 		);
 
+	const FName key = "Target";
+
 	if(Player){
 		FVector PlayerPos = Player->GetActorLocation(),
 			EnemyPos = EnemyPC->GetPawn()->GetActorLocation();
@@ -32,18 +34,21 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 
 		//Check if AI within "viewing" distance
 		if(FVector::Dist(EnemyPos, PlayerPos) < IN_RANGE_DISTANCE){
-			OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Object>(EnemyPC->GetEnemyKeyID(), Player);
+			//OwnerComp.GetBlackboardComponent()->SetValue<UBlackboardKeyType_Object>(EnemyPC->GetEnemyKeyID(), Player);
 			EnemyPC->MoveToActor(Player, 20.0f, true, true, true, 0, true);
 		}
 		else{
+			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "Player got away safely");
 			EnemyPC->StopMovement();
-			FName key = "Target";
+			
 			OwnerComp.GetBlackboardComponent()->ClearValue(key);
 		}
 
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, "Player exists");
 		return EBTNodeResult::Succeeded;
 	}
+
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, "Player got away safely");
+	OwnerComp.GetBlackboardComponent()->ClearValue(key);
 
 	return EBTNodeResult::Failed;
 }

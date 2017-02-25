@@ -16,7 +16,10 @@ class DISSERTATIONLEVEL_API AEnemyCharacter : public ACharacter
 
 		// Called when the game starts or when spawned
 		virtual void BeginPlay() override;
-	
+		
+		// Called after character initialized
+		virtual void PostInitializeComponents() override;
+
 		// Called every frame
 		virtual void Tick( float DeltaSeconds ) override;
 
@@ -30,6 +33,7 @@ class DISSERTATIONLEVEL_API AEnemyCharacter : public ACharacter
 		class UPawnSensingComponent *PawnSensingComp;
 
 	private:
+		UFUNCTION()
 		void OnPlayerCaught(APawn *Pawn);
 
 	

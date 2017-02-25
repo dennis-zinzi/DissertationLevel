@@ -17,7 +17,8 @@ AEnemyCharacter::AEnemyCharacter()
 
 	//Initialize senses
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
-	PawnSensingComp->SetPeripheralVisionAngle(90.0f);
+	PawnSensingComp->SetPeripheralVisionAngle(40.0f);
+	PawnSensingComp->SensingInterval = 0.25f;
 }
 
 // Called when the game starts or when spawned
@@ -31,10 +32,14 @@ void AEnemyCharacter::BeginPlay()
 	randPos.Y = FMath::RandRange(-1000.0f, 1000.0f);
 
 	SetActorLocation(randPos);
+}
 
-	if(PawnSensingComp){
-		PawnSensingComp->OnSeePawn.AddDynamic(this, &AEnemyCharacter::OnPlayerCaught);
-	}
+void AEnemyCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	//Set Function to call when player in AI's view
+	PawnSensingComp->OnSeePawn.AddDynamic(this, &AEnemyCharacter::OnPlayerCaught);
 }
 
 // Called every frame
@@ -56,7 +61,6 @@ void AEnemyCharacter::OnPlayerCaught(APawn *Pawn){
 	AEnemyAIController *AIController = Cast<AEnemyAIController>(GetController());
 
 	if(AIController){
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, "YOU'VE BEEN CAUGHT!");
 		AIController->SetPlayerCaught(Pawn);
 	}
 }
