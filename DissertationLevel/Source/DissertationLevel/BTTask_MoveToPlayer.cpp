@@ -9,6 +9,7 @@
 #include "EnemyCharacter.h"
 #include "EnemyAIController.h"
 #include "DissertationLevelCharacter.h"
+#include "DissertationLevelGameMode.h"
 
 #include "BTTask_MoveToPlayer.h"
 
@@ -37,7 +38,8 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 
 		//Check if AI caught the player
 		if(dist <= CAUGHT_DISTANCE){
-			//TODO - Set Game to Lost
+			//Set Game to Lost
+			((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EGameOver);
 
 			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, "YOU LOSE X_X");
 			return EBTNodeResult::Succeeded;

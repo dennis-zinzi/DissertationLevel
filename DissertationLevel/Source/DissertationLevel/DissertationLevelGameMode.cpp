@@ -3,6 +3,8 @@
 #include "DissertationLevel.h"
 #include "DissertationLevelGameMode.h"
 #include "DissertationLevelCharacter.h"
+#include "EnemyAIController.h"
+#include "EnemyCharacter.h"
 
 ADissertationLevelGameMode::ADissertationLevelGameMode()
 {
@@ -29,11 +31,35 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 		case EPlayState::EPlaying:
 			//spawn volumes active
 			break;
-			//If game is won
+
+		//If game is won
 		case EPlayState::EWin:
-			//spawn volumes inactive
+		{
+			//Get the AI controller
+			TArray<AActor*> AIs;
+			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AIs);
+			AEnemyAIController *ai = Cast<AEnemyAIController>(AIs[0]);
+
+			if(ai){
+				//Stop AI from moving anymore
+				ai->StopMovement();
+
+				AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(ai->GetPawn());
+
+				if(AIChar){
+					//Ragdoll the AI
+					AIChar->GetMesh()->SetSimulatePhysics(true);
+					AIChar->GetMovementComponent()->MovementState.bCanJump = false;
+				}
+
+				//Unpossess the AI to stop behavior tree tasks
+				ai->UnPossess();
+			}
+
+			
 			break;
-			//If game is lost
+		}
+		//If game is lost
 		case EPlayState::EGameOver:
 			//block player input
 			APlayerController *playerController = UGameplayStatics::GetPlayerController(this, 0);
