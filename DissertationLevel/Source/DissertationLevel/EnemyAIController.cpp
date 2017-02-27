@@ -44,7 +44,7 @@ void AEnemyAIController::Possess(APawn *InPawn){
 void AEnemyAIController::SetPlayerCaught(APawn * Pawn){
 	if(BlackboardComp){
 		BlackboardComp->SetValue<UBlackboardKeyType_Object>(EnemyKeyID, Pawn);
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, "YOU'VE BEEN CAUGHT!");
+		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, "YOU'VE BEEN SPOTTED!");
 	}
 }
 
