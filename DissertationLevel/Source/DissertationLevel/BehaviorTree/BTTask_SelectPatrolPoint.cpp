@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DissertationLevel.h"
+#include "../DissertationLevel.h"
 
-#include "EnemyPatrolPoint.h"
-#include "EnemyAIController.h"
+#include "../AI/EnemyPatrolPoint.h"
+#include "../AI/EnemyAIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/Blackboard/BlackboardKeyAllTypes.h"
 

@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DissertationLevel.h"
+#include "../DissertationLevel.h"
 
-#include "DissertationLevelCharacter.h"
-#include "DissertationLevelGameMode.h"
+#include "../DissertationLevelCharacter.h"
+#include "../DissertationLevelGameMode.h"
 
 #include "WinningLocation.h"
 

@@ -3,8 +3,8 @@
 #include "DissertationLevel.h"
 #include "DissertationLevelGameMode.h"
 #include "DissertationLevelCharacter.h"
-#include "EnemyAIController.h"
-#include "EnemyCharacter.h"
+#include "AI/EnemyAIController.h"
+#include "AI/EnemyCharacter.h"
 
 ADissertationLevelGameMode::ADissertationLevelGameMode()
 {
