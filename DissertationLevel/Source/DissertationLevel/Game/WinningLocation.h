@@ -20,7 +20,7 @@ class DISSERTATIONLEVEL_API AWinningLocation : public AActor
 		// Called every frame
 		virtual void Tick( float DeltaSeconds ) override;
 
-		// Called after character initialized
+		// Called after actor initialized
 		virtual void PostInitializeComponents() override;
 
 		//Return pickup's mesh

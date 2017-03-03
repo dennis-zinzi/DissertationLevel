@@ -20,6 +20,8 @@ class ADissertationLevelGameMode : public AGameMode
 		ADissertationLevelGameMode();
 
 		virtual void BeginPlay() override;
+
+		virtual void Tick(float DeltaTime) override;
 		
 		//Current playing state getter
 		UFUNCTION(BlueprintPure, Category = "PlayState")

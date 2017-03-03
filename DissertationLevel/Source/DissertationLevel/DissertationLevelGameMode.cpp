@@ -5,6 +5,7 @@
 #include "DissertationLevelCharacter.h"
 #include "AI/EnemyAIController.h"
 #include "AI/EnemyCharacter.h"
+#include "Game/PlayerTrail.h"
 
 ADissertationLevelGameMode::ADissertationLevelGameMode()
 {
@@ -25,6 +26,26 @@ void ADissertationLevelGameMode::BeginPlay(){
 
 }
 
+
+void ADissertationLevelGameMode::Tick(float DeltaTime){
+	Super::Tick(DeltaTime);
+
+	if(((int)DeltaTime % 6000) == 0){
+		ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+
+		//Check for player, and game still active
+		if(Player && CurrentState == EPlayState::EPlaying){
+			FVector pos = Player->GetActorLocation() - FVector(75.0f, 75.0f, 75.0f);
+			FRotator rotation(0.0f, 0.0f, 0.0f);
+			FActorSpawnParameters SpawnInfo;
+
+			//Generate TargetPoint at player pos (player trail)
+			GetWorld()->SpawnActor<APlayerTrail>(pos, rotation, SpawnInfo);
+		}
+	}
+}
+
+
 void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 	switch(state){
 		//If game is playing
@@ -43,6 +64,8 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 			if(ai){
 				//Stop AI from moving anymore
 				ai->StopMovement();
+				//Kill behavior tree
+				ai->StopBehavior();
 
 				AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(ai->GetPawn());
 
@@ -72,6 +95,18 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 			if(myCharacter){
 				myCharacter->GetMesh()->SetSimulatePhysics(true);
 				myCharacter->GetMovementComponent()->MovementState.bCanJump = false;
+			}
+
+			//Get the AI controller
+			TArray<AActor*> AIs;
+			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AIs);
+			AEnemyAIController *ai = Cast<AEnemyAIController>(AIs[0]);
+
+			if(ai){
+				//Stop AI from moving anymore
+				ai->StopMovement();
+				//Kill behavior tree
+				ai->StopBehavior();
 			}
 
 			break;

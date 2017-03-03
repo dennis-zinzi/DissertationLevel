@@ -45,8 +45,12 @@ void AEnemyAIController::SetPlayerCaught(APawn * Pawn){
 	if(BlackboardComp){
 		BlackboardComp->SetValue<UBlackboardKeyType_Object>(EnemyKeyID, Pawn);
 		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, "YOU'VE BEEN SPOTTED!");
+		BehaviorComp->RestartTree();
 	}
 }
 
+void AEnemyAIController::StopBehavior(){
+	BehaviorComp->StopTree();
+}
 
 

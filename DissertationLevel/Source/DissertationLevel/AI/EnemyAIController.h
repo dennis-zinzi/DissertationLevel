@@ -46,6 +46,9 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			CurrentPatrolPoint = point;
 		}
 
+		void StopBehavior();
+		void ReStartBehavior();
+
 	private:
 		//Blackboard keys
 		uint8 EnemyKeyID;

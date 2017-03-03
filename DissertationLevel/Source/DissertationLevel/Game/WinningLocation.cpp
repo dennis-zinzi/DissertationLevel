@@ -45,8 +45,7 @@ void AWinningLocation::Tick(float DeltaTime)
 void AWinningLocation::PostInitializeComponents(){
 	Super::PostInitializeComponents();
 
-	//WinningSpotMesh->OnComponentBeginOverlap.AddDynamic(this, &AWinningLocation::PlayerOnTop);
-	/*WinningSpotMesh->*/
+	//Add function to execute when player steps on winning spot
 	WinningSpotMesh->OnComponentHit.AddDynamic(this, &AWinningLocation::PlayerOnTop);
 }
 
