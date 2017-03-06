@@ -3,6 +3,7 @@
 #pragma once
 
 #include "AIController.h"
+#include "BehaviorTree/BlackboardComponent.h"
 #include "EnemyAIController.generated.h"
 
 /**
@@ -14,7 +15,7 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 	GENERATED_BODY()
 	
 	UPROPERTY(Transient)
-	class UBlackboardComponent *BlackboardComp;
+	UBlackboardComponent *BlackboardComp;
 
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent *BehaviorComp;
@@ -46,8 +47,11 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			CurrentPatrolPoint = point;
 		}
 
+		FORCEINLINE UBlackboardComponent* GetBlackboardComp() const{
+			return BlackboardComp;
+		}
+
 		void StopBehavior();
-		void ReStartBehavior();
 
 	private:
 		//Blackboard keys

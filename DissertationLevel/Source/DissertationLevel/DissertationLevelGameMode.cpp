@@ -30,19 +30,19 @@ void ADissertationLevelGameMode::BeginPlay(){
 void ADissertationLevelGameMode::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
 
-	if(((int)DeltaTime % 6000) == 0){
-		ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
+	//if(((int)DeltaTime % 6000) == 0){
+	//	ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
 
-		//Check for player, and game still active
-		if(Player && CurrentState == EPlayState::EPlaying){
-			FVector pos = Player->GetActorLocation() - FVector(75.0f, 75.0f, 75.0f);
-			FRotator rotation(0.0f, 0.0f, 0.0f);
-			FActorSpawnParameters SpawnInfo;
+	//	//Check for player, and game still active
+	//	if(Player && CurrentState == EPlayState::EPlaying){
+	//		FVector pos = Player->GetActorLocation() - FVector(75.0f, 75.0f, 75.0f);
+	//		FRotator rotation(0.0f, 0.0f, 0.0f);
+	//		FActorSpawnParameters SpawnInfo;
 
-			//Generate TargetPoint at player pos (player trail)
-			GetWorld()->SpawnActor<APlayerTrail>(pos, rotation, SpawnInfo);
-		}
-	}
+	//		//Generate TargetPoint at player pos (player trail)
+	//		GetWorld()->SpawnActor<APlayerTrail>(pos, rotation, SpawnInfo);
+	//	}
+	//}
 }
 
 
