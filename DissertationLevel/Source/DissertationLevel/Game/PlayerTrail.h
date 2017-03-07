@@ -29,12 +29,12 @@ class DISSERTATIONLEVEL_API APlayerTrail : public AActor
 		}
 
 	private:
-	//Function to call when player on top of winning spot
-	UFUNCTION()
-	void EnemySensed(UPrimitiveComponent *HitComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, FVector NormalImpulse, const FHitResult &Hit);
+		//Function to call when player on top of winning spot
+		UFUNCTION()
+		void EnemySensed(UPrimitiveComponent *HitComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, FVector NormalImpulse, const FHitResult &Hit);
 
 
-	//Static mesh to represent the winning spot on the level
-	UPROPERTY(EditAnywhere, Category = "Game")
-	class UStaticMeshComponent *TrailMesh;
+		//Static mesh to represent the player trail on the level
+		UPROPERTY(EditAnywhere, Category = "Game")
+		class UStaticMeshComponent *TrailMesh;
 };

@@ -6,6 +6,11 @@
 #include "AI/EnemyAIController.h"
 #include "AI/EnemyCharacter.h"
 #include "Game/PlayerTrail.h"
+#include "Game/WorldObject.h"
+
+#define WORLD_OBJECTS_TO_SPAWN 15
+#define WORLD_POS_LIMIT 1400.0f
+
 
 ADissertationLevelGameMode::ADissertationLevelGameMode()
 {
@@ -23,7 +28,18 @@ void ADissertationLevelGameMode::BeginPlay(){
 
 	CurrentState = EPlayState::EPlaying;
 
+	//Create random objects in the world
+	for(int i = 0; i < WORLD_OBJECTS_TO_SPAWN; i++){
+		float posX = FMath::RandRange(-WORLD_POS_LIMIT, WORLD_POS_LIMIT),
+			posY = FMath::RandRange(-WORLD_POS_LIMIT, WORLD_POS_LIMIT);
 
+		FVector loc = FVector(posX, posY, 125.0f);
+		FRotator rotation(0.0f, 0.0f, 0.0f);
+		FActorSpawnParameters SpawnInfo;
+
+		//Generate TargetPoint at player pos (player trail)
+		GetWorld()->SpawnActor<AWorldObject>(loc, rotation, SpawnInfo);
+	}
 }
 
 

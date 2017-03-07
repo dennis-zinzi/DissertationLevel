@@ -51,5 +51,3 @@ void AEnemyAIController::SetPlayerCaught(APawn * Pawn){
 void AEnemyAIController::StopBehavior(){
 	BehaviorComp->StopTree();
 }
-
-
