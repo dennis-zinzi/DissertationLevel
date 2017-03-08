@@ -6,6 +6,16 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "EnemyAIController.generated.h"
 
+USTRUCT()
+struct FNodeCost{
+	GENERATED_BODY()
+
+	FVector position;
+	int cost;
+	TArray<FNodeCost> connected;
+	FNodeCost *parent;
+};
+
 /**
  * 
  */
@@ -51,7 +61,15 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			return BlackboardComp;
 		}
 
+
 		void StopBehavior();
+
+
+		FORCEINLINE void AddToLocations(FVector pos) {
+			LocationsToGo.Add(pos);
+		}
+
+		void PopulateOpenList(TArray<FVector> &Locations);
 
 	private:
 		//Blackboard keys
@@ -63,5 +81,22 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 
 		//Current Patrol Point
 		int32 CurrentPatrolPoint;
-	
+
+		//AStar Nodes
+		TArray<FVector> LocationsToGo;
+
+		//AStar Open List
+		TArray<FNodeCost> OpenList;
+
+		//AStar Closed List
+		TArray<FVector> ClosedList;
+
+		bool AStarAlgorithm(TArray<FVector> &Locations, TArray<FNodeCost*> &OpenList, TArray<FNodeCost*> &ClosedList, const FVector &CurrentLoc, const FVector &Destination);
+		int HeuristicCost(const FVector &Source, const FVector &Destination);
+		int CostToMove(const FVector &Source, const FVector &Destination);
+
+		void Initialization(TArray<FVector> &Locations, TArray<FNodeCost*> &OpenList, TArray<FNodeCost*> &ClosedList, const FVector &CurrentLoc, const FVector &Destination);
+		TArray<FVector> GeneratePath(TArray<FNodeCost*> &ClosedList, const FVector &CurrentLoc, const FVector &Destination);
+
+		FNodeCost GetMinCostNode(const TArray<FNodeCost*> &List);
 };

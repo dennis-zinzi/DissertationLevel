@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DissertationLevel.h"
+#include "../DissertationLevel.h"
 
 #include "../DissertationLevelCharacter.h"
 #include "../AI/EnemyAIController.h"
@@ -53,11 +53,11 @@ void UAStarQueryTest::RunTest(FEnvQueryInstance &QueryInstance) const{
 
 float UAStarQueryTest::GetHeuristicCost(AActor *AI, AActor *Player) const{
 	FVector dist = AI->GetActorLocation() - Player->GetActorLocation();
-	return dist.X + dist.Y + dist.Z;
+	return FMath::Abs(dist.X) + FMath::Abs(dist.Y) + FMath::Abs(dist.Z);
 }
 
 
 float UAStarQueryTest::GetCostToMove(AActor *AI, FVector MapPos) const{
 	FVector dist = AI->GetActorLocation() - MapPos;
-	return dist.X + dist.Y + dist.Z;
+	return FMath::Abs(dist.X) + FMath::Abs(dist.Y) + FMath::Abs(dist.Z);
 }
