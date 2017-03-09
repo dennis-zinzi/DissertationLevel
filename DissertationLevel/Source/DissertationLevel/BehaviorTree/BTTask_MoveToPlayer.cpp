@@ -40,13 +40,22 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 		if(dist <= CAUGHT_DISTANCE){
 			//Set Game to Lost
 			((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EGameOver);
-
+			
 			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, "YOU LOSE X_X");
 			return EBTNodeResult::Succeeded;
 		}
 		//Check if AI within "viewing" distance
 		else if(dist < IN_RANGE_DISTANCE){
-			EnemyPC->MoveToActor(Player, 20.0f, true, true, true, 0, true);
+			TArray<FVector> Locations = EnemyPC->GetAStarPath();
+			if(Locations.Num() > 0){
+				for(int i = 0; i < Locations.Num(); i++){
+					EnemyPC->MoveToLocation(Locations[i], 25.0f, true, false, true, true, 0, true);
+				}
+				UE_LOG(LogClass, Log, TEXT("PATHING!"));
+			}
+
+			UE_LOG(LogClass, Log, TEXT("PATHING?"));
+			//EnemyPC->MoveToActor(Player, 20.0f, true, true, true, 0, true);
 			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "Pursuiting Player!!!");
 			return EBTNodeResult::Succeeded;
 		}

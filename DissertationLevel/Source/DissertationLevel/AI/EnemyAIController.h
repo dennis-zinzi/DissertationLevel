@@ -4,17 +4,9 @@
 
 #include "AIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "PathNode.h"
 #include "EnemyAIController.generated.h"
 
-USTRUCT()
-struct FNodeCost{
-	GENERATED_BODY()
-
-	FVector position;
-	int cost;
-	TArray<FNodeCost> connected;
-	FNodeCost *parent;
-};
 
 /**
  * 
@@ -69,7 +61,19 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			LocationsToGo.Add(pos);
 		}
 
-		void PopulateOpenList(TArray<FVector> &Locations);
+		FORCEINLINE TArray<FVector> GetLocationsToGo(){
+			return LocationsToGo;
+		}
+
+		FORCEINLINE void AddToOpenList(PathNode &pn){
+			Nodes.Add(&pn);
+		}
+
+		void PopulateOpenList();
+
+		int GetVectorID(const FVector &pos) const;
+
+		TArray<FVector> GetAStarPath();
 
 	private:
 		//Blackboard keys
@@ -85,18 +89,22 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		//AStar Nodes
 		TArray<FVector> LocationsToGo;
 
+		//AStar Nodes List
+		TArray<PathNode*> Nodes;
+
 		//AStar Open List
-		TArray<FNodeCost> OpenList;
+		TArray<PathNode*> OpenList;
 
 		//AStar Closed List
-		TArray<FVector> ClosedList;
+		TArray<PathNode*> ClosedList;
 
-		bool AStarAlgorithm(TArray<FVector> &Locations, TArray<FNodeCost*> &OpenList, TArray<FNodeCost*> &ClosedList, const FVector &CurrentLoc, const FVector &Destination);
+		bool AStarAlgorithm(const PathNode &CurrentNode, const PathNode &FinalNode);
 		int HeuristicCost(const FVector &Source, const FVector &Destination);
 		int CostToMove(const FVector &Source, const FVector &Destination);
 
-		void Initialization(TArray<FVector> &Locations, TArray<FNodeCost*> &OpenList, TArray<FNodeCost*> &ClosedList, const FVector &CurrentLoc, const FVector &Destination);
-		TArray<FVector> GeneratePath(TArray<FNodeCost*> &ClosedList, const FVector &CurrentLoc, const FVector &Destination);
+		void Initialization(const PathNode &CurrentNode, const PathNode &FinalNode);
+		TArray<FVector> GeneratePath(const PathNode &CurrentNode, const PathNode &FinalNode);
 
-		FNodeCost GetMinCostNode(const TArray<FNodeCost*> &List);
+		PathNode* GetMinCostNode(const TArray<PathNode*> &List);
+		PathNode* GetMatchingNode(const int ID, const TArray<PathNode*> &List);
 };
