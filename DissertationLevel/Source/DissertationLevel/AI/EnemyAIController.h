@@ -22,6 +22,12 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent *BehaviorComp;
 
+	UPROPERTY(EditAnywhere, Category = "GridMap")
+	float PointsDistance = 80.0f;
+
+	UPROPERTY(EditAnywhere, Category = "GridMap")
+	float RangeDistance = 800.0f;
+
 
 	public:
 		AEnemyAIController();
@@ -53,27 +59,35 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			return BlackboardComp;
 		}
 
-
+		//Stops BehaviorTree Execution
 		void StopBehavior();
 
 
-		FORCEINLINE void AddToLocations(FVector pos) {
-			LocationsToGo.Add(pos);
-		}
 
-		FORCEINLINE TArray<FVector> GetLocationsToGo(){
-			return LocationsToGo;
-		}
-
-		FORCEINLINE void AddToOpenList(PathNode &pn){
+		FORCEINLINE void AddToNodesList(PathNode &pn){
 			Nodes.Add(&pn);
 		}
 
-		void PopulateOpenList();
+		FORCEINLINE TArray<PathNode*> GetNodesList(){
+			return Nodes;
+		}
 
-		int GetVectorID(const FVector &pos) const;
+		FORCEINLINE void ClearLists(){
+			Nodes.Empty();
+			OpenList.Empty();
+			ClosedList.Empty();
+		}
 
-		TArray<FVector> GetAStarPath();
+		//Get connected/neighboring nodes for each node
+		void FindEveryNeighborNodes();
+
+		//Get A* Vector list of locations to move through
+		TArray<FVector> GetAStarPath(APawn *Pawn);
+
+		void ChasePlayer(APawn *Pawn);
+
+		//Create GridMap
+		void CreateGridMap(APawn *Pawn);
 
 	private:
 		//Blackboard keys
@@ -86,9 +100,6 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		//Current Patrol Point
 		int32 CurrentPatrolPoint;
 
-		//AStar Nodes
-		TArray<FVector> LocationsToGo;
-
 		//AStar Nodes List
 		TArray<PathNode*> Nodes;
 
@@ -98,13 +109,16 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		//AStar Closed List
 		TArray<PathNode*> ClosedList;
 
-		bool AStarAlgorithm(const PathNode &CurrentNode, const PathNode &FinalNode);
+		bool AStarAlgorithm(const PathNode &StartNode, const PathNode &FinalNode);
 		int HeuristicCost(const FVector &Source, const FVector &Destination);
 		int CostToMove(const FVector &Source, const FVector &Destination);
 
-		void Initialization(const PathNode &CurrentNode, const PathNode &FinalNode);
-		TArray<FVector> GeneratePath(const PathNode &CurrentNode, const PathNode &FinalNode);
+		void Initialization(const PathNode &StartNode, const PathNode &FinalNode);
+		TArray<FVector> GeneratePath(const PathNode &StartNode, const PathNode &FinalNode);
 
-		PathNode* GetMinCostNode(const TArray<PathNode*> &List);
+		PathNode* GetMinCostNode();
 		PathNode* GetMatchingNode(const int ID, const TArray<PathNode*> &List);
+		PathNode* GetNodeAtPos(const FVector &Pos, const TArray<PathNode*> &List);
+		PathNode* GetNodeWithXY(const float x, const float y, const TArray<PathNode*> &List);
+		bool FindNodeConnections(PathNode *Node);
 };

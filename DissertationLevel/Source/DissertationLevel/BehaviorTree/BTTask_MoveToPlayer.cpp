@@ -18,12 +18,10 @@
 
 
 EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory){
+	//Get AI controller
 	AEnemyAIController *EnemyPC = Cast<AEnemyAIController>(OwnerComp.GetAIOwner());
 
-	//ADissertationLevelCharacter *Player = 
-	//	Cast<ADissertationLevelCharacter>(
-	//		OwnerComp.GetBlackboardComponent()->GetValue<UBlackboardKeyType_Object>(EnemyPC->GetEnemyKeyID())
-	//	);
+	//Get Player Character
 	ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
 
 	//Blackboard key name representing player being chased
@@ -38,6 +36,8 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 
 		//Check if AI caught the player
 		if(dist <= CAUGHT_DISTANCE){
+			EnemyPC->StopBehavior();
+
 			//Set Game to Lost
 			((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EGameOver);
 			
@@ -46,17 +46,30 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 		}
 		//Check if AI within "viewing" distance
 		else if(dist < IN_RANGE_DISTANCE){
-			TArray<FVector> Locations = EnemyPC->GetAStarPath();
-			if(Locations.Num() > 0){
-				for(int i = 0; i < Locations.Num(); i++){
-					EnemyPC->MoveToLocation(Locations[i], 25.0f, true, false, true, true, 0, true);
-				}
-				UE_LOG(LogClass, Log, TEXT("PATHING!"));
-			}
+			//OwnerComp.GetBlackboardComponent()->SetValueAsBool(FName("IsPathing"), false);
+			//UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH"));
 
-			UE_LOG(LogClass, Log, TEXT("PATHING?"));
-			//EnemyPC->MoveToActor(Player, 20.0f, true, true, true, 0, true);
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "Pursuiting Player!!!");
+			////Get Locations to go through
+			//TArray<FVector> Locations = EnemyPC->GetAStarPath(Player);
+
+			//if(Locations.Num() > 0){
+			//	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "Pursuiting Player!!!");
+
+			//	for(int i = 0; i < Locations.Num(); i++){
+			//		EnemyPC->MoveToLocation(Locations[i], 25.0f, true, false, true, true, 0, true);
+			//	}
+			//	UE_LOG(LogClass, Log, TEXT("PATHING!"));
+			//}
+			//else{
+			//	UE_LOG(LogClass, Log, TEXT("NO PATH TO CREATE"));
+			//}
+			////EnemyPC->MoveToActor(Player, 20.0f, true, true, true, 0, true);
+			//OwnerComp.GetBlackboardComponent()->SetValueAsBool(FName("IsPathing"), false);
+			//return EBTNodeResult::Succeeded;
+			
+			//Make A* path
+			EnemyPC->ChasePlayer(Player);
+
 			return EBTNodeResult::Succeeded;
 		}
 		//Player survived the chase

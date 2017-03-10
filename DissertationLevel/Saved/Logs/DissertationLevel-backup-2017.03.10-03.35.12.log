@@ -1,0 +1,1749 @@
+﻿Log file open, 03/10/17 03:14:17
+LogInit:Display: Running engine for game: DissertationLevel
+LogPlatformFile: Not using cached read wrapper
+LogInit:Display: RandInit(-1616913609) SRandInit(-1616913607).
+LogTaskGraph: Started task graph with 4 named threads and 7 total threads with 1 sets of task threads.
+LogStats: Stats thread started at 0.072776
+LogInit: Version: 4.12.5-3039270+++UE4+Release-4.12
+LogInit: API Version: 2992821
+LogInit: Net Version: 3039270
+LogDevObjectVersion: Number of dev versions registered: 13
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 3
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 1
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 2
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 6
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 0
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 2
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 0
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 0
+LogInit: Compiled (64-bit): Jul  6 2016 09:09:46
+LogInit: Compiled with Visual C++: 19.00.23026.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.12
+LogInit: Command line: 
+LogInit: Base directory: C:/Program Files/Epic Games/4.12/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogInit: Using libcurl 7.41.0
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with WinSSL
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2017.03.10-03.14.18:120][  0]LogInit: Selected Device Profile: [Windows]
+[2017.03.10-03.14.18:120][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2017.03.10-03.14.18:205][  0]LogInit: Computer: RIGG001
+[2017.03.10-03.14.18:205][  0]LogInit: User: b3030113
+[2017.03.10-03.14.18:205][  0]LogInit: CPU Page size=65536, Cores=4
+[2017.03.10-03.14.18:205][  0]LogInit: High frequency timer resolution =3.312783 MHz
+[2017.03.10-03.14.18:205][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx)
+[2017.03.10-03.14.18:205][  0]LogMemory: Platform Memory Stats for Windows
+[2017.03.10-03.14.18:205][  0]LogMemory: Process Physical Memory: 188.38 MB used, 188.38 MB peak
+[2017.03.10-03.14.18:205][  0]LogMemory: Process Virtual Memory: 195.10 MB used, 195.10 MB peak
+[2017.03.10-03.14.18:205][  0]LogMemory: Physical Memory: 4671.79 MB used, 8142.59 MB total
+[2017.03.10-03.14.18:205][  0]LogMemory: Virtual Memory: 536.59 MB used, 134217728.00 MB total
+[2017.03.10-03.14.18:235][  0]LogTextLocalizationManager: No specific translations for ('en-GB') exist, so ('en') translations will be used.
+[2017.03.10-03.14.18:624][  0]LogD3D11RHI: D3D11 adapters:
+[2017.03.10-03.14.18:643][  0]LogD3D11RHI:    0. 'NVIDIA GeForce GT 610  ' (Feature Level 11_0)
+[2017.03.10-03.14.18:643][  0]LogD3D11RHI:       973/0/3071 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2017.03.10-03.14.18:649][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2017.03.10-03.14.18:649][  0]LogD3D11RHI:       0/0/256 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2017.03.10-03.14.18:650][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2017.03.10-03.14.18:653][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2017.03.10-03.14.18:653][  0]LogD3D11RHI:     GPU DeviceId: 0x104a (for the marketing name, search the web for "GPU Device Id")
+[2017.03.10-03.14.18:653][  0]LogWindows: EnumDisplayDevices:
+[2017.03.10-03.14.18:653][  0]LogWindows:    0. 'NVIDIA GeForce GT 610  ' (P:1 D:1)
+[2017.03.10-03.14.18:653][  0]LogWindows:    1. 'NVIDIA GeForce GT 610  ' (P:0 D:0)
+[2017.03.10-03.14.18:654][  0]LogWindows: DebugString: FoundDriverCount:2 
+[2017.03.10-03.14.18:654][  0]LogD3D11RHI:     Adapter Name: NVIDIA GeForce GT 610  
+[2017.03.10-03.14.18:654][  0]LogD3D11RHI:   Driver Version: 362.84 (internal:10.18.13.6284, unified:362.84)
+[2017.03.10-03.14.18:654][  0]LogD3D11RHI:      Driver Date: 6-26-2016
+[2017.03.10-03.14.18:654][  0]LogRHI: Texture pool is 681 MB (70% of 973 MB)
+[2017.03.10-03.14.18:663][  0]LogD3D11RHI: Async texture creation enabled
+[2017.03.10-03.14.18:681][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2017.03.10-03.14.18:681][  0]LogShaderCompilers: Guid format shader working directory is -12 characters bigger than the processId version (D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Intermediate/Shaders/WorkingDirectory/3340/).
+[2017.03.10-03.14.18:681][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/b3030113/AppData/Local/Temp/UnrealShaderWorkingDir/F195A0CD48FE79ADC0E19DA2A0283064/'.
+[2017.03.10-03.14.18:681][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2017.03.10-03.14.19:626][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2017.03.10-03.14.19:638][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2017.03.10-03.14.19:653][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2017.03.10-03.14.19:668][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2017.03.10-03.14.19:684][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2017.03.10-03.14.19:700][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2017.03.10-03.14.19:714][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2017.03.10-03.14.19:729][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2017.03.10-03.14.19:740][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2017.03.10-03.14.19:752][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2017.03.10-03.14.19:763][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2017.03.10-03.14.19:792][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
+[2017.03.10-03.14.19:792][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2017.03.10-03.14.19:793][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2017.03.10-03.14.19:818][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2017.03.10-03.14.19:832][  0]LogTemp:Display: Loaded TP TVOSTargetPlatform
+[2017.03.10-03.14.19:843][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2017.03.10-03.14.19:854][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2017.03.10-03.14.19:869][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2017.03.10-03.14.19:869][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2017.03.10-03.14.19:934][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2017.03.10-03.14.19:986][  0]LogDerivedDataCache: Loaded boot cache 0.05s 50MB C:/Users/b3030113/AppData/Local/UnrealEngine/4.12/DerivedDataCache/Boot.ddc.
+[2017.03.10-03.14.19:986][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/b3030113/AppData/Local/UnrealEngine/4.12/DerivedDataCache/Boot.ddc
+[2017.03.10-03.14.19:987][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2017.03.10-03.14.19:987][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2017.03.10-03.14.19:987][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2017.03.10-03.14.19:987][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2017.03.10-03.14.20:003][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2017.03.10-03.14.20:015][  0]LogDerivedDataCache: Using Local data cache path C:/Users/b3030113/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2017.03.10-03.14.20:281][  0]LogInit: Selected Device Profile: [Windows]
+[2017.03.10-03.14.20:281][  0]LogContentStreaming: Texture pool size is 0.00 MB
+[2017.03.10-03.14.20:524][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2017.03.10-03.14.20:524][  0]LogMeshUtilities: No automatic mesh merging module available
+[2017.03.10-03.14.20:524][  0]LogMeshUtilities: No distributed automatic mesh merging module available
+[2017.03.10-03.14.20:763][  0]LogAssetRegistry: FAssetRegistry took 0.0222 seconds to start up
+[2017.03.10-03.14.24:220][  0]LogPackageLocalizationCache: Processed 3 localized package path(s) for 2 prioritized culture(s) in 3.455365 seconds
+[2017.03.10-03.14.24:225][  0]LogUObjectArray: 28739 objects as part of root set at end of initial load.
+[2017.03.10-03.14.24:225][  0]LogUObjectAllocator: 5855624 out of 0 bytes used by permanent object pool.
+[2017.03.10-03.14.24:225][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2017.03.10-03.14.24:230][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2017.03.10-03.14.24:425][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2017.03.10-03.14.24:425][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2017.03.10-03.14.25:605][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2017.03.10-03.14.26:884][  0]SourceControl: Info Source control is disabled
+[2017.03.10-03.14.26:909][  0]SourceControl: Info Source control is disabled
+[2017.03.10-03.14.26:920][  0]SourceControl: Info Source control is disabled
+[2017.03.10-03.14.26:927][  0]SourceControl: Info Source control is disabled
+[2017.03.10-03.14.27:137][  0]LogEngine: Initializing Engine...
+[2017.03.10-03.14.27:137][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2017.03.10-03.14.27:138][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2017.03.10-03.14.27:265][  0]LogAIModule: Creating AISystem for world NewWorld
+[2017.03.10-03.14.27:270][  0]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-03.14.27:287][  0]LogInit: FAudioDevice initialized.
+[2017.03.10-03.14.27:316][  0]LogDerivedDataCache: Saved boot cache 0.03s 50MB C:/Users/b3030113/AppData/Local/UnrealEngine/4.12/DerivedDataCache/Boot.ddc.
+[2017.03.10-03.14.27:326][  0]LogInit: Texture streaming: Enabled
+[2017.03.10-03.14.27:343][  0]LogInit: Transaction tracking system initialized
+[2017.03.10-03.14.27:358][  0]BlueprintLog: New page: Editor Load
+[2017.03.10-03.14.27:499][  0]LocalizationService: Info Localization service is disabled
+[2017.03.10-03.14.27:750][  0]LogConsoleResponse:Display: 
+[2017.03.10-03.14.27:846][  0]LogCook:Display: Max memory allowance for cook 8192mb
+[2017.03.10-03.14.27:846][  0]LogCook:Display: Mobile HDR setting 1
+[2017.03.10-03.14.27:924][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/' took 0.04s
+[2017.03.10-03.14.27:924][  0]SourceControl: Info Source control is disabled
+[2017.03.10-03.14.27:924][  0]Cmd: MAP LOAD FILE="D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2017.03.10-03.14.27:931][  0]LightingResults: New page: Lighting Build
+[2017.03.10-03.14.27:933][  0]MapCheck: New page: Map Check
+[2017.03.10-03.14.27:933][  0]LightingResults: New page: Lighting Build
+[2017.03.10-03.14.28:190][  0]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-03.14.28:202][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2017.03.10-03.14.28:203][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2017.03.10-03.14.28:289][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 85.991ms to complete.
+[2017.03.10-03.14.28:289][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 0.365
+[2017.03.10-03.14.28:460][  0]LogCollectionManager: Loaded 0 collections in 0.002255 seconds
+[2017.03.10-03.14.28:504][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Saved/Collections/' took 0.01s
+[2017.03.10-03.14.28:504][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/Developers/b3030113/Collections/' took 0.01s
+[2017.03.10-03.14.28:504][  0]LogFileCache: Scanning file cache for directory 'D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/Collections/' took 0.01s
+[2017.03.10-03.14.28:504][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000003 seconds
+[2017.03.10-03.14.28:530][  0]LogContentBrowser: Native class hierarchy populated in 0.0255 seconds. Added 2068 classes and 376 folders.
+[2017.03.10-03.14.28:533][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2017.03.10-03.14.28:533][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2017.03.10-03.14.28:550][  0]LogContentBrowser: Native class hierarchy updated for 'GameplayTags' in 0.0170 seconds. Added 12 classes and 0 folders.
+[2017.03.10-03.14.28:573][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0190 seconds. Added 0 classes and 0 folders.
+[2017.03.10-03.14.28:642][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0227 seconds. Added 0 classes and 0 folders.
+[2017.03.10-03.14.28:673][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0261 seconds. Added 1 classes and 2 folders.
+[2017.03.10-03.14.28:687][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2017.03.10-03.14.28:692][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2017.03.10-03.14.28:733][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0175 seconds. Added 1 classes and 2 folders.
+[2017.03.10-03.14.28:734][  0]LogLoad: Full Startup: 12.68 seconds (BP compile: 0.07 seconds)
+[2017.03.10-03.14.28:734][  0]LogExternalProfiler: Found external profiler: VSPerf
+[2017.03.10-03.14.28:734][  0]LogExternalProfiler: Using external profiler: VSPerf
+[2017.03.10-03.14.28:743][  0]LogOcInput: OculusInput pre-init called
+[2017.03.10-03.14.28:759][  0]LogContentStreaming: Texture pool size now 200 MB
+[2017.03.10-03.14.28:895][  0]LogRenderer: Reallocating scene render targets to support 1208x576 (Frame:2).
+[2017.03.10-03.14.29:215][  2]LogAssetRegistry: Asset discovery search completed in 8.4748 seconds
+[2017.03.10-03.14.29:215][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2017.03.10-03.14.29:215][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000084 seconds (updated 0 objects)
+[2017.03.10-03.15.14:804][246]Recompiling DissertationLevel...
+[2017.03.10-03.15.14:806][246]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe DissertationLevel -ModuleWithSuffix DissertationLevel 4822 Win64 Development -editorrecompile -canskiplink "D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DissertationLevel.uproject"  -2015]
+[2017.03.10-03.15.14:807][246]Warning: Starting HotReload took  0.0s.
+[2017.03.10-03.16.32:400][590]CompilerResultsLog: New page: Compilation - 10 Mar 2017 03:16:32
+[2017.03.10-03.16.32:400][590]CompilerResultsLog: Info Creating makefile for hot reloading DissertationLevel (working set of source files changed)
+[2017.03.10-03.16.32:400][590]CompilerResultsLog: Info Compiling game modules for hot reload
+[2017.03.10-03.16.32:401][590]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2017.03.10-03.16.32:401][590]CompilerResultsLog: Info EnvQueryGenerator_AStarNodes.cpp
+[2017.03.10-03.16.32:401][590]CompilerResultsLog: Info EnemyAIController.cpp
+[2017.03.10-03.16.32:401][590]CompilerResultsLog: Info [3/3] Link UE4Editor-DissertationLevel-4822.dll
+[2017.03.10-03.16.32:401][590]CompilerResultsLog: Info    Creating library D:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-4822.lib and object D:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-4822.exp
+[2017.03.10-03.16.32:401][590]CompilerResultsLog: Info Total build time: 77.41 seconds
+[2017.03.10-03.16.32:401][590]LogMainFrame: MainFrame: Module compiling took 77.622 seconds
+[2017.03.10-03.16.32:486][590]LogClass: EPlayState HotReload.
+[2017.03.10-03.16.32:510][590]LogContentBrowser: Native class hierarchy updated for 'DissertationLevel' in 0.0196 seconds. Added 14 classes and 5 folders.
+[2017.03.10-03.16.32:512][590]Warning: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2017.03.10-03.16.32:611][590]LogContentBrowser: Native class hierarchy populated in 0.0261 seconds. Added 2070 classes and 380 folders.
+[2017.03.10-03.16.32:611][590]Warning: HotReload took 77.8s.
+[2017.03.10-03.16.36:789][713]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.16.36:789][713]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-03.16.36:789][713]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 03:16:36)
+[2017.03.10-03.16.36:789][713]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-03.16.36:831][713]LogPlayLevel: PIE: StaticDuplicateObject took: (0.041486s)
+[2017.03.10-03.16.36:833][713]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-03.16.36:833][713]LogPlayLevel: PIE: World Init took: (0.001831s)
+[2017.03.10-03.16.36:834][713]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.044220s)
+[2017.03.10-03.16.36:856][713]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-03.16.36:863][713]LogInit: FAudioDevice initialized.
+[2017.03.10-03.16.36:931][713]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-03.16.37:019][713]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-03.16.37
+[2017.03.10-03.16.37:027][713]LogWorld: Bringing up level for play took: 0.094826
+[2017.03.10-03.16.37:084][713]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0401 seconds. Added 11 classes and 0 folders.
+[2017.03.10-03.16.37:085][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:088][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:090][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:091][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:092][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:093][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:095][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:096][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:097][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:099][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:100][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:102][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:102][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:103][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:108][713]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.16.37:111][713]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap -0.36
+[2017.03.10-03.16.37:111][713]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.16.41:334][797]Cmd: EnableGDT
+[2017.03.10-03.16.41:334][797]LogGameplayDebugger:Warning: Got from client: EnableGDT 
+[2017.03.10-03.16.47:949][926]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.47:949][926]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.47:951][926]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.47:951][926]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.48:120][929]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.48:121][929]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.48:122][929]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.48:122][929]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.48:289][932]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.48:290][932]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.48:291][932]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.48:291][932]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.48:514][936]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.48:514][936]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.48:516][936]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.48:516][936]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.48:704][939]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.48:704][939]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.48:708][939]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.48:708][939]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.48:832][941]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.48:832][941]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.48:834][941]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.48:834][941]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:000][944]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:000][944]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:002][944]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:002][944]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:091][946]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:091][946]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:093][946]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:094][946]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:242][949]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:242][949]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:244][949]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:244][949]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:434][952]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:434][952]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:436][952]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:436][952]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:605][955]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:605][955]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:609][955]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:609][955]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:691][957]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:691][957]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:693][957]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:693][957]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.49:875][960]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.49:875][960]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.49:879][960]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.49:879][960]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.50:014][962]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.50:014][962]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.50:015][962]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.50:015][962]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.50:172][965]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.50:172][965]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.50:173][965]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.50:173][965]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.50:313][967]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.50:313][967]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.50:315][967]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.50:315][967]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.50:529][971]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.50:530][971]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.50:531][971]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.50:531][971]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.50:723][974]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.50:724][974]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.50:728][974]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.50:728][974]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.50:851][976]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.50:851][976]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.50:852][976]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.50:853][976]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:020][979]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:020][979]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:025][979]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:025][979]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:124][981]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:124][981]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:126][981]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:126][981]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:297][984]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:297][984]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:299][984]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:299][984]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:425][986]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:425][986]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:426][986]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:426][986]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:676][990]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:676][990]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:678][990]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:678][990]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:822][993]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:823][993]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:824][993]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:824][993]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.51:993][996]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.51:993][996]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.51:995][996]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.51:995][996]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.52:237][  0]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.52:237][  0]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.52:239][  0]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.52:239][  0]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.52:405][  3]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.52:405][  3]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.52:407][  3]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.52:407][  3]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.52:514][  5]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.52:514][  5]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.52:516][  5]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.52:516][  5]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.52:688][  8]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.52:689][  8]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.52:690][  8]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.52:690][  8]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.52:811][ 10]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.52:811][ 10]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.52:813][ 10]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.52:813][ 10]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.52:995][ 13]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.52:995][ 13]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.52:999][ 13]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.52:999][ 13]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:097][ 15]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:097][ 15]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:099][ 15]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:099][ 15]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:268][ 18]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:268][ 18]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:270][ 18]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:270][ 18]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:377][ 20]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:377][ 20]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:379][ 20]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:379][ 20]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:549][ 23]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:549][ 23]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:551][ 23]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:551][ 23]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:653][ 25]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:653][ 25]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:655][ 25]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:655][ 25]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:820][ 28]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:820][ 28]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:822][ 28]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:822][ 28]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.53:949][ 30]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.53:949][ 30]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.53:951][ 30]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.53:951][ 30]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:084][ 33]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:084][ 33]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:085][ 33]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:085][ 33]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:206][ 35]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:206][ 35]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:208][ 35]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:208][ 35]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:331][ 38]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:331][ 38]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:333][ 38]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:333][ 38]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:474][ 41]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:474][ 41]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:475][ 41]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:475][ 41]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:607][ 44]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:607][ 44]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:609][ 44]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:609][ 44]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:745][ 47]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:745][ 47]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:747][ 47]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:747][ 47]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.54:907][ 50]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.54:907][ 50]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.54:909][ 50]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.54:909][ 50]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:030][ 53]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:030][ 53]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:031][ 53]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:031][ 53]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:163][ 56]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:164][ 56]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:165][ 56]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:165][ 56]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:306][ 59]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:307][ 59]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:308][ 59]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:308][ 59]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:438][ 62]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:438][ 62]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:439][ 62]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:439][ 62]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:589][ 65]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:589][ 65]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:591][ 65]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:591][ 65]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:733][ 68]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:733][ 68]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:735][ 68]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:735][ 68]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:866][ 71]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:866][ 71]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.55:868][ 71]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.55:869][ 71]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.55:999][ 74]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.55:999][ 74]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:001][ 74]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:001][ 74]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:140][ 77]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:140][ 77]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:142][ 77]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:142][ 77]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:275][ 80]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:275][ 80]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:277][ 80]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:277][ 80]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:442][ 83]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:442][ 83]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:444][ 83]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:444][ 83]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:572][ 86]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:572][ 86]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:574][ 86]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:574][ 86]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:705][ 89]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:705][ 89]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:707][ 89]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:707][ 89]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:843][ 92]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:843][ 92]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:847][ 92]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:847][ 92]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.56:979][ 95]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.56:979][ 95]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.56:981][ 95]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.56:981][ 95]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:108][ 98]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:108][ 98]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:110][ 98]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:110][ 98]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:249][101]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:250][101]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:251][101]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:251][101]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:397][104]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:397][104]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:399][104]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:399][104]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:552][107]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:552][107]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:556][107]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:556][107]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:684][110]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:684][110]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:688][110]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:688][110]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:805][113]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:805][113]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:808][113]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:808][113]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.57:939][116]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.57:940][116]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.57:941][116]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.57:941][116]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:080][119]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:080][119]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:082][119]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:082][119]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:215][122]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:215][122]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:219][122]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:219][122]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:349][125]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:349][125]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:351][125]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:351][125]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:472][128]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:472][128]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:474][128]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:474][128]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:605][131]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:605][131]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:607][131]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:607][131]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:747][134]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:747][134]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:749][134]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:749][134]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.58:890][137]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.58:890][137]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.58:892][137]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.58:892][137]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:025][140]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:025][140]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:027][140]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:027][140]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:169][143]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:169][143]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:173][143]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:173][143]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:300][146]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:300][146]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:302][146]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:302][146]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:435][149]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:435][149]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:437][149]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:437][149]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:574][152]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:575][152]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:578][152]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:578][152]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:719][155]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:719][155]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:723][155]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:724][155]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:867][158]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:867][158]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:871][158]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:871][158]LogClass: NO PATH TO CREATE
+[2017.03.10-03.16.59:997][161]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.16.59:998][161]LogClass: Number of Nodes: 378
+[2017.03.10-03.16.59:999][161]LogClass: ERROR: Start node not found
+[2017.03.10-03.16.59:999][161]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:130][164]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:130][164]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:132][164]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:132][164]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:280][167]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:280][167]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:281][167]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:282][167]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:430][170]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:430][170]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:432][170]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:432][170]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:574][173]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:574][173]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:576][173]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:576][173]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:717][176]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:717][176]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:719][176]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:719][176]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:847][179]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:847][179]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:849][179]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:849][179]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.00:983][182]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.00:983][182]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.00:987][182]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.00:987][182]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:125][185]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:125][185]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:127][185]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:127][185]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:260][188]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:260][188]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:262][188]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:262][188]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:413][191]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:413][191]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:415][191]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:415][191]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:563][194]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:563][194]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:565][194]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:565][194]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:698][197]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:698][197]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:700][197]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:700][197]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:837][200]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:838][200]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:839][200]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:839][200]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.01:974][203]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.01:975][203]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.01:979][203]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.01:979][203]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:114][206]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:114][206]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:116][206]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:116][206]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:260][209]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:260][209]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:261][209]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:261][209]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:390][212]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:390][212]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:392][212]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:392][212]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:525][215]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:525][215]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:527][215]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:527][215]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:667][218]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:667][218]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:669][218]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:669][218]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:787][221]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:787][221]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:789][221]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:789][221]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.02:921][224]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.02:921][224]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.02:923][224]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.02:923][224]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.03:056][227]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.03:056][227]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.03:058][227]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.03:058][227]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.03:199][230]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.03:199][230]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.03:201][230]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.03:201][230]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.07:977][367]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.07:978][367]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.07:979][367]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.07:979][367]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.08:206][370]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.08:206][370]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.08:208][370]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.08:208][370]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.08:371][373]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.08:371][373]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.08:375][373]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.08:375][373]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.08:522][376]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.08:523][376]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.08:524][376]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.08:524][376]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.08:655][379]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.17.08:655][379]LogClass: Number of Nodes: 378
+[2017.03.10-03.17.08:657][379]LogClass: ERROR: Start node not found
+[2017.03.10-03.17.08:657][379]LogClass: NO PATH TO CREATE
+[2017.03.10-03.17.08:709][380]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.17.08:774][380]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.21.06:130][528]Recompiling DissertationLevel...
+[2017.03.10-03.21.06:133][528]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe DissertationLevel -ModuleWithSuffix DissertationLevel 9767 Win64 Development -editorrecompile -canskiplink "D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DissertationLevel.uproject"  -2015]
+[2017.03.10-03.21.06:134][528]Warning: Starting HotReload took  0.0s.
+[2017.03.10-03.22.26:873][946]CompilerResultsLog: New page: Compilation - 10 Mar 2017 03:22:26
+[2017.03.10-03.22.26:873][946]CompilerResultsLog: Info Creating makefile for hot reloading DissertationLevel (working set of source files changed)
+[2017.03.10-03.22.26:873][946]CompilerResultsLog: Info Compiling game modules for hot reload
+[2017.03.10-03.22.26:873][946]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2017.03.10-03.22.26:874][946]CompilerResultsLog: Info EnvQueryGenerator_AStarNodes.cpp
+[2017.03.10-03.22.26:874][946]CompilerResultsLog: Info [2/2] Link UE4Editor-DissertationLevel-9767.dll
+[2017.03.10-03.22.26:874][946]CompilerResultsLog: Info    Creating library D:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-9767.lib and object D:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-9767.exp
+[2017.03.10-03.22.26:874][946]CompilerResultsLog: Info Total build time: 80.58 seconds
+[2017.03.10-03.22.26:874][946]LogMainFrame: MainFrame: Module compiling took 80.746 seconds
+[2017.03.10-03.22.26:917][946]LogClass: EPlayState HotReload.
+[2017.03.10-03.22.26:960][946]LogContentBrowser: Native class hierarchy updated for 'DissertationLevel' in 0.0390 seconds. Added 14 classes and 5 folders.
+[2017.03.10-03.22.26:962][946]Warning: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2017.03.10-03.22.27:045][946]LogContentBrowser: Native class hierarchy populated in 0.0489 seconds. Added 2070 classes and 380 folders.
+[2017.03.10-03.22.27:045][946]Warning: HotReload took 80.9s.
+[2017.03.10-03.22.30:162][ 40]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.22.30:163][ 40]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-03.22.30:163][ 40]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 03:22:30)
+[2017.03.10-03.22.30:163][ 40]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-03.22.30:186][ 40]LogPlayLevel: PIE: StaticDuplicateObject took: (0.022749s)
+[2017.03.10-03.22.30:187][ 40]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-03.22.30:187][ 40]LogPlayLevel: PIE: World Init took: (0.001198s)
+[2017.03.10-03.22.30:188][ 40]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.024705s)
+[2017.03.10-03.22.30:212][ 40]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-03.22.30:219][ 40]LogInit: FAudioDevice initialized.
+[2017.03.10-03.22.30:271][ 40]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-03.22.30:367][ 40]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-03.22.30
+[2017.03.10-03.22.30:375][ 40]LogWorld: Bringing up level for play took: 0.101820
+[2017.03.10-03.22.30:380][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:382][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:383][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:385][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:386][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:387][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:392][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:393][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:395][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:396][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:397][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:399][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:400][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:401][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:402][ 40]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.22.30:404][ 40]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 0.936
+[2017.03.10-03.22.30:404][ 40]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.22.33:618][102]Cmd: EnableGDT
+[2017.03.10-03.22.33:618][102]LogGameplayDebugger:Warning: Got from client: EnableGDT 
+[2017.03.10-03.23.20:338][885]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.20:338][885]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.20:341][885]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.20:341][885]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.20:599][888]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.20:599][888]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.20:601][888]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.20:601][888]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.20:733][891]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.20:733][891]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.20:735][891]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.20:735][891]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.20:863][894]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.20:864][894]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.20:865][894]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.20:865][894]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.20:997][897]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.20:997][897]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.20:999][897]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.20:999][897]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:130][900]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:130][900]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:132][900]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:132][900]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:280][903]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:280][903]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:282][903]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:282][903]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:448][906]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:448][906]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:450][906]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:450][906]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:599][909]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:599][909]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:601][909]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:601][909]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:689][911]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:689][911]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:691][911]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:691][911]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:828][914]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:829][914]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:830][914]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:830][914]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.21:980][917]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.21:980][917]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.21:981][917]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.21:981][917]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:125][920]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:125][920]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:129][920]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:129][920]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:274][923]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:274][923]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:277][923]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:277][923]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:407][926]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:407][926]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:409][926]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:409][926]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:547][929]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:547][929]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:549][929]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:549][929]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:690][932]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:690][932]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:692][932]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:692][932]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:841][935]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:841][935]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:843][935]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:843][935]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.22:980][938]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.22:980][938]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.22:982][938]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.22:982][938]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:114][941]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:115][941]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:115][941]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:115][941]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:255][944]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:255][944]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:257][944]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:257][944]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:398][947]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:398][947]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:400][947]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:400][947]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:548][950]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:548][950]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:550][950]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:550][950]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:630][952]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:630][952]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:634][952]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:634][952]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:793][955]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:793][955]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:795][955]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:795][955]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.23:935][958]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.23:935][958]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.23:937][958]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.23:937][958]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:063][961]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:063][961]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:065][961]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:065][961]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:213][964]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:213][964]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:215][964]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:215][964]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:356][967]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:356][967]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:360][967]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:360][967]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:509][970]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:509][970]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:512][970]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:512][970]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:652][973]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:652][973]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:654][973]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:654][973]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:789][976]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:789][976]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:791][976]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:791][976]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.24:931][979]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.24:931][979]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.24:933][979]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.24:933][979]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:091][982]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:091][982]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:093][982]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:093][982]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:223][985]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:223][985]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:226][985]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:226][985]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:365][988]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:365][988]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:367][988]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:367][988]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:506][991]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:506][991]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:508][991]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:508][991]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:645][994]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:645][994]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:647][994]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:647][994]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:787][997]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:788][997]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:789][997]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:789][997]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.25:940][  0]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.25:940][  0]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.25:944][  0]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.25:944][  0]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:075][  3]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:075][  3]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:077][  3]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:078][  3]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:206][  6]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:206][  6]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:207][  6]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:207][  6]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:354][  9]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:354][  9]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:356][  9]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:356][  9]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:491][ 12]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:491][ 12]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:495][ 12]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:495][ 12]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:622][ 15]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:622][ 15]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:624][ 15]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:624][ 15]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:765][ 18]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:766][ 18]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:767][ 18]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:767][ 18]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.26:916][ 21]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.26:916][ 21]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.26:920][ 21]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.26:920][ 21]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:008][ 23]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:008][ 23]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:010][ 23]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:011][ 23]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:130][ 26]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:130][ 26]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:132][ 26]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:132][ 26]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:305][ 29]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:305][ 29]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:310][ 29]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:310][ 29]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:444][ 32]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:444][ 32]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:446][ 32]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:447][ 32]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:548][ 34]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:548][ 34]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:550][ 34]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:550][ 34]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:700][ 37]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:700][ 37]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:702][ 37]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:702][ 37]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:791][ 39]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:791][ 39]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:795][ 39]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:795][ 39]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.27:930][ 42]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.27:930][ 42]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.27:932][ 42]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.27:932][ 42]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:089][ 45]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:089][ 45]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:091][ 45]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:091][ 45]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:232][ 48]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:232][ 48]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:234][ 48]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:234][ 48]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:335][ 50]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:335][ 50]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:337][ 50]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:337][ 50]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:465][ 53]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:465][ 53]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:467][ 53]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:467][ 53]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:641][ 56]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:641][ 56]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:643][ 56]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:643][ 56]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:792][ 59]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:792][ 59]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:793][ 59]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:794][ 59]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.28:884][ 61]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.28:884][ 61]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.28:887][ 61]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.28:887][ 61]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.29:034][ 64]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.29:035][ 64]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.29:036][ 64]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.29:036][ 64]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.29:162][ 67]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.29:162][ 67]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.29:164][ 67]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.29:164][ 67]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.29:319][ 70]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.29:319][ 70]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.29:321][ 70]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.29:321][ 70]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.29:457][ 73]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.29:457][ 73]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.29:459][ 73]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.29:459][ 73]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.29:589][ 76]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.29:589][ 76]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.29:591][ 76]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.29:591][ 76]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.29:741][ 79]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.29:741][ 79]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.29:741][ 79]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.29:741][ 79]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.33:211][179]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.33:211][179]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.33:211][179]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.33:211][179]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.33:481][182]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.33:481][182]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.33:482][182]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.33:482][182]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.33:631][185]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.33:631][185]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.33:635][185]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.33:635][185]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.33:731][187]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.33:731][187]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.33:733][187]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.33:733][187]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.33:864][190]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.33:864][190]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.33:866][190]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.33:866][190]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:015][193]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:015][193]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:017][193]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:017][193]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:167][196]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:167][196]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:169][196]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:169][196]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:290][199]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:290][199]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:292][199]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:292][199]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:435][202]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:435][202]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:437][202]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:437][202]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:565][205]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:565][205]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:569][205]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:569][205]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:698][208]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:698][208]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:702][208]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:702][208]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:848][211]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:848][211]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:852][211]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:852][211]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.34:980][214]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.34:980][214]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.34:982][214]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.34:982][214]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.35:122][217]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.35:122][217]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.35:124][217]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.35:124][217]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.35:258][220]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.35:258][220]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.35:260][220]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.35:260][220]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.35:402][223]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.35:402][223]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.35:404][223]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.35:405][223]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.37:318][275]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.37:318][275]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.37:319][275]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.37:319][275]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.37:558][278]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.37:558][278]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.37:560][278]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.37:560][278]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.37:701][281]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.37:701][281]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.37:703][281]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.37:703][281]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.37:854][284]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.37:855][284]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.37:856][284]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.37:856][284]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:035][287]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:035][287]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:037][287]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:037][287]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:114][289]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:114][289]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:116][289]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:116][289]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:277][292]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:277][292]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:279][292]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:279][292]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:365][294]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:366][294]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:367][294]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:367][294]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:507][297]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:507][297]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:509][297]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:509][297]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:649][300]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:649][300]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:651][300]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:651][300]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:801][303]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:801][303]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:803][303]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:803][303]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.38:890][305]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.38:890][305]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.38:892][305]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.38:892][305]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:033][308]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:033][308]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:036][308]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:037][308]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:181][311]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:181][311]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:183][311]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:183][311]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:315][314]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:315][314]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:317][314]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:317][314]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:465][317]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:465][317]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:467][317]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:467][317]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:591][320]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:591][320]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:593][320]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:593][320]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:729][323]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:729][323]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:731][323]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:731][323]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:867][326]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:867][326]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:869][326]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:869][326]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.39:997][329]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.39:997][329]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.39:999][329]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.39:999][329]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:137][332]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:137][332]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:141][332]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:141][332]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:261][335]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:261][335]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:263][335]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:263][335]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:378][338]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:378][338]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:380][338]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:380][338]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:506][341]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:506][341]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:508][341]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:508][341]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:639][344]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:640][344]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:641][344]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:641][344]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:774][347]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:774][347]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:776][347]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:776][347]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.40:922][350]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.40:922][350]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.40:924][350]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.40:924][350]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.41:075][353]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.41:075][353]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.41:077][353]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.41:077][353]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.41:215][356]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.41:215][356]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.41:217][356]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.41:217][356]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.41:361][359]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.41:361][359]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.41:363][359]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.41:363][359]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.41:576][362]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.41:576][362]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.41:576][362]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.41:576][362]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.41:774][365]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.41:774][365]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.41:776][365]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.41:776][365]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.49:999][509]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.50:000][509]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.50:001][509]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.50:001][509]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.50:273][513]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.50:273][513]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.50:275][513]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.50:275][513]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.50:559][517]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.50:559][517]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.50:561][517]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.50:561][517]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.50:878][521]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.50:878][521]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.50:880][521]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.50:880][521]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.51:179][525]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.51:179][525]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.51:180][525]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.51:181][525]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.51:471][529]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.51:471][529]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.51:473][529]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.51:473][529]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.51:772][533]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.51:772][533]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.51:773][533]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.51:773][533]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.52:051][537]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.52:051][537]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.52:053][537]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.52:053][537]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.52:351][541]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.52:351][541]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.52:353][541]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.52:353][541]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.52:620][545]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.52:621][545]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.52:622][545]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.52:622][545]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.52:885][549]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.52:886][549]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.52:887][549]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.52:887][549]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.53:172][553]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.53:172][553]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.53:176][553]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.53:176][553]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.53:522][557]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.53:522][557]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.53:524][557]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.53:524][557]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.53:824][561]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.53:824][561]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.53:826][561]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.53:826][561]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.54:134][565]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.54:134][565]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.54:136][565]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.54:136][565]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.54:411][569]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.54:411][569]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.54:413][569]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.54:413][569]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.54:699][573]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.54:699][573]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.54:701][573]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.54:701][573]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.54:962][577]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.54:962][577]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.54:964][577]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.54:964][577]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.55:219][581]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.55:219][581]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.55:221][581]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.55:221][581]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.55:474][585]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.55:474][585]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.55:475][585]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.55:475][585]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.55:677][588]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.55:677][588]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.55:679][588]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.55:679][588]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.55:865][591]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.55:865][591]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.55:867][591]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.55:867][591]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.56:047][594]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.56:048][594]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.56:049][594]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.56:049][594]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.56:231][597]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.56:231][597]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.56:233][597]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.56:233][597]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.56:426][600]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.56:426][600]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.56:428][600]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.56:428][600]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.56:622][603]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.56:622][603]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.56:624][603]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.56:624][603]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.56:813][606]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.23.56:813][606]LogClass: Number of Nodes: 379
+[2017.03.10-03.23.56:815][606]LogClass: ERROR: Start node not found
+[2017.03.10-03.23.56:815][606]LogClass: NO PATH TO CREATE
+[2017.03.10-03.23.56:936][608]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.23.57:022][608]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.23.58:264][637]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.23.58:264][637]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-03.23.58:265][637]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 03:23:58)
+[2017.03.10-03.23.58:265][637]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-03.23.58:286][637]LogPlayLevel: PIE: StaticDuplicateObject took: (0.020896s)
+[2017.03.10-03.23.58:287][637]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-03.23.58:287][637]LogPlayLevel: PIE: World Init took: (0.001240s)
+[2017.03.10-03.23.58:288][637]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.022889s)
+[2017.03.10-03.23.58:305][637]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-03.23.58:311][637]LogInit: FAudioDevice initialized.
+[2017.03.10-03.23.58:366][637]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-03.23.58:462][637]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-03.23.58
+[2017.03.10-03.23.58:468][637]LogWorld: Bringing up level for play took: 0.099478
+[2017.03.10-03.23.58:471][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:472][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:473][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:474][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:475][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:475][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:481][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:482][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:483][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:483][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:484][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:485][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:486][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:486][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:488][637]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.23.58:489][637]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 1.021
+[2017.03.10-03.23.58:489][637]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.24.02:612][722]Cmd: EnableGDT
+[2017.03.10-03.24.02:612][722]LogGameplayDebugger:Warning: Got from client: EnableGDT 
+[2017.03.10-03.24.05:838][798]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.05:838][798]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.05:840][798]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.05:840][798]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.05:980][801]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.05:980][801]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.05:982][801]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.05:982][801]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.06:146][804]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.06:146][804]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.06:147][804]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.06:147][804]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.06:313][807]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.06:313][807]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.06:313][807]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.06:313][807]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.06:509][810]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.06:509][810]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.06:511][810]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.06:511][810]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.06:686][813]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.06:686][813]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.06:687][813]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.06:687][813]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.06:854][816]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.06:855][816]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.06:856][816]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.06:856][816]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:011][819]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:011][819]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:011][819]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:012][819]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:163][822]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:163][822]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:165][822]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:165][822]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:343][825]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:343][825]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:345][825]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:345][825]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:488][828]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:488][828]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:490][828]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:490][828]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:653][831]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:653][831]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:657][831]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:657][831]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:810][834]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:810][834]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:812][834]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:812][834]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.07:992][837]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.07:992][837]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.07:994][837]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.07:994][837]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.08:136][840]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.08:136][840]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.08:138][840]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.08:138][840]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.08:267][843]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.08:268][843]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.08:269][843]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.08:269][843]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.08:433][846]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.08:434][846]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.08:435][846]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.08:436][846]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.08:593][849]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.08:593][849]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.08:595][849]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.08:595][849]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.08:727][852]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.08:727][852]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.08:729][852]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.08:729][852]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.08:858][855]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.08:858][855]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.08:860][855]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.08:860][855]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:016][858]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:016][858]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:019][858]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:019][858]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:166][861]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:166][861]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:168][861]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:168][861]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:318][864]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:319][864]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:319][864]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:319][864]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:439][867]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:439][867]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:440][867]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:440][867]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:589][870]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:590][870]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:591][870]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:591][870]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:722][873]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:722][873]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:724][873]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:724][873]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:860][876]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:860][876]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:862][876]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:862][876]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.09:993][879]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.09:993][879]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.09:994][879]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.09:994][879]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:123][882]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:124][882]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:125][882]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:125][882]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:277][885]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:277][885]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:279][885]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:279][885]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:396][888]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:396][888]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:398][888]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:398][888]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:531][891]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:531][891]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:533][891]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:533][891]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:668][894]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:668][894]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:670][894]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:670][894]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:815][897]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:815][897]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:817][897]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:817][897]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.10:976][900]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.10:976][900]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.10:976][900]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.10:976][900]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.11:116][903]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.11:117][903]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.11:118][903]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.11:118][903]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.11:303][906]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.11:303][906]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.11:305][906]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.11:305][906]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.11:499][909]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.11:499][909]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.11:500][909]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.11:500][909]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.11:634][911]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.24.11:729][911]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.24.13:043][942]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.24.13:044][942]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-03.24.13:044][942]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 03:24:13)
+[2017.03.10-03.24.13:044][942]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-03.24.13:064][942]LogPlayLevel: PIE: StaticDuplicateObject took: (0.019859s)
+[2017.03.10-03.24.13:066][942]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-03.24.13:067][942]LogPlayLevel: PIE: World Init took: (0.001322s)
+[2017.03.10-03.24.13:067][942]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.021858s)
+[2017.03.10-03.24.13:084][942]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-03.24.13:090][942]LogInit: FAudioDevice initialized.
+[2017.03.10-03.24.13:145][942]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-03.24.13:219][942]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-03.24.13
+[2017.03.10-03.24.13:233][942]LogWorld: Bringing up level for play took: 0.085810
+[2017.03.10-03.24.13:238][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:240][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:241][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:243][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:244][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:245][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:247][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:248][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:249][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:250][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:251][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:252][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:254][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:255][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:260][942]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.24.13:261][942]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap -0.207
+[2017.03.10-03.24.13:262][942]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.24.16:879][ 17]Cmd: EnableGDT
+[2017.03.10-03.24.16:879][ 17]LogGameplayDebugger:Warning: Got from client: EnableGDT 
+[2017.03.10-03.24.28:423][228]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.28:423][228]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.28:425][228]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.28:425][228]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.28:574][231]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.28:574][231]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.28:576][231]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.28:576][231]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.28:765][234]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.28:765][234]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.28:767][234]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.28:767][234]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.28:974][237]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.28:974][237]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.28:975][237]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.28:975][237]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.29:107][239]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.29:107][239]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.29:109][239]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.29:109][239]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.29:385][243]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.29:385][243]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.29:387][243]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.29:387][243]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.29:632][247]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.29:632][247]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.29:634][247]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.29:634][247]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.29:895][251]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.29:895][251]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.29:896][251]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.29:896][251]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.30:163][255]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.30:163][255]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.30:163][255]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.30:163][255]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.30:349][258]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.30:350][258]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.30:350][258]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.30:350][258]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.30:493][260]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.30:493][260]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.30:495][260]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.30:495][260]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.30:742][264]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.30:743][264]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.30:744][264]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.30:744][264]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.30:999][268]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.30:999][268]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:001][268]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:001][268]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.31:175][271]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.31:176][271]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:177][271]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:177][271]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.31:303][273]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.31:303][273]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:305][273]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:305][273]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.31:477][276]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.31:477][276]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:479][276]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:479][276]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.31:594][278]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.31:594][278]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:596][278]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:596][278]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.31:775][281]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.31:775][281]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:778][281]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:778][281]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.31:886][283]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.31:886][283]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.31:888][283]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.31:888][283]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.32:066][286]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.32:066][286]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.32:066][286]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.32:066][286]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.32:192][288]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.32:192][288]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.32:194][288]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.32:194][288]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.32:376][291]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.32:376][291]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.32:377][291]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.32:377][291]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.32:505][293]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.32:505][293]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.32:505][293]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.32:505][293]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.32:760][297]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.32:760][297]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.32:762][297]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.32:762][297]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.32:941][300]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.32:941][300]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.32:943][300]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.32:943][300]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.33:085][302]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.33:086][302]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.33:087][302]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.33:087][302]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.33:299][306]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.33:299][306]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.33:301][306]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.33:301][306]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.33:482][309]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.33:482][309]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.33:484][309]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.33:484][309]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.33:599][311]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.33:599][311]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.33:601][311]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.33:601][311]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.33:781][314]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.33:781][314]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.33:785][314]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.33:785][314]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.33:898][316]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.33:898][316]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.33:900][316]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.33:900][316]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:083][319]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:083][319]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:085][319]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:085][319]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:200][321]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:200][321]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:202][321]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:202][321]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:390][324]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:390][324]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:392][324]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:392][324]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:510][326]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:510][326]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:513][326]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:513][326]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:691][329]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:691][329]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:693][329]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:693][329]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:797][331]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:797][331]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:799][331]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:799][331]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.34:977][334]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.34:977][334]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.34:979][334]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.34:979][334]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.35:096][336]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.35:096][336]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.35:098][336]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.35:098][336]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.35:278][339]LogClass: ATTEMPTING TO GENERATE PATH
+[2017.03.10-03.24.35:278][339]LogClass: Number of Nodes: 379
+[2017.03.10-03.24.35:280][339]LogClass: ERROR: Start node not found
+[2017.03.10-03.24.35:280][339]LogClass: NO PATH TO CREATE
+[2017.03.10-03.24.35:350][340]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.24.35:435][340]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.29.56:456][943]Recompiling DissertationLevel...
+[2017.03.10-03.29.56:459][943]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe DissertationLevel -ModuleWithSuffix DissertationLevel 537 Win64 Development -editorrecompile -canskiplink "D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DissertationLevel.uproject"  -2015]
+[2017.03.10-03.29.56:462][943]Warning: Starting HotReload took  0.0s.
+[2017.03.10-03.31.25:524][256]CompilerResultsLog: New page: Compilation - 10 Mar 2017 03:31:25
+[2017.03.10-03.31.25:524][256]CompilerResultsLog: Info Creating makefile for hot reloading DissertationLevel (working set of source files changed)
+[2017.03.10-03.31.25:524][256]CompilerResultsLog: Info Compiling game modules for hot reload
+[2017.03.10-03.31.25:525][256]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2017.03.10-03.31.25:525][256]CompilerResultsLog: Info EnvQueryGenerator_AStarNodes.cpp
+[2017.03.10-03.31.25:525][256]CompilerResultsLog: Info EnemyAIController.cpp
+[2017.03.10-03.31.25:525][256]CompilerResultsLog: Info [3/3] Link UE4Editor-DissertationLevel-537.dll
+[2017.03.10-03.31.25:525][256]CompilerResultsLog: Info    Creating library D:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-537.lib and object D:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-537.exp
+[2017.03.10-03.31.25:525][256]CompilerResultsLog: Info Total build time: 84.90 seconds
+[2017.03.10-03.31.25:525][256]LogMainFrame: MainFrame: Module compiling took 89.099 seconds
+[2017.03.10-03.31.25:561][256]LogClass: EPlayState HotReload.
+[2017.03.10-03.31.25:582][256]LogContentBrowser: Native class hierarchy updated for 'DissertationLevel' in 0.0164 seconds. Added 14 classes and 5 folders.
+[2017.03.10-03.31.25:584][256]Warning: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2017.03.10-03.31.25:649][256]LogContentBrowser: Native class hierarchy populated in 0.0337 seconds. Added 2070 classes and 380 folders.
+[2017.03.10-03.31.25:650][256]Warning: HotReload took 89.2s.
+[2017.03.10-03.31.31:236][338]Recompiling DissertationLevel...
+[2017.03.10-03.31.31:238][338]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe DissertationLevel -ModuleWithSuffix DissertationLevel 4059 Win64 Development -editorrecompile -canskiplink "D:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DissertationLevel.uproject"  -2015]
+[2017.03.10-03.31.31:239][338]Warning: Starting HotReload took  0.0s.
+[2017.03.10-03.31.33:470][395]CompilerResultsLog: New page: Compilation - 10 Mar 2017 03:31:33
+[2017.03.10-03.31.33:470][395]CompilerResultsLog: Info Compiling game modules for hot reload
+[2017.03.10-03.31.33:470][395]CompilerResultsLog: Info Target is up to date
+[2017.03.10-03.31.33:470][395]LogMainFrame: MainFrame: Module compiling took 2.263 seconds
+[2017.03.10-03.31.33:550][395]LogContentBrowser: Native class hierarchy populated in 0.0476 seconds. Added 2070 classes and 380 folders.
+[2017.03.10-03.31.33:550][395]Warning: HotReload took  2.4s.
+[2017.03.10-03.31.34:283][418]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.31.34:283][418]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-03.31.34:283][418]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 03:31:34)
+[2017.03.10-03.31.34:283][418]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-03.31.34:318][418]LogPlayLevel: PIE: StaticDuplicateObject took: (0.034793s)
+[2017.03.10-03.31.34:319][418]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-03.31.34:320][418]LogPlayLevel: PIE: World Init took: (0.001357s)
+[2017.03.10-03.31.34:320][418]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.036950s)
+[2017.03.10-03.31.34:337][418]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-03.31.34:343][418]LogInit: FAudioDevice initialized.
+[2017.03.10-03.31.34:406][418]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-03.31.34:482][418]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-03.31.34
+[2017.03.10-03.31.34:487][418]LogWorld: Bringing up level for play took: 0.079473
+[2017.03.10-03.31.34:491][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:492][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:493][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:495][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:496][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:498][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:499][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:500][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:501][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:516][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:518][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:520][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:520][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:521][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:522][418]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-03.31.34:523][418]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 1.056
+[2017.03.10-03.31.34:523][418]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-03.31.37:113][467]Cmd: EnableGDT
+[2017.03.10-03.31.37:113][467]LogGameplayDebugger:Warning: Got from client: EnableGDT 
+[2017.03.10-03.31.44:663][621]LogCrashTracker: 
+
+
+[2017.03.10-03.31.44:663][621]LogCrashTracker: 
+
+
+[2017.03.10-03.31.44:663][621]LogWindows:Error: === Critical error: ===
+Fatal error!
+
+
+
+[2017.03.10-03.31.44:719][621]LogExit: Executing StaticShutdownAfterError
+[2017.03.10-03.31.44:722][621]LogWindows: FPlatformMisc::RequestExit(1)
+[2017.03.10-03.31.44:722][621]Log file closed, 03/10/17 03:31:44

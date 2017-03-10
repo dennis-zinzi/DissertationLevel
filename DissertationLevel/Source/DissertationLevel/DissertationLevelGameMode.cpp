@@ -113,22 +113,22 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 				myCharacter->GetMovementComponent()->MovementState.bCanJump = false;
 			}
 
-			//Get the AI controller
-			TArray<AActor*> AIs;
-			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AIs);
-			AEnemyAIController *ai = Cast<AEnemyAIController>(AIs[0]);
+			////Get the AI controller
+			//TArray<AActor*> AIs;
+			//UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AIs);
+			//AEnemyAIController *ai = Cast<AEnemyAIController>(AIs[0]);
 
-			if(ai){
-				//Stop AI from moving anymore
-				ai->StopMovement();
-				//Kill behavior tree
-				ai->StopBehavior();
-			}
+			//if(ai){
+			//	//Stop AI from moving anymore
+			//	ai->StopMovement();
+			//	//Kill behavior tree
+			//	//ai->StopBehavior();
+			//}
 
 			break;
 			//Unknown/default state
 			/*default:
-			case EBatteryPlayState::EUnknown:
+			case EPlayState::EUnknown:
 			break;*/
 	}
 }

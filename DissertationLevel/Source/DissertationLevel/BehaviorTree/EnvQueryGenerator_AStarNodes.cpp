@@ -4,6 +4,7 @@
 #include "EnvQueryGenerator_AStarNodes.h"
 #include "../AI/EnemyAIController.h"
 #include "../AI/PathNode.h"
+#include "../DissertationLevelCharacter.h"
 
 
 UEnvQueryGenerator_AStarNodes::UEnvQueryGenerator_AStarNodes(){
@@ -12,48 +13,61 @@ UEnvQueryGenerator_AStarNodes::UEnvQueryGenerator_AStarNodes(){
 
 
 void UEnvQueryGenerator_AStarNodes::GenerateItems(FEnvQueryInstance &QueryInstance) const{
-	//This array will hold a reference to all the generated items, meaning, the cone items
+	//This array will hold a reference to all the generated items, meaning, the grid items
 	TArray<FNavLocation> ItemCandidates;
-
-	//Get a reference for our AI Pawn
-	//AActor* AIPawn = Cast<AActor>((QueryInstance.Owner).Get());
 
 	AEnemyAIController *AICon = Cast<AEnemyAIController>(
 		(Cast<AActor>(
 			(QueryInstance.Owner).Get())->GetInstigatorController())
 		);
 
+	//Clear current nodes
+	AICon->ClearLists();
+
 	//Store its location and its forward vector
 	FVector PawnLocation = AICon->GetPawn()->GetActorLocation();
-	FVector PawnForwardVector = AICon->GetPawn()->GetActorForwardVector();
 
-	//If the angle step is zero we're going into an infinite loop. 
-	//Since we don't want that, don't execute the following logic
-	if(AngleStep == 0){
-		return;
-	}
+	//Rotate Vector by 90 degrees
+	FVector LineVector = AICon->GetPawn()->GetActorForwardVector().RotateAngleAxis(-90.0f, FVector(0.0f, 0.0f, 1.0f));
 
+	//PathNode ID
 	int ID = 0;
-	for(float Angle = -ConeDegrees; Angle < ConeDegrees; Angle += AngleStep){
-		//Start from the left side of the pawn and rotate its forward vector by Angle + 1
-		FVector LeftVector = PawnForwardVector.RotateAngleAxis(Angle + 1, FVector(0, 0, 1));
-		//The Left Vector is showing a straight line for that angle. The only thing we need
-		//is to generate items in that line
 
-		//Generates all the points for the current line (LeftVector)
-		for(int32 Point = 0; Point < ConeRadius; Point++){
-			//Generate a point for this particular angle and distance
-			FNavLocation NavLoc = FNavLocation(PawnLocation + LeftVector * Point * PointsDistance);
+	//X Pos loop
+	for(float x = PawnLocation.X - RangeDistance; x < PawnLocation.X + RangeDistance + 1; x += PointsDistance){
+		//Y Pos loop
+		for(float y = PawnLocation.Y; y < PawnLocation.Y + RangeDistance + 1; y += PointsDistance){
+			//Generate Point at these coordinates
+			FNavLocation NavLoc = FNavLocation(FVector(x, y, PawnLocation.Z));
 
 			//Add the new point into our array
 			ItemCandidates.Add(NavLoc);
 
 			//AICon->AddToLocations(NavLoc.Location);
 			PathNode pn(ID, NavLoc.Location);
-			AICon->AddToOpenList(pn);
+			AICon->AddToNodesList(pn);
+			
+			UE_LOG(LogClass, Log, TEXT("Node ID: %s"), *FString::FromInt(pn.ID));
 
 			ID++;
 		}
+	}
+
+	//Start Node
+	FNavLocation StartLoc = FNavLocation(PawnLocation);
+	////Add the start and end positions into our array
+	ItemCandidates.Add(StartLoc);
+	////Add start and end nodes
+	PathNode pn(ID + 1, StartLoc.Location);
+	AICon->AddToNodesList(pn);
+
+	////End Node (Player Pos)
+	if(GetWorld() && GetWorld() != NULL){
+		APlayerController *Player = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+		FNavLocation EndLoc = FNavLocation(Player->GetPawn()->GetActorLocation());
+		ItemCandidates.Add(EndLoc);
+		PathNode pn1(ID + 2, EndLoc.Location);
+		AICon->AddToNodesList(pn1);
 	}
 
 	//Projects all the nav points into our Viewport and removes those outside of our navmesh
