@@ -82,12 +82,12 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		void FindEveryNeighborNodes();
 
 		//Get A* Vector list of locations to move through
-		TArray<FVector> GetAStarPath(APawn *Pawn);
+		TArray<FVector> GetAStarPath(const FVector &AIPos, const FVector &PlayerPos);
 
 		void ChasePlayer(APawn *Pawn);
 
 		//Create GridMap
-		void CreateGridMap(APawn *Pawn);
+		void CreateGridMap(const FVector &AIPos, const FVector &AIForwardVec, const FVector &PlayerPos);
 
 	private:
 		//Blackboard keys
@@ -109,16 +109,17 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		//AStar Closed List
 		TArray<PathNode*> ClosedList;
 
-		bool AStarAlgorithm(const PathNode &StartNode, const PathNode &FinalNode);
+		bool AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode);
 		int HeuristicCost(const FVector &Source, const FVector &Destination);
 		int CostToMove(const FVector &Source, const FVector &Destination);
 
-		void Initialization(const PathNode &StartNode, const PathNode &FinalNode);
-		TArray<FVector> GeneratePath(const PathNode &StartNode, const PathNode &FinalNode);
+		TArray<FVector> GeneratePath(PathNode *StartNode, PathNode *FinalNode);
 
 		PathNode* GetMinCostNode();
 		PathNode* GetMatchingNode(const int ID, const TArray<PathNode*> &List);
 		PathNode* GetNodeAtPos(const FVector &Pos, const TArray<PathNode*> &List);
 		PathNode* GetNodeWithXY(const float x, const float y, const TArray<PathNode*> &List);
 		bool FindNodeConnections(PathNode *Node);
+
+		bool bIsPathing;
 };

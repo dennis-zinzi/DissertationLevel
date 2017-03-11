@@ -2,13 +2,17 @@
 
 #pragma once
 
+#include <vector>
+
+using std::vector;
+
 /**
  * 
  */
 class DISSERTATIONLEVEL_API PathNode
 {
 	public:
-		PathNode(int ID, const FVector &Position, int Cost = 0, TArray<int> Connected = TArray<int>(), PathNode *Parent = nullptr);
+		PathNode(int ID, const FVector &Position, int Cost = 0, vector<int> Connected = vector<int>(), PathNode *Parent = nullptr);
 		PathNode(const FVector &v);
 
 		~PathNode();
@@ -16,7 +20,8 @@ class DISSERTATIONLEVEL_API PathNode
 		int ID;
 		FVector Position;
 		int Cost;
-		TArray<int> Connected;
+		//TArray<int> Connected;
+		vector<int> Connected;
 		PathNode *Parent;
 
 		FORCEINLINE bool operator==(const PathNode &rhs) const{

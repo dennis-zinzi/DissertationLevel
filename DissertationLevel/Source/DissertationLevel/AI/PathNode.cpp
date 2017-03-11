@@ -4,7 +4,7 @@
 #include "PathNode.h"
 
 
-PathNode::PathNode(int ID, const FVector &Position, int Cost, TArray<int> Connected, PathNode *Parent){
+PathNode::PathNode(int ID, const FVector &Position, int Cost, vector<int> Connected, PathNode *Parent){
 	this->ID = ID;
 	this->Position = Position;
 	this->Cost = Cost;
@@ -16,7 +16,7 @@ PathNode::PathNode(const FVector &v){
 	ID = GetVectorID(v);
 	Position = v;
 	Cost = 0;
-	Connected = TArray<int>();
+	Connected = vector<int>();
 	Parent = nullptr;
 }
 

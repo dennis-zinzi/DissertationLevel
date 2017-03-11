@@ -46,27 +46,6 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 		}
 		//Check if AI within "viewing" distance
 		else if(dist < IN_RANGE_DISTANCE){
-			//OwnerComp.GetBlackboardComponent()->SetValueAsBool(FName("IsPathing"), false);
-			//UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH"));
-
-			////Get Locations to go through
-			//TArray<FVector> Locations = EnemyPC->GetAStarPath(Player);
-
-			//if(Locations.Num() > 0){
-			//	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "Pursuiting Player!!!");
-
-			//	for(int i = 0; i < Locations.Num(); i++){
-			//		EnemyPC->MoveToLocation(Locations[i], 25.0f, true, false, true, true, 0, true);
-			//	}
-			//	UE_LOG(LogClass, Log, TEXT("PATHING!"));
-			//}
-			//else{
-			//	UE_LOG(LogClass, Log, TEXT("NO PATH TO CREATE"));
-			//}
-			////EnemyPC->MoveToActor(Player, 20.0f, true, true, true, 0, true);
-			//OwnerComp.GetBlackboardComponent()->SetValueAsBool(FName("IsPathing"), false);
-			//return EBTNodeResult::Succeeded;
-			
 			//Make A* path
 			EnemyPC->ChasePlayer(Player);
 

@@ -1,0 +1,1063 @@
+﻿Log file open, 03/10/17 21:41:06
+LogInit:Display: Running engine for game: DissertationLevel
+LogPlatformFile: Not using cached read wrapper
+LogInit:Display: RandInit(766917093) SRandInit(766917094).
+LogTaskGraph: Started task graph with 4 named threads and 7 total threads with 1 sets of task threads.
+LogStats: Stats thread started at 0.076722
+LogInit: Version: 4.12.5-3039270+++UE4+Release-4.12
+LogInit: API Version: 2992821
+LogInit: Net Version: 3039270
+LogDevObjectVersion: Number of dev versions registered: 13
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 3
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 1
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 2
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 6
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 0
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 2
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 0
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 0
+LogInit: Compiled (64-bit): Jul  6 2016 09:09:46
+LogInit: Compiled with Visual C++: 19.00.23026.00
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.12
+LogInit: Command line: 
+LogInit: Base directory: C:/Program Files/Epic Games/4.12/Engine/Binaries/Win64/
+LogInit: Installed Engine Build: 1
+LogInit: Using libcurl 7.41.0
+LogInit:  - built for x86_64-pc-win32
+LogInit:  - supports SSL with WinSSL
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_IDN
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2017.03.10-21.41.06:809][  0]LogInit: Selected Device Profile: [Windows]
+[2017.03.10-21.41.06:809][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2017.03.10-21.41.06:916][  0]LogInit: Computer: RIGG016
+[2017.03.10-21.41.06:916][  0]LogInit: User: B3030113
+[2017.03.10-21.41.06:916][  0]LogInit: CPU Page size=65536, Cores=4
+[2017.03.10-21.41.06:916][  0]LogInit: High frequency timer resolution =2.734395 MHz
+[2017.03.10-21.41.06:916][  0]LogMemory: Memory total: Physical=8.0GB (8GB approx)
+[2017.03.10-21.41.06:916][  0]LogMemory: Platform Memory Stats for Windows
+[2017.03.10-21.41.06:916][  0]LogMemory: Process Physical Memory: 188.42 MB used, 188.42 MB peak
+[2017.03.10-21.41.06:916][  0]LogMemory: Process Virtual Memory: 195.07 MB used, 195.07 MB peak
+[2017.03.10-21.41.06:916][  0]LogMemory: Physical Memory: 3607.51 MB used, 8145.50 MB total
+[2017.03.10-21.41.06:916][  0]LogMemory: Virtual Memory: 536.59 MB used, 134217728.00 MB total
+[2017.03.10-21.41.06:951][  0]LogTextLocalizationManager: No specific translations for ('en-GB') exist, so ('en') translations will be used.
+[2017.03.10-21.41.07:360][  0]LogD3D11RHI: D3D11 adapters:
+[2017.03.10-21.41.07:385][  0]LogD3D11RHI:    0. 'NVIDIA Quadro 600 ' (Feature Level 11_0)
+[2017.03.10-21.41.07:386][  0]LogD3D11RHI:       963/0/4072 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:1, VendorId:0x10de
+[2017.03.10-21.41.07:392][  0]LogD3D11RHI:    1. 'Microsoft Basic Render Driver' (Feature Level 11_0)
+[2017.03.10-21.41.07:393][  0]LogD3D11RHI:       0/0/256 MB DedicatedVideo/DedicatedSystem/SharedSystem, Outputs:0, VendorId:0x1414
+[2017.03.10-21.41.07:393][  0]LogD3D11RHI: Chosen D3D11 Adapter: 0
+[2017.03.10-21.41.07:398][  0]LogD3D11RHI: Creating new Direct3DDevice
+[2017.03.10-21.41.07:398][  0]LogD3D11RHI:     GPU DeviceId: 0xdf8 (for the marketing name, search the web for "GPU Device Id")
+[2017.03.10-21.41.07:398][  0]LogWindows: EnumDisplayDevices:
+[2017.03.10-21.41.07:398][  0]LogWindows:    0. 'NVIDIA Quadro 600 ' (P:1 D:1)
+[2017.03.10-21.41.07:398][  0]LogWindows:    1. 'NVIDIA Quadro 600 ' (P:0 D:0)
+[2017.03.10-21.41.07:398][  0]LogWindows: DebugString: FoundDriverCount:2 
+[2017.03.10-21.41.07:398][  0]LogD3D11RHI:     Adapter Name: NVIDIA Quadro 600 
+[2017.03.10-21.41.07:398][  0]LogD3D11RHI:   Driver Version: 362.84 (internal:10.18.13.6284, unified:362.84)
+[2017.03.10-21.41.07:398][  0]LogD3D11RHI:      Driver Date: 6-26-2016
+[2017.03.10-21.41.07:398][  0]LogRHI: Texture pool is 674 MB (70% of 963 MB)
+[2017.03.10-21.41.07:409][  0]LogD3D11RHI: Async texture creation enabled
+[2017.03.10-21.41.07:430][  0]LogD3D11RHI: GPU Timing Frequency: 1000.000000 (Debug: 2 2)
+[2017.03.10-21.41.07:430][  0]LogShaderCompilers: Guid format shader working directory is -12 characters bigger than the processId version (E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Intermediate/Shaders/WorkingDirectory/8124/).
+[2017.03.10-21.41.07:430][  0]LogShaderCompilers: Cleaned the shader compiler working directory 'C:/Users/B3030113/AppData/Local/Temp/UnrealShaderWorkingDir/22BA78A6437E6EB7BB9850A8AEE6348F/'.
+[2017.03.10-21.41.07:430][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2017.03.10-21.41.08:632][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2017.03.10-21.41.08:648][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2017.03.10-21.41.08:664][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2017.03.10-21.41.08:680][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2017.03.10-21.41.08:694][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2017.03.10-21.41.08:708][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2017.03.10-21.41.08:723][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2017.03.10-21.41.08:736][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2017.03.10-21.41.08:748][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2017.03.10-21.41.08:761][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2017.03.10-21.41.08:775][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2017.03.10-21.41.08:802][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
+[2017.03.10-21.41.08:802][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2017.03.10-21.41.08:802][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2017.03.10-21.41.08:835][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2017.03.10-21.41.08:850][  0]LogTemp:Display: Loaded TP TVOSTargetPlatform
+[2017.03.10-21.41.08:863][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2017.03.10-21.41.08:875][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2017.03.10-21.41.08:887][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2017.03.10-21.41.08:887][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2017.03.10-21.41.08:965][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2017.03.10-21.41.09:021][  0]LogDerivedDataCache: Loaded boot cache 0.06s 50MB C:/Users/B3030113/AppData/Local/UnrealEngine/4.12/DerivedDataCache/Boot.ddc.
+[2017.03.10-21.41.09:021][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/B3030113/AppData/Local/UnrealEngine/4.12/DerivedDataCache/Boot.ddc
+[2017.03.10-21.41.09:022][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2017.03.10-21.41.09:022][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2017.03.10-21.41.09:022][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2017.03.10-21.41.09:022][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2017.03.10-21.41.09:047][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2017.03.10-21.41.09:059][  0]LogDerivedDataCache: Using Local data cache path C:/Users/B3030113/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2017.03.10-21.41.13:259][  0]LogInit: Selected Device Profile: [Windows]
+[2017.03.10-21.41.13:260][  0]LogContentStreaming: Texture pool size is 0.00 MB
+[2017.03.10-21.41.13:588][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2017.03.10-21.41.13:588][  0]LogMeshUtilities: No automatic mesh merging module available
+[2017.03.10-21.41.13:588][  0]LogMeshUtilities: No distributed automatic mesh merging module available
+[2017.03.10-21.41.13:856][  0]LogAssetRegistry: FAssetRegistry took 0.0220 seconds to start up
+[2017.03.10-21.41.18:134][  0]LogPackageLocalizationCache: Processed 3 localized package path(s) for 2 prioritized culture(s) in 4.268438 seconds
+[2017.03.10-21.41.18:140][  0]LogUObjectArray: 28739 objects as part of root set at end of initial load.
+[2017.03.10-21.41.18:140][  0]LogUObjectAllocator: 5855624 out of 0 bytes used by permanent object pool.
+[2017.03.10-21.41.18:140][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2017.03.10-21.41.18:149][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2017.03.10-21.41.18:377][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2017.03.10-21.41.18:377][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 1
+[2017.03.10-21.41.20:023][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2017.03.10-21.41.21:697][  0]SourceControl: Info Source control is disabled
+[2017.03.10-21.41.21:735][  0]SourceControl: Info Source control is disabled
+[2017.03.10-21.41.21:744][  0]SourceControl: Info Source control is disabled
+[2017.03.10-21.41.21:753][  0]SourceControl: Info Source control is disabled
+[2017.03.10-21.41.21:980][  0]LogEngine: Initializing Engine...
+[2017.03.10-21.41.21:981][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2017.03.10-21.41.21:982][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2017.03.10-21.41.22:153][  0]LogAIModule: Creating AISystem for world NewWorld
+[2017.03.10-21.41.22:157][  0]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-21.41.22:176][  0]LogInit: FAudioDevice initialized.
+[2017.03.10-21.41.22:202][  0]LogDerivedDataCache: Saved boot cache 0.03s 50MB C:/Users/B3030113/AppData/Local/UnrealEngine/4.12/DerivedDataCache/Boot.ddc.
+[2017.03.10-21.41.22:214][  0]LogInit: Texture streaming: Enabled
+[2017.03.10-21.41.22:235][  0]LogInit: Transaction tracking system initialized
+[2017.03.10-21.41.22:257][  0]BlueprintLog: New page: Editor Load
+[2017.03.10-21.41.22:453][  0]LocalizationService: Info Localization service is disabled
+[2017.03.10-21.41.22:735][  0]LogConsoleResponse:Display: 
+[2017.03.10-21.41.22:859][  0]LogCook:Display: Max memory allowance for cook 8192mb
+[2017.03.10-21.41.22:859][  0]LogCook:Display: Mobile HDR setting 1
+[2017.03.10-21.41.22:947][  0]LogFileCache: Scanning file cache for directory 'E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/' took 0.04s
+[2017.03.10-21.41.22:952][  0]SourceControl: Info Source control is disabled
+[2017.03.10-21.41.22:952][  0]Cmd: MAP LOAD FILE="E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2017.03.10-21.41.22:956][  0]LightingResults: New page: Lighting Build
+[2017.03.10-21.41.22:959][  0]MapCheck: New page: Map Check
+[2017.03.10-21.41.22:959][  0]LightingResults: New page: Lighting Build
+[2017.03.10-21.41.23:570][  0]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-21.41.23:586][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2017.03.10-21.41.23:587][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2017.03.10-21.41.23:685][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 98.561ms to complete.
+[2017.03.10-21.41.23:685][  0]LogFileHelpers: Loading map 'ThirdPersonExampleMap' took 0.734
+[2017.03.10-21.41.23:914][  0]LogCollectionManager: Loaded 0 collections in 0.002220 seconds
+[2017.03.10-21.41.23:959][  0]LogFileCache: Scanning file cache for directory 'E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Saved/Collections/' took 0.01s
+[2017.03.10-21.41.23:959][  0]LogFileCache: Scanning file cache for directory 'E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/Developers/B3030113/Collections/' took 0.01s
+[2017.03.10-21.41.23:960][  0]LogFileCache: Scanning file cache for directory 'E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/Content/Collections/' took 0.01s
+[2017.03.10-21.41.23:960][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000003 seconds
+[2017.03.10-21.41.23:989][  0]LogContentBrowser: Native class hierarchy populated in 0.0297 seconds. Added 2068 classes and 376 folders.
+[2017.03.10-21.41.23:994][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2017.03.10-21.41.23:994][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2017.03.10-21.41.24:014][  0]LogContentBrowser: Native class hierarchy updated for 'GameplayTags' in 0.0192 seconds. Added 12 classes and 0 folders.
+[2017.03.10-21.41.24:040][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0229 seconds. Added 0 classes and 0 folders.
+[2017.03.10-21.41.25:368][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0192 seconds. Added 0 classes and 0 folders.
+[2017.03.10-21.41.25:394][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0224 seconds. Added 1 classes and 2 folders.
+[2017.03.10-21.41.25:417][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2017.03.10-21.41.25:422][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2017.03.10-21.41.25:467][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0192 seconds. Added 1 classes and 2 folders.
+[2017.03.10-21.41.25:467][  0]LogLoad: Full Startup: 20.95 seconds (BP compile: 0.09 seconds)
+[2017.03.10-21.41.25:467][  0]LogExternalProfiler: Found external profiler: VSPerf
+[2017.03.10-21.41.25:467][  0]LogExternalProfiler: Using external profiler: VSPerf
+[2017.03.10-21.41.25:476][  0]LogOcInput: OculusInput pre-init called
+[2017.03.10-21.41.25:493][  0]LogContentStreaming: Texture pool size now 200 MB
+[2017.03.10-21.41.25:846][  0]LogRenderer: Reallocating scene render targets to support 1208x576 (Frame:2).
+[2017.03.10-21.41.25:946][  1]LogActor:Warning: WinningLocation_BP_C /Engine/Transient.World_1:PersistentLevel.WinningLocation_BP_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.41.25:971][  1]LogAssetRegistry: Asset discovery search completed in 12.1370 seconds
+[2017.03.10-21.41.25:971][  1]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2017.03.10-21.41.25:971][  1]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000022 seconds (updated 0 objects)
+[2017.03.10-21.41.37:558][698]Recompiling DissertationLevel...
+[2017.03.10-21.41.37:560][698]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe DissertationLevel -ModuleWithSuffix DissertationLevel 1305 Win64 Development -editorrecompile -canskiplink "E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DissertationLevel.uproject"  -2015]
+[2017.03.10-21.41.37:561][698]Warning: Starting HotReload took  0.0s.
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: New page: Compilation - 10 Mar 2017 21:44:21
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info Creating makefile for hot reloading DissertationLevel (working set of source files changed)
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info Compiling game modules for hot reload
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info Parsing headers for DissertationLevelEditor
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info   Running UnrealHeaderTool "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\DissertationLevel.uproject" "E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\DissertationLevelEditor\Development\DissertationLevelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info Reflection code generated for DissertationLevelEditor in 8.4958456 seconds
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info Performing 12 actions (4 in parallel)
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info BTService_CheckForPlayer.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info EnemyCharacter.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info DissertationLevel.generated.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info EnemyAIController.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info BTTask_SelectPatrolPoint.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info EnvQueryGenerator_AStarNodes.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info BTTask_MoveToPlayer.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info FindPlayerQueryContext.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info PlayerTrail.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info DissertationLevelGameMode.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info AStarQueryTest.cpp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info [12/12] Link UE4Editor-DissertationLevel-1305.dll
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info    Creating library E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-1305.lib and object E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-1305.exp
+[2017.03.10-21.44.21:209][891]CompilerResultsLog: Info Total build time: 163.46 seconds
+[2017.03.10-21.44.21:209][891]LogMainFrame: MainFrame: Module compiling took 163.666 seconds
+[2017.03.10-21.44.21:258][891]LogClass: Could not find existing class EnemyAIController in package /Script/DissertationLevel for HotReload, assuming new class
+[2017.03.10-21.44.21:262][891]LogClass: EPlayState HotReload.
+[2017.03.10-21.44.21:276][891]LogHotReload: Re-instancing EnemyAIController after hot-reload.
+[2017.03.10-21.44.21:533][891]LogContentBrowser: Native class hierarchy updated for 'DissertationLevel' in 0.0248 seconds. Added 14 classes and 5 folders.
+[2017.03.10-21.44.21:534][891]Warning: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2017.03.10-21.44.21:642][891]LogContentBrowser: Native class hierarchy populated in 0.0284 seconds. Added 2070 classes and 380 folders.
+[2017.03.10-21.44.21:642][891]Warning: HotReload took 164.1s.
+[2017.03.10-21.44.29:632][269]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-21.44.29:632][269]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-21.44.29:632][269]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 21:44:29)
+[2017.03.10-21.44.29:632][269]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-21.44.29:662][269]LogPlayLevel: PIE: StaticDuplicateObject took: (0.030205s)
+[2017.03.10-21.44.29:663][269]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-21.44.29:664][269]LogPlayLevel: PIE: World Init took: (0.001236s)
+[2017.03.10-21.44.29:664][269]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.031948s)
+[2017.03.10-21.44.29:693][269]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-21.44.29:701][269]LogInit: FAudioDevice initialized.
+[2017.03.10-21.44.29:816][269]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-21.44.29:901][269]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-21.44.29
+[2017.03.10-21.44.29:908][269]LogWorld: Bringing up level for play took: 0.090538
+[2017.03.10-21.44.29:961][269]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0356 seconds. Added 11 classes and 0 folders.
+[2017.03.10-21.44.29:962][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:963][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:964][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:965][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:966][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:967][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:968][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:969][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:981][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:982][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:984][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:985][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:986][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:987][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:988][269]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.44.29:989][269]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 0.523
+[2017.03.10-21.44.29:989][269]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-21.44.35:376][455]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:377][455]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:377][455]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:432][457]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:432][457]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:432][457]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:488][459]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:488][459]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:488][459]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:543][461]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:543][461]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:543][461]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:598][463]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:598][463]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:599][463]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:654][465]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:654][465]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:654][465]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:710][467]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:710][467]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:710][467]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:765][469]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:765][469]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:765][469]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:822][471]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:822][471]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:822][471]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:877][473]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:877][473]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:877][473]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:905][474]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:905][474]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:905][474]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.35:960][476]LogClass: Attempting to Start A*
+[2017.03.10-21.44.35:960][476]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.35:960][476]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:016][478]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:016][478]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:016][478]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:073][480]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:073][480]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:073][480]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:127][482]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:127][482]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:127][482]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:183][484]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:183][484]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:183][484]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:238][486]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:238][486]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:238][486]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:294][488]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:294][488]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:294][488]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:349][490]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:349][490]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:349][490]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:405][492]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:405][492]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:405][492]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:433][493]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:433][493]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:433][493]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:489][495]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:489][495]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:489][495]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:544][497]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:544][497]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:544][497]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:600][499]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:600][499]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:600][499]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:655][501]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:655][501]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:655][501]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:683][502]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:683][502]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:683][502]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:740][504]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:740][504]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:740][504]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:795][506]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:795][506]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:795][506]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:850][508]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:850][508]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:850][508]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:907][510]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:907][510]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:907][510]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:934][511]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:934][511]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:934][511]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.36:990][513]LogClass: Attempting to Start A*
+[2017.03.10-21.44.36:990][513]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.36:990][513]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:045][515]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:045][515]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:045][515]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:102][517]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:102][517]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:102][517]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:157][519]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:157][519]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:157][519]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:212][521]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:212][521]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:212][521]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:267][523]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:267][523]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:267][523]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:323][525]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:323][525]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:323][525]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:378][527]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:378][527]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:378][527]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:434][529]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:434][529]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:434][529]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:489][531]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:489][531]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:489][531]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:544][533]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:544][533]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:544][533]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:600][535]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:600][535]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:600][535]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:655][537]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:655][537]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:655][537]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:705][539]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:705][539]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:706][539]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:760][541]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:760][541]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:760][541]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:816][543]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:816][543]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:816][543]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:871][545]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:871][545]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:871][545]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:928][547]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:928][547]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:928][547]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.37:983][549]LogClass: Attempting to Start A*
+[2017.03.10-21.44.37:983][549]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.37:983][549]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:011][550]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:011][550]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:011][550]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:067][552]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:067][552]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:067][552]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:123][554]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:123][554]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:123][554]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:178][556]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:178][556]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:178][556]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:233][558]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:233][558]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:233][558]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:256][559]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:256][559]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:256][559]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:311][561]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:311][561]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:311][561]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:366][563]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:366][563]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:366][563]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:422][565]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:422][565]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:422][565]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:477][567]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:478][567]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:478][567]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:546][569]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:547][569]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:547][569]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:602][571]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:602][571]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:602][571]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:657][573]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:657][573]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:657][573]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:713][575]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:713][575]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:713][575]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:769][577]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:769][577]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:769][577]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:798][578]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:798][578]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:798][578]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:854][580]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:854][580]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:854][580]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:910][582]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:910][582]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:910][582]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.38:968][584]LogClass: Attempting to Start A*
+[2017.03.10-21.44.38:968][584]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.38:968][584]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:058][586]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:058][586]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:058][586]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:081][587]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:082][587]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:082][587]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:113][589]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:113][589]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:113][589]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:171][591]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:171][591]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:171][591]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:228][593]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:228][593]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:228][593]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:297][595]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:297][595]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:297][595]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:346][597]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:346][597]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:346][597]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:399][599]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:399][599]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:399][599]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:464][601]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:464][601]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:464][601]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:527][603]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:527][603]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:527][603]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:575][605]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:575][605]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:575][605]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:602][606]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:602][606]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:602][606]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:657][608]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:657][608]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:657][608]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:713][610]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:713][610]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:713][610]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:769][612]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:769][612]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:769][612]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:824][614]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:824][614]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:824][614]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:882][616]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:882][616]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:882][616]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:936][618]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:936][618]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:936][618]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.39:995][620]LogClass: Attempting to Start A*
+[2017.03.10-21.44.39:995][620]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.39:995][620]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:076][622]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:076][622]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:076][622]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:113][624]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:113][624]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:113][624]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:168][626]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:168][626]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:168][626]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:222][628]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:222][628]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:222][628]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:279][630]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:279][630]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:279][630]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:356][632]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:356][632]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:356][632]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:394][634]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:394][634]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:394][634]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:450][636]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:450][636]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:450][636]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:507][638]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:507][638]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:507][638]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:563][640]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:563][640]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:563][640]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:620][642]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:620][642]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:620][642]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.40:648][643]LogClass: Attempting to Start A*
+[2017.03.10-21.44.40:648][643]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.40:648][643]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:109][728]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:109][728]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:109][728]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:174][730]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:174][730]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:174][730]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:220][732]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:220][732]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:220][732]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:249][733]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:249][733]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:249][733]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:305][735]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:305][735]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:305][735]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:361][737]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:361][737]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:362][737]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:418][739]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:418][739]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:418][739]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:476][741]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:476][741]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:476][741]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:503][742]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:503][742]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:503][742]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:559][744]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:560][744]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:560][744]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:614][746]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:614][746]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:614][746]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:670][748]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:670][748]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:670][748]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:727][750]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:727][750]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:727][750]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:755][751]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:756][751]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:756][751]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:814][753]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:814][753]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:814][753]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:870][755]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:870][755]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:870][755]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:926][757]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:926][757]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:926][757]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.43:982][759]LogClass: Attempting to Start A*
+[2017.03.10-21.44.43:983][759]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.43:983][759]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:011][760]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:011][760]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:011][760]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:066][762]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:067][762]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:067][762]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:122][764]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:123][764]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:123][764]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:180][766]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:180][766]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:180][766]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:237][768]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:237][768]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:237][768]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:264][769]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:264][769]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:265][769]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:319][771]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:320][771]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:320][771]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:375][773]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:376][773]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:376][773]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:431][775]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:432][775]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:432][775]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:487][777]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:487][777]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:488][777]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:515][778]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:516][778]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:516][778]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:571][780]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:571][780]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:571][780]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:627][782]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:627][782]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:628][782]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:683][784]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:684][784]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:684][784]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:740][786]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:740][786]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:740][786]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:768][787]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:768][787]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:768][787]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:824][789]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:825][789]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:825][789]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:880][791]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:881][791]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:881][791]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:935][793]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:936][793]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:936][793]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.44:991][795]LogClass: Attempting to Start A*
+[2017.03.10-21.44.44:992][795]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.44:992][795]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:019][796]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:020][796]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:020][796]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:075][798]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:076][798]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:076][798]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:126][800]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:126][800]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:126][800]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:182][802]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:182][802]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:182][802]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:239][804]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:239][804]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:239][804]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:295][806]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:295][806]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:296][806]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:351][808]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:352][808]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:352][808]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:408][810]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:408][810]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:408][810]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:464][812]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:465][812]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:465][812]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:519][814]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:520][814]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:520][814]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:547][815]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:548][815]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:548][815]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:604][817]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:604][817]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:604][817]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:660][819]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:660][819]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:660][819]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:717][821]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:717][821]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:717][821]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:774][823]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:775][823]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:775][823]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:834][824]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:834][824]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:834][824]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:861][826]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:861][826]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:861][826]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:920][828]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:920][828]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:920][828]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.45:977][830]LogClass: Attempting to Start A*
+[2017.03.10-21.44.45:977][830]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.45:977][830]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:056][832]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:057][832]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:057][832]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:106][834]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:106][834]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:106][834]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:155][836]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:156][836]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:156][836]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:211][838]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:211][838]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:211][838]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:270][840]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:270][840]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:271][840]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:326][842]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:327][842]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:327][842]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:355][843]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:356][843]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:356][843]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:412][845]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:412][845]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:412][845]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:470][847]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:470][847]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:470][847]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:527][849]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:527][849]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:527][849]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:584][851]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:584][851]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:584][851]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:614][852]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:615][852]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:615][852]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:671][854]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:671][854]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:671][854]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:728][856]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:728][856]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:728][856]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:784][858]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:785][858]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:785][858]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:871][860]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:871][860]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:871][860]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:879][861]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:880][861]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:880][861]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:930][863]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:931][863]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:931][863]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.46:987][865]LogClass: Attempting to Start A*
+[2017.03.10-21.44.46:987][865]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.46:987][865]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:042][867]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:043][867]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:043][867]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:099][869]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:099][869]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:099][869]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:155][871]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:156][871]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:156][871]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:213][873]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:213][873]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:213][873]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:271][875]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:271][875]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:272][875]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:339][877]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:339][877]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:339][877]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:387][879]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:388][879]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:388][879]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:414][880]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:414][880]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:414][880]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:471][882]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:472][882]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:472][882]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:527][884]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:528][884]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:528][884]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:583][886]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:583][886]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:583][886]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:639][888]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:639][888]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:639][888]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:667][889]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:667][889]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:667][889]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:724][891]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:724][891]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:724][891]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:781][893]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:781][893]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:781][893]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:836][895]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:837][895]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:837][895]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:892][897]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:892][897]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:892][897]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:920][898]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:920][898]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:920][898]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.47:976][900]LogClass: Attempting to Start A*
+[2017.03.10-21.44.47:976][900]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.47:976][900]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:032][902]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:032][902]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:033][902]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:088][904]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:089][904]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:089][904]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:144][906]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:145][906]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:145][906]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:172][907]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:173][907]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:173][907]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:229][909]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:229][909]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:230][909]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:284][911]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:284][911]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:285][911]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:342][913]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:343][913]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:343][913]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:397][915]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:398][915]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:398][915]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:453][916]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:453][916]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:453][916]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:478][918]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:478][918]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:478][918]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:552][920]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:553][920]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:553][920]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:610][922]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:611][922]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:611][922]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:667][924]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:668][924]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:668][924]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:699][925]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:699][925]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:699][925]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:755][927]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:756][927]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:756][927]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:811][929]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:811][929]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:812][929]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:867][931]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:867][931]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:868][931]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:923][933]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:923][933]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:923][933]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.48:951][934]LogClass: Attempting to Start A*
+[2017.03.10-21.44.48:951][934]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.48:951][934]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:002][936]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:003][936]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:003][936]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:057][938]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:057][938]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:057][938]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:113][940]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:113][940]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:113][940]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:184][942]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:184][942]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:184][942]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:214][943]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:215][943]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:215][943]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:268][945]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:269][945]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:269][945]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:325][947]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:325][947]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:325][947]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:381][949]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:381][949]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:381][949]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:438][951]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:438][951]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:438][951]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:469][952]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:469][952]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:469][952]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:523][954]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:524][954]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:524][954]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:578][956]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:578][956]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:579][956]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:635][958]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:636][958]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:636][958]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:690][960]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:691][960]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:691][960]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:719][961]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:719][961]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:720][961]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:776][963]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:776][963]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:776][963]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:832][965]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:832][965]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:832][965]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:888][967]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:888][967]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:888][967]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:945][969]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:946][969]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:946][969]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.49:973][970]LogClass: Attempting to Start A*
+[2017.03.10-21.44.49:973][970]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.49:973][970]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:031][972]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:031][972]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:031][972]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:087][974]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:087][974]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:087][974]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:145][976]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:145][976]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:145][976]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:201][978]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:201][978]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:201][978]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:230][979]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:230][979]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:230][979]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:285][981]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:285][981]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:285][981]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:343][983]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:343][983]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:343][983]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:398][985]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:398][985]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:398][985]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:455][987]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:455][987]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:455][987]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:483][988]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:483][988]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:483][988]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:539][990]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:539][990]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:539][990]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:602][992]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:602][992]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:602][992]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:640][994]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:640][994]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:640][994]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:698][996]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:698][996]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:698][996]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:754][998]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:754][998]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:754][998]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:825][  0]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:825][  0]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:825][  0]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:868][  2]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:868][  2]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:868][  2]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:924][  4]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:924][  4]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:924][  4]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.50:980][  6]LogClass: Attempting to Start A*
+[2017.03.10-21.44.50:980][  6]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.50:980][  6]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.51:008][  7]LogClass: Attempting to Start A*
+[2017.03.10-21.44.51:009][  7]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.51:009][  7]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.51:064][  9]LogClass: Attempting to Start A*
+[2017.03.10-21.44.51:064][  9]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.51:065][  9]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.51:120][ 11]LogClass: Attempting to Start A*
+[2017.03.10-21.44.51:120][ 11]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.51:121][ 11]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.51:178][ 13]LogClass: Attempting to Start A*
+[2017.03.10-21.44.51:178][ 13]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.51:178][ 13]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.51:235][ 15]LogClass: Attempting to Start A*
+[2017.03.10-21.44.51:235][ 15]LogClass: ERROR: Start node not found
+[2017.03.10-21.44.51:235][ 15]LogClass: PATH NOT FOUND
+[2017.03.10-21.44.51:272][ 16]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-21.44.51:361][ 16]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-21.46.05:902][373]Recompiling DissertationLevel...
+[2017.03.10-21.46.05:904][373]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.12/Engine/Binaries/DotNET/UnrealBuildTool.exe DissertationLevel -ModuleWithSuffix DissertationLevel 2499 Win64 Development -editorrecompile -canskiplink "E:/Unreal Engine Projects/DissertationLevel/DissertationLevel/DissertationLevel.uproject"  -2015]
+[2017.03.10-21.46.05:905][373]Warning: Starting HotReload took  0.0s.
+[2017.03.10-21.47.31:417][860]CompilerResultsLog: New page: Compilation - 10 Mar 2017 21:47:31
+[2017.03.10-21.47.31:417][860]CompilerResultsLog: Info Creating makefile for hot reloading DissertationLevel (working set of source files changed)
+[2017.03.10-21.47.31:418][860]CompilerResultsLog: Info Compiling game modules for hot reload
+[2017.03.10-21.47.31:418][860]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2017.03.10-21.47.31:418][860]CompilerResultsLog: Info EnemyAIController.cpp
+[2017.03.10-21.47.31:418][860]CompilerResultsLog: Info [2/2] Link UE4Editor-DissertationLevel-2499.dll
+[2017.03.10-21.47.31:418][860]CompilerResultsLog: Info    Creating library E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-2499.lib and object E:\Unreal Engine Projects\DissertationLevel\DissertationLevel\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-DissertationLevel-2499.exp
+[2017.03.10-21.47.31:418][860]CompilerResultsLog: Info Total build time: 85.35 seconds
+[2017.03.10-21.47.31:418][860]LogMainFrame: MainFrame: Module compiling took 85.519 seconds
+[2017.03.10-21.47.31:466][860]LogClass: EPlayState HotReload.
+[2017.03.10-21.47.31:491][860]LogContentBrowser: Native class hierarchy updated for 'DissertationLevel' in 0.0192 seconds. Added 14 classes and 5 folders.
+[2017.03.10-21.47.31:492][860]Warning: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2017.03.10-21.47.31:566][860]LogContentBrowser: Native class hierarchy populated in 0.0279 seconds. Added 2070 classes and 380 folders.
+[2017.03.10-21.47.31:566][860]Warning: HotReload took 85.7s.
+[2017.03.10-21.47.51:854][ 52]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel' has LevelScriptBlueprint '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap' with GeneratedClass '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap_C' with ClassGeneratedBy '/Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.ThirdPersonExampleMap'
+[2017.03.10-21.47.51:854][ 52]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.10-21.47.51:854][ 52]PIE: New page: PIE session: ThirdPersonExampleMap (10 Mar 2017 21:47:51)
+[2017.03.10-21.47.51:854][ 52]LogPlayLevel: Creating play world package: /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+[2017.03.10-21.47.51:879][ 52]LogPlayLevel: PIE: StaticDuplicateObject took: (0.024958s)
+[2017.03.10-21.47.51:881][ 52]LogAIModule: Creating AISystem for world ThirdPersonExampleMap
+[2017.03.10-21.47.51:881][ 52]LogPlayLevel: PIE: World Init took: (0.001653s)
+[2017.03.10-21.47.51:882][ 52]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPersonCPP/Maps/ThirdPersonExampleMap.ThirdPersonExampleMap to /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap (0.027427s)
+[2017.03.10-21.47.51:905][ 52]LogInit: XAudio2 using 'Speakers (Realtek High Definition Audio)' : 2 channels at 48 kHz using 32 bits per sample (channel mask 0x3)
+[2017.03.10-21.47.51:913][ 52]LogInit: FAudioDevice initialized.
+[2017.03.10-21.47.51:968][ 52]LogWorld: Game class is 'DissertationLevelGameMode'
+[2017.03.10-21.47.52:048][ 52]LogWorld: Bringing World /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap up for play (max tick rate 0) at 2017.03.10-21.47.52
+[2017.03.10-21.47.52:055][ 52]LogWorld: Bringing up level for play took: 0.083959
+[2017.03.10-21.47.52:061][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:062][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:065][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:067][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:068][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:069][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:070][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:071][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:073][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:074][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:075][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:076][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_11 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:077][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_12 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:078][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_13 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:079][ 52]LogActor:Warning: WorldObject /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap.ThirdPersonExampleMap:PersistentLevel.WorldObject_14 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2017.03.10-21.47.52:081][ 52]PIE: Info Play in editor start time for /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap 0.613
+[2017.03.10-21.47.52:081][ 52]LogBlueprintUserMessages: 
