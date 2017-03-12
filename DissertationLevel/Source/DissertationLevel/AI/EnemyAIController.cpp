@@ -120,7 +120,7 @@ bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode
         }
         
         //Iterate through all of the connected nodes
-        for(int i = 0; i < Q->Connected.size(); i++){
+        for(int i = 0; i < Current->Connected.size(); i++){
             //Get Child node
             PathNode *Successor = GetMatchingNode(Current->Connected[i], Nodes);
             if(!Successor || Successor == nullptr){
