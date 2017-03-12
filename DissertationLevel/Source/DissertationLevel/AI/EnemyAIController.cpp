@@ -12,8 +12,7 @@
 
 #include "EnemyAIController.h"
 
-#include <thread>
-#include <chrono>
+#define MAX_ITERATIONS 10000
 
 
 AEnemyAIController::AEnemyAIController(){
@@ -51,9 +50,8 @@ void AEnemyAIController::SetPlayerCaught(APawn *Pawn){
 		BlackboardComp->SetValue<UBlackboardKeyType_Object>(EnemyKeyID, Pawn);
 		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, "YOU'VE BEEN SPOTTED!");
 
-		//Restart to run EQS Query
+		//Restart to run MoveToPlayerTask immediately
 		BehaviorComp->RestartTree();
-		//BehaviorComp->StopTree();
 	}
 	
 }
@@ -64,34 +62,17 @@ void AEnemyAIController::StopBehavior(){
 }
 
 
-void AEnemyAIController::FindEveryNeighborNodes(){
-	const float PointsDistance = 60.0f;
+/*
+ *  ----------------------------------------------------------
+ *	----------------A* Pathfinding Functions------------------
+ *	----------------------------------------------------------
+ */
 
-	for(int i = 0; i < Nodes.Num(); i++){
-		PathNode *Curr = Nodes[i];
-
-		for(float x = Curr->Position.X - PointsDistance; x < Curr->Position.X + PointsDistance + 1; x += PointsDistance){
-			for(float y = Curr->Position.Y - PointsDistance; y < Curr->Position.Y + PointsDistance + 1; y += PointsDistance){
-				PathNode* found = GetNodeWithXY(x, y, Nodes);//GetNodeAtPos(FVector(x, y, Curr->Position.Z), Nodes);
-
-				if(found && found != nullptr){
-					Curr->Connected.push_back(found->ID);
-				}
-			}
-		}
-		
-		//if(Curr->Connected.Num() == 0){
-		if(Curr->Connected.empty()){
-			UE_LOG(LogClass, Log, TEXT("NO CONNECTIONS TO NODE with ID: %s"), *FString::FromInt(Curr->ID));
-			//Remove node?
-			Nodes.Remove(Curr);
-		}
-	}
-
-}
-
-
+/**
+ * Actual A* Algorithm
+ */
 bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode){
+    //Check there are actually nodes to traverse
 	if(Nodes.Num() == 0){
 		UE_LOG(LogClass, Log, TEXT("NO NODES TO EXPLORE"));
 		return false;
@@ -111,131 +92,139 @@ bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode
 		return false;
 	}
 	
-	PathNode *P = GetMinCostNode();
-
-	if(!P || P == nullptr){
-		//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "NO NODES ON OPEN LIST");
-		UE_LOG(LogClass, Log, TEXT("NODE NOT FOUND"));
-		return false;
-	}
-
-	//Safety number to prevent infinite execution
-	int num = 0;
-
-	//While potential nodes exist 
-	while(/*num < 50000 &&*/ OpenList.Num() > 0){
-		if(P->ID == FinalNode->ID){
-			UE_LOG(LogClass, Log, TEXT("WE HAVE A PATH"));
-			return true;
-		}
-
-		//if(P->Connected.Num() == 0){
-		if(P->Connected.empty()){
-			//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "NO CONNECTION TO NODE");
-			bool isConnected = FindNodeConnections(P);
-
-			if(!isConnected){
-				UE_LOG(LogClass, Log, TEXT("NO CONNECTIONS TO NODE, ID: %s; made %s calls"), *FString::FromInt(P->ID), *FString::FromInt(num));
-				return false;
-				//OpenList.Remove(P);
-				//P = GetMinCostNode();
-				//continue;
-			}
-		}
-		
-
-		for(int i = 0; i < P->Connected.size()/*.Num()*/; i++){
-			PathNode *Q = GetMatchingNode(P->Connected[i], Nodes);
-			//Q->Cost = HeuristicCost(Q->Position, FinalNode.Position) + CostToMove(P->Position, Q->Position);
-
-			if(!Q || Q == nullptr){
-				UE_LOG(LogClass, Log, TEXT("404 NODE with ID: %s NOT FOUND"), *FString::FromInt(P->Connected[i]));
-				continue;
-			}
-			if(ClosedList.Contains(Q)){
-				//UE_LOG(LogClass, Log, TEXT("NODE %s ALREADY IN CLOSED LIST"), *FString::FromInt(Q->ID));
-				continue;
-			}
-
-			int cost = HeuristicCost(Q->Position, FinalNode->Position) + CostToMove(P->Position, Q->Position);
-
-			if(OpenList.Contains(Q) && cost >= Q->Cost){
-				continue;
-			}
-			else if(OpenList.Contains(Q) && cost < Q->Cost){
-				Q->Cost = cost;
-				Q->Parent = P;
-			}
-			else{
-				Q->Cost = cost;
-				Q->Parent = P;
-
-				OpenList.Add(Q);
-			}
-			num++;
-		}
-
-		OpenList.Remove(P);
-		ClosedList.Add(P);
-		
-		P = GetMinCostNode();
-		num++;
-	}
-
-	//If reached here, no Path exists
-	UE_LOG(LogClass, Log, TEXT("NO PATH MADE, %s made"), *FString::FromInt(num));
-	return false;
+    //Safety number to prevent infinite execution
+    int num = 0;
+    
+    //While nodes to explore are available create path
+    while(OpenList.Num() > 0 && num < MAX_ITERATIONS){
+        PathNode *Current = GetMinCostNode();
+        
+        //Check node is real
+        if(!Current || Current == nullptr){
+            UE_LOG(LogClass, Log, TEXT("NODE NOT FOUND"));
+            return false;
+        }
+        
+        //Remove current node from Open List (already explored)
+        OpenList.Remove(Current);
+        
+        //Check if Node has children, if not find them
+        if(Current->Connected.empty()){
+            bool isConnected = FindNodeConnections(Current);
+            
+            //Check node actually has connections, reject it if it doesn't
+            if(!isConnected){
+                UE_LOG(LogClass, Log, TEXT("NO CONNECTIONS TO NODE, ID: %s"), *FString::FromInt(Current->ID));
+                continue;
+            }
+        }
+        
+        //Iterate through all of the connected nodes
+        for(int i = 0; i < Q->Connected.size(); i++){
+            //Get Child node
+            PathNode *Successor = GetMatchingNode(Current->Connected[i], Nodes);
+            if(!Successor || Successor == nullptr){
+                continue;
+            }
+            
+            //If the child node is the goal, we have a winner
+            if(Successor->ID == FinalNode->ID){
+                UE_LOG(LogClass, Log, TEXT("WE HAVE A PATH"));
+                return true;
+            }
+            
+            //Recalculate Cost to reach node
+            const int cost = CostToMove(Current->Position, Successor->Position) + HeuristicCost(Successor->Position, FinalNode->Position);
+            
+            //If Node already in open list with a cheaper cost, then ignore
+            if(OpenList.Contains(Successor) && Successor->Cost < cost){
+                continue;
+            }
+            //If Node already in closed list with a cheaper cost, then ignore
+            if(ClosedList.Contains(Successor) && Successor->Cost < cost){
+                continue;
+            }
+            
+            //Otherwise update the child's cost, and set it's parent to current node
+            Successor->Cost = cost;
+            Successor->Parent = Current;
+            
+            //If child not in open list, add it
+            if(!OpenList.Contains(Successor)){
+                OpenList.Add(Successor);
+            }
+            num++;
+        }
+        
+        //Add Current node to closed list
+        ClosedList.Add(Current);
+        num++;
+    }
+    
+    //If reached here, no path exists to player
+    UE_LOG(LogClass, Log, TEXT("NO POSSIBLE PATH, after %s iterations"), *FString::FromInt(num));
+    return false;
 }
 
 
+/**
+ * Determines Heuristic cost of moving from one position to another, using Manhattan Distance
+ */
 int AEnemyAIController::HeuristicCost(const FVector &Source, const FVector &Destination){
 	FVector dist = Source - Destination;
 	return (int)(FMath::Abs(dist.X) + FMath::Abs(dist.Y) + FMath::Abs(dist.Z));
 }
 
 
+/**
+ * Determines cost of moving from one position to another, using Manhattan Distance
+ */
 int AEnemyAIController::CostToMove(const FVector &Source, const FVector &Destination){
 	FVector dist = Source - Destination;
 	return (int)(FMath::Abs(dist.X) + FMath::Abs(dist.Y) + FMath::Abs(dist.Z));
 }
 
 
+/**
+ * Generates the FVector Array of positions to in the path
+ */
 TArray<FVector> AEnemyAIController::GeneratePath(PathNode *StartNode, PathNode *FinalNode){
 	//Final path to Player
 	TArray<FVector> Path;
-
-	PathNode *R = FinalNode;
-
-	while(R->ID != StartNode->ID){
-		Path.Add(R->Position);
-		R = R->Parent;
-	}
-
-	//Final position to add is players
-	Path.Add(StartNode->Position);
-
+    
+    ClosedList.Sort([](const PathNode &node1, const PathNode &node2){
+        return node1.ID > node2.ID;
+    });
+    
+    //Final position to add is players
+    ClosedList.Add(FinalNode);
+    
+    for(auto Node : ClosedList){
+        Path.Add(Node->Position);
+    }
+    
 	return Path;
+    
+    //	PathNode *R = FinalNode;
+    //
+    //	while(R->ID != StartNode->ID){
+    //		Path.Add(R->Position);
+    //		R = R->Parent;
+    //	}
+    //
+    //	//Final position to add is players
+    //	Path.Add(StartNode->Position);
 }
 
 
-PathNode* AEnemyAIController::GetMinCostNode(){
-	PathNode *Min = OpenList.Num() > 0 ? OpenList[0] : nullptr;
-
-	for(int i = 0; i < OpenList.Num(); i++){
-		if(OpenList[i]->Cost < Min->Cost){
-			Min = OpenList[i];
-		}
-	}
-
-	return Min;
-}
-
-
+/**
+ * Prepares and calls A* algorithm
+ */
 TArray<FVector> AEnemyAIController::GetAStarPath(const FVector &AIPos, const FVector &PlayerPos){
 	//Get start node (AI)
-	PathNode *start = GetNodeWithXY(AIPos.X, AIPos.Y, Nodes);//Nodes[0];//Nodes[Nodes.Num() - 2];//GetNodeAtPos(AIPos, Nodes);
+    PathNode *start = GetClosestNode(AIPos, Nodes);
 	//Get start node (Player)
-	PathNode *end = GetNodeWithXY(PlayerPos.X, PlayerPos.Y, Nodes);//Nodes[Nodes.Num() - 10];//GetNodeAtPos(PlayerPos, Nodes);
+    PathNode *end = GetClosestNode(PlayerPos, Nodes);
 
 	//Check Nodes actually exist
 	if(!start || start == nullptr){
@@ -249,8 +238,7 @@ TArray<FVector> AEnemyAIController::GetAStarPath(const FVector &AIPos, const FVe
 
 	//Check Path available
 	if(AStarAlgorithm(start, end)){
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, "SUCCESS!!!");
-		UE_LOG(LogClass, Log, TEXT("WE MADE IT?"));
+		UE_LOG(LogClass, Log, TEXT("PATH IS AVAILABLE!!!"));
 		return GeneratePath(start, end);;
 	}
 	else{
@@ -260,6 +248,9 @@ TArray<FVector> AEnemyAIController::GetAStarPath(const FVector &AIPos, const FVe
 }
 
 
+/**
+ * Called when player withing AI's catching distance
+ */
 void AEnemyAIController::ChasePlayer(APawn *Pawn){
 	UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
 	BehaviorComp->StopTree();
@@ -278,11 +269,13 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 			UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
 
 			for(int i = 0; i < Locations.Num(); i++){
-				//while(FVector::Dist(AIPos, Locations[i]) > 80.0f){
-					GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "MOVING TOWARDS YOU!");
+                GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "MOVING TOWARDS YOU!");
+                
+                int num = 0;
+				while(FVector::Dist(AIPos, Locations[i]) > 80.0f && num < 1000){
 					MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);
-					//std::this_thread::sleep_for(std::chrono::seconds(2));
-				//}bash
+                    num++;
+				}
 			}
 
 			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "DONE MOVING BEYATCH!");
@@ -293,9 +286,7 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 		}
 	}
 
-	//BehaviorComp->RestartTree();
-
-	//bIsPathing = false;
+	BehaviorComp->RestartTree();
 }
 
 
@@ -315,7 +306,7 @@ void AEnemyAIController::CreateGridMap(const FVector &AIPos, const FVector &AIFo
 	//X Pos loop
 	for(float x = AIPos.X - RangeDistance; x < AIPos.X + RangeDistance + 1; x += PointsDistance){
 		//Y Pos loop
-		for(float y = AIPos.Y; y < AIPos.Y + RangeDistance + 1; y += PointsDistance){
+		for(float y = AIPos.Y - RangeDistance; y < AIPos.Y + RangeDistance + 1; y += PointsDistance){
 			//Generate Point at these coordinates
 			FVector GridLoc = FVector(x, y, AIPos.Z);
 
@@ -326,14 +317,6 @@ void AEnemyAIController::CreateGridMap(const FVector &AIPos, const FVector &AIFo
 			ID++;
 		}
 	}
-
-	////Add Start location
-	PathNode *start = new PathNode(ID + 1, AIPos);
-	Nodes.Add(start);
-
-	//Add End location
-	PathNode *end = new PathNode(ID + 2, PlayerPos);
-	Nodes.Add(end);
 }
 
 
@@ -369,9 +352,11 @@ bool AEnemyAIController::FindNodeConnections(PathNode *Node){
 }
 
 
-/*  ---------------------------------------------------------- 
- *	-----------------Node Helper Functions--------------------
- *	---------------------------------------------------------- */
+/*  
+ *  ----------------------------------------------------------
+ *	---------------PathNode Helper Functions------------------
+ *	---------------------------------------------------------- 
+ */
 PathNode* AEnemyAIController::GetMatchingNode(const int ID, const TArray<PathNode*> &List){
 	for(int i = 0; i < List.Num(); i++){
 		if(List[i]->ID == ID){
@@ -383,15 +368,18 @@ PathNode* AEnemyAIController::GetMatchingNode(const int ID, const TArray<PathNod
 }
 
 
-PathNode* AEnemyAIController::GetNodeAtPos(const FVector &Pos, const TArray<PathNode*> &List){
-	for(int i = 0; i < List.Num(); i++){
-		if(List[i]->Position == Pos){
-			return List[i];
-		}
-	}
-
-	return nullptr;
+PathNode* AEnemyAIController::GetMinCostNode(){
+    PathNode *Min = OpenList.Num() > 0 ? OpenList[0] : nullptr;
+    
+    for(int i = 0; i < OpenList.Num(); i++){
+        if(OpenList[i]->Cost < Min->Cost){
+            Min = OpenList[i];
+        }
+    }
+    
+    return Min;
 }
+
 
 PathNode* AEnemyAIController::GetNodeWithXY(const float x, const float y, const TArray<PathNode*> &List){
 	for(int i = 0; i < List.Num(); i++){
@@ -402,3 +390,21 @@ PathNode* AEnemyAIController::GetNodeWithXY(const float x, const float y, const 
 
 	return nullptr;
 }
+
+
+PathNode* AEnemyAIController::GetClosestNode(const FVector &Pos, const TArray<PathNode*> &List){
+    PathNode *Closest = List.Num() > 0 ? List[0] : nullptr;
+    float dist = 999999.0f;
+    
+    for(int i = 0; i < List.Num(); i++){
+        float DistToNode = FMath::Abs(FVector::Dist(Pos, List[i]->Position));
+        
+        if(DistToNode < dist){
+            Closest = List[i];
+            dist = DistToNode;
+        }
+    }
+    
+    return Closest;
+}
+

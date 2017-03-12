@@ -26,7 +26,7 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 	float PointsDistance = 80.0f;
 
 	UPROPERTY(EditAnywhere, Category = "GridMap")
-	float RangeDistance = 800.0f;
+	float RangeDistance = 1200.0f;
 
 
 	public:
@@ -117,8 +117,8 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 
 		PathNode* GetMinCostNode();
 		PathNode* GetMatchingNode(const int ID, const TArray<PathNode*> &List);
-		PathNode* GetNodeAtPos(const FVector &Pos, const TArray<PathNode*> &List);
 		PathNode* GetNodeWithXY(const float x, const float y, const TArray<PathNode*> &List);
+        PathNode* GetClosestNode(const FVector &Pos, const TArray<PathNode*> &List);
 		bool FindNodeConnections(PathNode *Node);
 
 		bool bIsPathing;
