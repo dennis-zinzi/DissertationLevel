@@ -12,6 +12,12 @@
 
 #include "EnemyAIController.h"
 
+#include <vector>
+#include <algorithm>
+
+using std::vector;
+using std::reverse;
+
 #define MAX_ITERATIONS 10000
 
 
@@ -119,6 +125,9 @@ bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode
             }
         }
         
+        //Get G value of Current Node
+        const int GCostCurrent = Current->Cost - HeuristicCost(Current->Position, FinalNode->Position);
+        
         //Iterate through all of the connected nodes
         for(int i = 0; i < Current->Connected.size(); i++){
             //Get Child node
@@ -130,11 +139,13 @@ bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode
             //If the child node is the goal, we have a winner
             if(Successor->ID == FinalNode->ID){
                 UE_LOG(LogClass, Log, TEXT("WE HAVE A PATH"));
+                Successor->Parent = Current;
+                ClosedList.AddUnique(Current);
                 return true;
             }
             
-            //Recalculate Cost to reach node
-            const int cost = CostToMove(Current->Position, Successor->Position) + HeuristicCost(Successor->Position, FinalNode->Position);
+            //Recalculate Cost to reach node (Add G cost of current node)
+            const int cost = GCostCurrent + CostToMove(Current->Position, Successor->Position) + HeuristicCost(Successor->Position, FinalNode->Position);
             
             //If Node already in open list with a cheaper cost, then ignore
             if(OpenList.Contains(Successor) && Successor->Cost < cost){
@@ -150,14 +161,12 @@ bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode
             Successor->Parent = Current;
             
             //If child not in open list, add it
-            if(!OpenList.Contains(Successor)){
-                OpenList.Add(Successor);
-            }
+            OpenList.AddUnique(Successor);
             num++;
         }
         
         //Add Current node to closed list
-        ClosedList.Add(Current);
+        ClosedList.AddUnique(Current);
         num++;
     }
     
@@ -189,31 +198,35 @@ int AEnemyAIController::CostToMove(const FVector &Source, const FVector &Destina
  * Generates the FVector Array of positions to in the path
  */
 TArray<FVector> AEnemyAIController::GeneratePath(PathNode *StartNode, PathNode *FinalNode){
+    //Array containing final nodes
+    vector<PathNode*> FinalNodes;
+    
 	//Final path to Player
 	TArray<FVector> Path;
     
-    ClosedList.Sort([](const PathNode &node1, const PathNode &node2){
-        return node1.ID > node2.ID;
-    });
+    //Start from final node and make your way upwards
+    PathNode *R = FinalNode;
+
+    //Safety int to prevent infinite loop
+    int num = 0;
     
-    //Final position to add is players
-    ClosedList.Add(FinalNode);
+    while(R && R->ID != StartNode->ID && num < 1000){
+        FinalNodes.push_back(R);
+        R = GetMatchingNode(R->Parent->ID, ClosedList);
+        num++;
+    }
     
-    for(auto Node : ClosedList){
+    //Since Nodes have been added in reverse order, need to reverse the array
+    reverse(FinalNodes.begin(), FinalNodes.end());
+
+
+    //Add the positions the AI has to traverse
+    for(auto Node : FinalNodes){
         Path.Add(Node->Position);
     }
     
-	return Path;
     
-    //	PathNode *R = FinalNode;
-    //
-    //	while(R->ID != StartNode->ID){
-    //		Path.Add(R->Position);
-    //		R = R->Parent;
-    //	}
-    //
-    //	//Final position to add is players
-    //	Path.Add(StartNode->Position);
+	return Path;
 }
 
 
@@ -260,7 +273,6 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 		AIPos = GetPawn()->GetActorLocation();
 
 	if(Player){
-		//bIsPathing = true;
 		CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), PlayerPos);
 
 		TArray<FVector> Locations = GetAStarPath(AIPos, PlayerPos);
@@ -269,16 +281,15 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 			UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
 
 			for(int i = 0; i < Locations.Num(); i++){
-                GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, "MOVING TOWARDS YOU!");
-                
+                //Safety int to prevent infinite loop
                 int num = 0;
-				while(FVector::Dist(AIPos, Locations[i]) > 80.0f && num < 1000){
+                
+                while(FVector::Dist(AIPos, Locations[i]) > 80.0f && num < 1000){
 					MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);
                     num++;
 				}
 			}
 
-			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Orange, "DONE MOVING BEYATCH!");
 			UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
 		}
 		else{
@@ -325,7 +336,7 @@ void AEnemyAIController::CreateGridMap(const FVector &AIPos, const FVector &AIFo
  */
 bool AEnemyAIController::FindNodeConnections(PathNode *Node){
 	//Empty list currently there
-	Node->Connected.clear();/*.Empty();*/
+	Node->Connected.clear();
 
 	float NodeX = Node->Position.X,
 		NodeY = Node->Position.Y;
@@ -345,7 +356,7 @@ bool AEnemyAIController::FindNodeConnections(PathNode *Node){
 			}
 		}
 	}
-	UE_LOG(LogClass, Log, TEXT("%s CONNECTIONS to ID: %s"), *FString::FromInt(Node->Connected.size()),*FString::FromInt(Node->ID));
+//	UE_LOG(LogClass, Log, TEXT("%s CONNECTIONS to ID: %s"), *FString::FromInt(Node->Connected.size()),*FString::FromInt(Node->ID));
 	//UE_LOG(LogClass, Log, TEXT("CONNECTIONS to ID: %s %s"), *FString::FromInt(Node->Connected.size()), Node->Connected.empty() ? *FString("DONT EXIST") : *FString("EXIST"));
 
 	return Node->Connected.empty()/*Num() > 0*/ ? false : true;
