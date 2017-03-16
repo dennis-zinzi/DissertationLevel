@@ -20,6 +20,9 @@ class DISSERTATIONLEVEL_API AWorldObject : public AActor
 		// Called every frame
 		virtual void Tick( float DeltaSeconds ) override;
 
+		// Called after actor initialized
+		virtual void PostInitializeComponents() override;
+
 		//Return pickup's mesh
 		FORCEINLINE UStaticMeshComponent* GetMesh() const{
 			return ObjectMesh;
@@ -30,4 +33,7 @@ class DISSERTATIONLEVEL_API AWorldObject : public AActor
 		UPROPERTY(EditAnywhere, Category = "Game")
 		class UStaticMeshComponent *ObjectMesh;
 	
+		//Function to call when player on top of winning spot
+		UFUNCTION()
+		void ObjectHit(UPrimitiveComponent *HitComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, FVector NormalImpulse, const FHitResult &Hit);
 };

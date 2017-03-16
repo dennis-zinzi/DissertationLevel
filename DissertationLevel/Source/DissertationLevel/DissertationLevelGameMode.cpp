@@ -40,6 +40,22 @@ void ADissertationLevelGameMode::BeginPlay(){
 		//Generate TargetPoint at player pos (player trail)
 		GetWorld()->SpawnActor<AWorldObject>(loc, rotation, SpawnInfo);
 	}
+
+	//Get all the AIs
+	TArray<AActor*> AllAIs;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyCharacter::StaticClass(), AllAIs);
+
+	//Cast all the AIs to EnemyCharacters
+	TArray<AEnemyCharacter*> AIChars;
+	for(auto Actor : AllAIs){
+		AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(Actor);
+
+		if(AIChar){
+			AIChars.Add(AIChar);
+		}
+	}
+
+	AIFlock = new BoidFlock(AIChars);
 }
 
 
@@ -59,6 +75,10 @@ void ADissertationLevelGameMode::Tick(float DeltaTime){
 	//		GetWorld()->SpawnActor<APlayerTrail>(pos, rotation, SpawnInfo);
 	//	}
 	//}
+
+	if(((int)DeltaTime % 60000) == 0){
+		AIFlock->UpdateAIPositions();
+	}
 }
 
 
@@ -73,9 +93,9 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 		case EPlayState::EWin:
 		{
 			//Get the AI controller
-			TArray<AActor*> AIs;
-			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AIs);
-			AEnemyAIController *ai = Cast<AEnemyAIController>(AIs[0]);
+			TArray<AActor*> AllAIs;
+			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AllAIs);
+			AEnemyAIController *ai = Cast<AEnemyAIController>(AllAIs[0]);
 
 			if(ai){
 				//Stop AI from moving anymore

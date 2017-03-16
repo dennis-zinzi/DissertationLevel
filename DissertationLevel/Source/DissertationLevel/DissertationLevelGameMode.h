@@ -1,6 +1,9 @@
 // Copyright 1998-2016 Epic Games, Inc. All Rights Reserved.
 #pragma once
 #include "GameFramework/GameMode.h"
+
+#include "Boids/BoidFlock.h"
+
 #include "DissertationLevelGameMode.generated.h"
 
 UENUM(BlueprintType)
@@ -38,6 +41,9 @@ class ADissertationLevelGameMode : public AGameMode
 		}
 
 	private:
+		//Flock of AI Characters
+		BoidFlock *AIFlock;
+
 		EPlayState CurrentState;
 
 		void HandleNewState(EPlayState state);

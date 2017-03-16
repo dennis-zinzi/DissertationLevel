@@ -19,6 +19,7 @@ AEnemyCharacter::AEnemyCharacter()
 	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
 	PawnSensingComp->SetPeripheralVisionAngle(40.0f);
 	PawnSensingComp->SensingInterval = 0.25f;
+	PawnSensingComp->SightRadius = 1500.0f;
 }
 
 // Called when the game starts or when spawned

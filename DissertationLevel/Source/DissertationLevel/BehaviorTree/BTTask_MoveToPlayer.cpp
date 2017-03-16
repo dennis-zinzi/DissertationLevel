@@ -13,7 +13,7 @@
 
 #include "BTTask_MoveToPlayer.h"
 
-#define IN_RANGE_DISTANCE 800.0f
+#define IN_RANGE_DISTANCE 1000.0f
 #define CAUGHT_DISTANCE 80.0f
 
 
