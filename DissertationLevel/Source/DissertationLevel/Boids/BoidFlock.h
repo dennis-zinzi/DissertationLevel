@@ -3,6 +3,7 @@
 #pragma once
 
 #include "../AI/EnemyCharacter.h"
+#include "../DissertationLevelCharacter.h"
 
 /**
  * All based on Pseudocode from: www.kfish.org/boids/pseudocode.html
@@ -10,7 +11,7 @@
 class DISSERTATIONLEVEL_API BoidFlock
 {
 	public:
-		BoidFlock(TArray<AEnemyCharacter*> AIs);
+		BoidFlock(TArray<AEnemyCharacter*> AIs, ADissertationLevelCharacter *Player);
 		~BoidFlock();
 
 		void UpdateAIPositions();
@@ -18,12 +19,18 @@ class DISSERTATIONLEVEL_API BoidFlock
 		FORCEINLINE TArray<AEnemyCharacter*> GetAllAIs(){
 			return AIs;
 		}
+    
+        FORCEINLINE ADissertationLevelCharacter* GetPlayer(){
+            return Player;
+        }
 
 	private:
 		TArray<AEnemyCharacter*> AIs;
+        ADissertationLevelCharacter *Player;
+    
 
 		FVector CalculateBoidCohesion(AEnemyCharacter *AI);
 		FVector CalculateBoidAlignment(AEnemyCharacter *AI);
 		FVector CalculateBoidSeparation(AEnemyCharacter *AI);
-		FVector LimitVelocity(AEnemyCharacter *AI);
+		void LimitVelocity(AEnemyCharacter *AI);
 };

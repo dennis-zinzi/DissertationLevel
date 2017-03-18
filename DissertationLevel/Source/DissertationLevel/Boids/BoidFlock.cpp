@@ -1,18 +1,22 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "DissertationLevel.h"
+
+#include "../AI/EnemyAIController.h"
+
 #include "BoidFlock.h"
 
 //Percentage
-#define COHESION_FACTOR 0.01f
-#define OVERLAP_DISTANCE 150.0f
+#define COHESION_FACTOR 0.1f
+#define OVERLAP_DISTANCE 100.0f
 #define ALIGNMENT_FACTOR 0.05f
 
-#define VELOCITY_LIMIT 0.01f
+#define VELOCITY_LIMIT 350.0f
 
-BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs){
+BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs, ADissertationLevelCharacter *Player){
 	//Get every AI character
 	this->AIs = AIs;
+    this->Player = Player;
 }
 
 BoidFlock::~BoidFlock(){
@@ -28,9 +32,20 @@ void BoidFlock::UpdateAIPositions(){
 		Allignment = CalculateBoidAlignment(AI);
 		Separation = CalculateBoidSeparation(AI);
 
-		AI->GetCharacterMovement()->Velocity += Cohesion + Allignment + Separation;
-		LimitVelocity(AI);
-		AI->SetActorLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
+        AI->GetCharacterMovement()->Velocity += Cohesion + Allignment + Separation;
+        LimitVelocity(AI);
+        
+        AEnemyAIController *Cont = Cast<AEnemyAIController>(AI->GetController());
+        
+        if(Cont){
+            Cont->MoveToLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
+        }
+        
+		
+        
+        
+        
+//		AI->SetActorLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
 	}
 }
 
@@ -46,8 +61,9 @@ FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
 	}
 
 	PerceivedCenter /= AIs.Num() - 1;
- 
-	return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
+    
+    return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
+//	return (Player->GetActorLocation() - AI->GetActorLocation()) * COHESION_FACTOR;
 }
 
 
@@ -85,12 +101,12 @@ FVector BoidFlock::CalculateBoidSeparation(AEnemyCharacter *AI){
 }
 
 
-FVector BoidFlock::LimitVelocity(AEnemyCharacter *AI){
+void BoidFlock::LimitVelocity(AEnemyCharacter *AI){
 	FVector Vel = AI->GetCharacterMovement()->Velocity;
-
+    UE_LOG(LogClass, Log, TEXT("VELOCITY: %s"), *FString::SanitizeFloat(Vel.Size()));
 	if(Vel.Size() > VELOCITY_LIMIT){
 		Vel = (Vel / Vel.Size()) * VELOCITY_LIMIT;
 	}
 	
-	return Vel;
+    AI->GetCharacterMovement()->Velocity = Vel;
 }

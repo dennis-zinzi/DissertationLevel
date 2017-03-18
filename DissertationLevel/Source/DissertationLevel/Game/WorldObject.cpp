@@ -31,7 +31,7 @@ void AWorldObject::BeginPlay()
 void AWorldObject::PostInitializeComponents(){
 	Super::PostInitializeComponents();
 
-	ObjectMesh->OnComponentHit.AddDynamic(this, &AWorldObject::ObjectHit);
+//	ObjectMesh->OnComponentHit.AddDynamic(this, &AWorldObject::ObjectHit);
 }
 
 // Called every frame

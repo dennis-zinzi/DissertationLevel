@@ -37,9 +37,9 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 		//Check if AI caught the player
 		if(dist <= CAUGHT_DISTANCE){
 			EnemyPC->StopBehavior();
-
+            EnemyPC->StopMovement();
 			//Set Game to Lost
-			((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EGameOver);
+			//((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EGameOver);
 			
 			GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, "YOU LOSE X_X");
 			return EBTNodeResult::Succeeded;

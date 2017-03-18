@@ -5,7 +5,6 @@
 #include "DissertationLevelCharacter.h"
 #include "AI/EnemyAIController.h"
 #include "AI/EnemyCharacter.h"
-#include "Game/PlayerTrail.h"
 #include "Game/WorldObject.h"
 
 #define WORLD_OBJECTS_TO_SPAWN 15
@@ -55,30 +54,19 @@ void ADissertationLevelGameMode::BeginPlay(){
 		}
 	}
 
-	AIFlock = new BoidFlock(AIChars);
+    //Get player
+    ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+    
+	AIFlock = new BoidFlock(AIChars, Player);
 }
 
 
 void ADissertationLevelGameMode::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
 
-	//if(((int)DeltaTime % 6000) == 0){
-	//	ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(UGameplayStatics::GetPlayerPawn(this, 0));
-
-	//	//Check for player, and game still active
-	//	if(Player && CurrentState == EPlayState::EPlaying){
-	//		FVector pos = Player->GetActorLocation() - FVector(75.0f, 75.0f, 75.0f);
-	//		FRotator rotation(0.0f, 0.0f, 0.0f);
-	//		FActorSpawnParameters SpawnInfo;
-
-	//		//Generate TargetPoint at player pos (player trail)
-	//		GetWorld()->SpawnActor<APlayerTrail>(pos, rotation, SpawnInfo);
-	//	}
-	//}
-
-	if(((int)DeltaTime % 60000) == 0){
-		AIFlock->UpdateAIPositions();
-	}
+//	if(((int)DeltaTime % 60000) == 0){
+//		AIFlock->UpdateAIPositions();
+//	}
 }
 
 
