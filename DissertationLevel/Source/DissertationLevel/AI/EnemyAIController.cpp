@@ -269,10 +269,12 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 	BehaviorComp->StopTree();
 
 	ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(Pawn);
-	FVector PlayerPos = Player->GetActorLocation(),
-		AIPos = GetPawn()->GetActorLocation();
+
 
 	if(Player){
+        FVector PlayerPos = Player->GetActorLocation(),
+            AIPos = GetPawn()->GetActorLocation();
+        
 		CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), PlayerPos);
 
 		TArray<FVector> Locations = GetAStarPath(AIPos, PlayerPos);
@@ -298,6 +300,47 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 	}
 
 	BehaviorComp->RestartTree();
+}
+
+
+/**
+ * Called when player withing AI's catching distance
+ */
+void AEnemyAIController::GoToWinningLocation(AActor *WinLoc){
+    UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
+    BehaviorComp->StopTree();
+    
+    AWinningLocation *WinningLoc = Cast<AWinningLocation>(WinLoc);
+    
+    if(WinningLoc){
+        FVector WinningPos = WinningLoc->GetActorLocation(),
+            AIPos = GetPawn()->GetActorLocation();
+        
+        CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), WinningPos);
+        
+        TArray<FVector> Locations = GetAStarPath(AIPos, WinningPos);
+        
+        if(Locations.Num() > 0){
+            UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
+            
+            for(int i = 0; i < Locations.Num(); i++){
+                //Safety int to prevent infinite loop
+                int num = 0;
+                
+                while(FVector::Dist(AIPos, Locations[i]) > 80.0f && num < 1000){
+                    MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);
+                    num++;
+                }
+            }
+            
+            UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
+        }
+        else{
+            UE_LOG(LogClass, Log, TEXT("PATH NOT FOUND"));
+        }
+    }
+    
+    BehaviorComp->RestartTree();
 }
 
 

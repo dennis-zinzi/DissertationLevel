@@ -26,12 +26,12 @@ void AWinningLocation::BeginPlay()
 	//Enable collisions
 	SetActorEnableCollision(true);
 
-	//Start winning location at random position
-	FVector randPos = GetActorLocation();
-	randPos.X = FMath::RandRange(-1000.0f, 1000.0f);
-	randPos.Y = FMath::RandRange(-1000.0f, 1000.0f);
-
-	SetActorLocation(randPos);
+//	//Start winning location at random position
+//	FVector randPos = GetActorLocation();
+//	randPos.X = FMath::RandRange(-1000.0f, 1000.0f);
+//	randPos.Y = FMath::RandRange(-1000.0f, 1000.0f);
+//
+//	SetActorLocation(randPos);
 }
 
 // Called every frame

@@ -13,10 +13,16 @@
 
 #define VELOCITY_LIMIT 350.0f
 
-BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs, ADissertationLevelCharacter *Player){
+BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc){
 	//Get every AI character
 	this->AIs = AIs;
-    this->Player = Player;
+    this->WinLoc = WinLoc;
+    
+    for(auto Boid : AIs){
+        PerceivedCenter += Boid->GetActorLocation();
+    }
+    
+    PerceivedCenter /= AIs.Num();
 }
 
 BoidFlock::~BoidFlock(){
@@ -40,17 +46,11 @@ void BoidFlock::UpdateAIPositions(){
         if(Cont){
             Cont->MoveToLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
         }
-        
-		
-        
-        
-        
-//		AI->SetActorLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
 	}
 }
 
 FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
-	FVector PerceivedCenter;
+//	FVector PerceivedCenter;
 
 	for(auto Boid : AIs){
 		if(Boid == AI){
@@ -63,7 +63,6 @@ FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
 	PerceivedCenter /= AIs.Num() - 1;
     
     return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
-//	return (Player->GetActorLocation() - AI->GetActorLocation()) * COHESION_FACTOR;
 }
 
 

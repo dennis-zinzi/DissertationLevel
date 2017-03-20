@@ -54,19 +54,24 @@ void ADissertationLevelGameMode::BeginPlay(){
 		}
 	}
 
-    //Get player
-    ADissertationLevelCharacter *Player = Cast<ADissertationLevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+    //Get Winning Location
+    TArray<AActor*> WinLocArr;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AWinningLocation::StaticClass(), WinLocArr);
     
-	AIFlock = new BoidFlock(AIChars, Player);
+    WinLoc = Cast<AWinningLocation>(WinLocArr[0]);
+    
+    if(WinLoc){
+        AIFlock = new BoidFlock(AIChars, WinLoc);
+    }
 }
 
 
 void ADissertationLevelGameMode::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
 
-//	if(((int)DeltaTime % 60000) == 0){
-//		AIFlock->UpdateAIPositions();
-//	}
+	if(((int)DeltaTime % 60000) == 0){
+		AIFlock->UpdateAIPositions();
+	}
 }
 
 

@@ -3,6 +3,7 @@
 #include "GameFramework/GameMode.h"
 
 #include "Boids/BoidFlock.h"
+#include "Game/WinningLocation.h"
 
 #include "DissertationLevelGameMode.generated.h"
 
@@ -39,10 +40,18 @@ class ADissertationLevelGameMode : public AGameMode
 			//handle the new state
 			HandleNewState(state);
 		}
+    
+        FORCEINLINE AWinningLocation* GetWinLoc(){
+            return WinLoc;
+        }
+    
 
 	private:
 		//Flock of AI Characters
 		BoidFlock *AIFlock;
+    
+        //Winning Location
+        AWinningLocation *WinLoc;
 
 		EPlayState CurrentState;
 

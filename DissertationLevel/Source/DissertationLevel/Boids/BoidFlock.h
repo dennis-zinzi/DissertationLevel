@@ -3,7 +3,7 @@
 #pragma once
 
 #include "../AI/EnemyCharacter.h"
-#include "../DissertationLevelCharacter.h"
+#include "../Game/WinningLocation.h"
 
 /**
  * All based on Pseudocode from: www.kfish.org/boids/pseudocode.html
@@ -11,7 +11,7 @@
 class DISSERTATIONLEVEL_API BoidFlock
 {
 	public:
-		BoidFlock(TArray<AEnemyCharacter*> AIs, ADissertationLevelCharacter *Player);
+		BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc);
 		~BoidFlock();
 
 		void UpdateAIPositions();
@@ -19,14 +19,12 @@ class DISSERTATIONLEVEL_API BoidFlock
 		FORCEINLINE TArray<AEnemyCharacter*> GetAllAIs(){
 			return AIs;
 		}
-    
-        FORCEINLINE ADissertationLevelCharacter* GetPlayer(){
-            return Player;
-        }
+
 
 	private:
 		TArray<AEnemyCharacter*> AIs;
-        ADissertationLevelCharacter *Player;
+        AWinningLocation *WinLoc;
+        FVector PerceivedCenter;
     
 
 		FVector CalculateBoidCohesion(AEnemyCharacter *AI);

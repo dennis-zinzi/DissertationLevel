@@ -85,6 +85,7 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		TArray<FVector> GetAStarPath(const FVector &AIPos, const FVector &PlayerPos);
 
 		void ChasePlayer(APawn *Pawn);
+        void GoToWinningLocation(AActor *WinLoc);
 
 		//Create GridMap
 		void CreateGridMap(const FVector &AIPos, const FVector &AIForwardVec, const FVector &PlayerPos);

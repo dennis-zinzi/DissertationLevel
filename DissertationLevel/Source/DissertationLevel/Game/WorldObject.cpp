@@ -18,6 +18,8 @@ AWorldObject::AWorldObject()
 	ObjectMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TrailMesh"));
 	const ConstructorHelpers::FObjectFinder<UStaticMesh> mesh_ref(TEXT("/Game/StarterContent/Shapes/Shape_Cube"));
 	ObjectMesh->SetStaticMesh(mesh_ref.Object);
+    
+    ObjectMesh->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 }
 
 // Called when the game starts or when spawned
