@@ -5,6 +5,7 @@
 #include "../Game/WinningLocation.h"
 #include "../DissertationLevelGameMode.h"
 #include "../AI/EnemyAIController.h"
+#include "../AI/PathNode.h"
 
 #include "BTTask_MoveToWinningLocation.h"
 
@@ -18,7 +19,13 @@ EBTNodeResult::Type UBTTask_MoveToWinningLocation::ExecuteTask(UBehaviorTreeComp
     AWinningLocation *WinLoc = ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetWinLoc();
     
     if(EnemyPC && WinLoc){
-        EnemyPC->GoToWinningLocation(WinLoc);
+		//Get the Node Map
+		TArray<PathNode*> MapNodes = ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetMapNodes();
+
+		//If Node Map populated, go to the goal
+		if(MapNodes.Num() > 0){
+			EnemyPC->GoToWinningLocation(WinLoc, MapNodes);
+		}
         
         return EBTNodeResult::Succeeded;
     }

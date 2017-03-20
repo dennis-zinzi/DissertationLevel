@@ -78,14 +78,11 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			ClosedList.Empty();
 		}
 
-		//Get connected/neighboring nodes for each node
-		void FindEveryNeighborNodes();
-
 		//Get A* Vector list of locations to move through
 		TArray<FVector> GetAStarPath(const FVector &AIPos, const FVector &PlayerPos);
 
 		void ChasePlayer(APawn *Pawn);
-        void GoToWinningLocation(AActor *WinLoc);
+        void GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> MapNodes);
 
 		//Create GridMap
 		void CreateGridMap(const FVector &AIPos, const FVector &AIForwardVec, const FVector &PlayerPos);

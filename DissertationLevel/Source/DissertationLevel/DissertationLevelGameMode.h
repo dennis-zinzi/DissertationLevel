@@ -4,6 +4,7 @@
 
 #include "Boids/BoidFlock.h"
 #include "Game/WinningLocation.h"
+#include "AI/PathNode.h"
 
 #include "DissertationLevelGameMode.generated.h"
 
@@ -44,7 +45,10 @@ class ADissertationLevelGameMode : public AGameMode
         FORCEINLINE AWinningLocation* GetWinLoc(){
             return WinLoc;
         }
-    
+		
+		FORCEINLINE TArray<PathNode*> GetMapNodes(){
+			return MapNodes;
+		}
 
 	private:
 		//Flock of AI Characters
@@ -53,10 +57,16 @@ class ADissertationLevelGameMode : public AGameMode
         //Winning Location
         AWinningLocation *WinLoc;
 
+		//Current Game State
 		EPlayState CurrentState;
-
+		//Change Game State function
 		void HandleNewState(EPlayState state);
 
+		//List of Nodes in Map
+		TArray<PathNode*> MapNodes;
+
+		//Create GridMap
+		void CreateGridMap(const FVector &StartPos, const FVector &EndPos);
 };
 
 

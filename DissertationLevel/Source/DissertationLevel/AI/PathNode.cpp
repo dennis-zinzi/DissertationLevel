@@ -4,25 +4,26 @@
 #include "PathNode.h"
 
 
-PathNode::PathNode(int ID, const FVector &Position, int Cost, vector<int> Connected, PathNode *Parent){
+PathNode::PathNode(int ID, const FVector &Position, int Cost, vector<int> Connected, PathNode *Parent, bool bIsPassable){
 	this->ID = ID;
 	this->Position = Position;
 	this->Cost = Cost;
 	this->Connected = Connected;
 	this->Parent = Parent;
+	this->bIsPassable = bIsPassable;
 }
 
-PathNode::PathNode(const FVector &v){
-	ID = GetVectorID(v);
-	Position = v;
-	Cost = 0;
-	Connected = vector<int>();
-	Parent = nullptr;
-}
 
 PathNode::~PathNode(){
 }
 
-int PathNode::GetVectorID(const FVector &v) const{
-	return (int)(FMath::Abs(v.X) + FMath::Abs(v.Y) + FMath::Abs(v.Z));
+
+void PathNode::CheckOverlappingNodes(const FVector &Start, const FVector &End, const TArray<PathNode*> &List){
+	for(auto Node : List){
+		if(Start.X <= Node->Position.X && Node->Position.X <= End.X
+			&& Start.Y <= Node->Position.Y && Node->Position.Y <= End.Y){
+			//If checks above true, must be overlapping, so set isPassable flag to false
+			Node->bIsPassable = false;
+		}
+	}
 }

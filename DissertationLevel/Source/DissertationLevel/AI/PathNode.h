@@ -12,17 +12,16 @@ using std::vector;
 class DISSERTATIONLEVEL_API PathNode
 {
 	public:
-		PathNode(int ID, const FVector &Position, int Cost = 0, vector<int> Connected = vector<int>(), PathNode *Parent = nullptr);
-		PathNode(const FVector &v);
-
+		PathNode(int ID, const FVector &Position, int Cost = 0, vector<int> Connected = vector<int>(), PathNode *Parent = nullptr, bool bIsPassable = true);
 		~PathNode();
 
 		int ID;
 		FVector Position;
 		int Cost;
-		//TArray<int> Connected;
 		vector<int> Connected;
 		PathNode *Parent;
+		bool bIsPassable;
+
 
 		FORCEINLINE bool operator==(const PathNode &rhs) const{
 			if(this == &rhs){
@@ -32,5 +31,5 @@ class DISSERTATIONLEVEL_API PathNode
 			return ID == rhs.ID;
 		}
 
-		int GetVectorID(const FVector &v) const;
+		static void CheckOverlappingNodes(const FVector &Start, const FVector &End, const TArray<PathNode*> &List);
 };

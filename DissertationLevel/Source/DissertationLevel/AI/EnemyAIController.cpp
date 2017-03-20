@@ -19,6 +19,7 @@ using std::vector;
 using std::reverse;
 
 #define MAX_ITERATIONS 10000
+#define MOVE_ITERATIONS 500
 
 
 AEnemyAIController::AEnemyAIController(){
@@ -143,6 +144,12 @@ bool AEnemyAIController::AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode
                 ClosedList.AddUnique(Current);
                 return true;
             }
+
+			//Check if node is actually possible to go through
+			if(!Successor->bIsPassable){
+				//Ignore if it isn't
+				continue;
+			}
             
             //Recalculate Cost to reach node (Add G cost of current node)
             const int cost = GCostCurrent + CostToMove(Current->Position, Successor->Position) + HeuristicCost(Successor->Position, FinalNode->Position);
@@ -306,7 +313,7 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
 /**
  * Called when player withing AI's catching distance
  */
-void AEnemyAIController::GoToWinningLocation(AActor *WinLoc){
+void AEnemyAIController::GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> MapNodes){
     UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
     BehaviorComp->StopTree();
     
@@ -316,21 +323,18 @@ void AEnemyAIController::GoToWinningLocation(AActor *WinLoc){
         FVector WinningPos = WinningLoc->GetActorLocation(),
             AIPos = GetPawn()->GetActorLocation();
         
-        CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), WinningPos);
+        //CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), WinningPos);
+		//Get Nodes List
+		Nodes = MapNodes;
         
         TArray<FVector> Locations = GetAStarPath(AIPos, WinningPos);
         
         if(Locations.Num() > 0){
             UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
             
+			//Move AI along the A* path
             for(int i = 0; i < Locations.Num(); i++){
-                //Safety int to prevent infinite loop
-                int num = 0;
-                
-                while(FVector::Dist(AIPos, Locations[i]) > 80.0f && num < 1000){
-                    MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);
-                    num++;
-                }
+                MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);               
             }
             
             UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
