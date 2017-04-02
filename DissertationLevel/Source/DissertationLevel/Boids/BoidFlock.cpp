@@ -12,6 +12,7 @@
 #define ALIGNMENT_FACTOR 0.05f
 
 #define VELOCITY_LIMIT 350.0f
+#define LOCATION_FACTOR 0.2f
 
 BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc){
 	//Get every AI character
@@ -31,14 +32,20 @@ BoidFlock::~BoidFlock(){
 void BoidFlock::UpdateAIPositions(){
 	FVector Cohesion,
 		Allignment,
-		Separation;
-
+		Separation,
+        GoalTendency;
+    
+    //Calculate A* path from Perceived Center to Goal location
+    
+    
+    //for(auto locToGo : Locations){
 	for(auto AI : AIs){
 		Cohesion = CalculateBoidCohesion(AI);
 		Allignment = CalculateBoidAlignment(AI);
 		Separation = CalculateBoidSeparation(AI);
+        GoalTendency = MoveToLocation(AI, GoalTendency);// MoveToLocation(AI, locToGo);
 
-        AI->GetCharacterMovement()->Velocity += Cohesion + Allignment + Separation;
+        AI->GetCharacterMovement()->Velocity += Cohesion + Allignment + Separation + GoalTendency;
         LimitVelocity(AI);
         
         AEnemyAIController *Cont = Cast<AEnemyAIController>(AI->GetController());
@@ -47,20 +54,21 @@ void BoidFlock::UpdateAIPositions(){
             Cont->MoveToLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
         }
 	}
+    //}
 }
 
 FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
 //	FVector PerceivedCenter;
-
-	for(auto Boid : AIs){
-		if(Boid == AI){
-			continue;
-		}
-
-		PerceivedCenter += Boid->GetActorLocation();
-	}
-
-	PerceivedCenter /= AIs.Num() - 1;
+//
+//	for(auto Boid : AIs){
+//		if(Boid == AI){
+//			continue;
+//		}
+//
+//		PerceivedCenter += Boid->GetActorLocation();
+//	}
+//
+//	PerceivedCenter /= AIs.Num() - 1;
     
     return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
 }
@@ -109,3 +117,10 @@ void BoidFlock::LimitVelocity(AEnemyCharacter *AI){
 	
     AI->GetCharacterMovement()->Velocity = Vel;
 }
+
+
+FVector BoidFlock::MoveToLocation(AEnemyCharacter *AI, FVector pos){
+    return (pos - AI->GetActorLocation()) * LOCATION_FACTOR;
+}
+
+

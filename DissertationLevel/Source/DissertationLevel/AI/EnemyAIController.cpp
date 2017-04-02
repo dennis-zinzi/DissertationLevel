@@ -9,6 +9,7 @@
 #include "EnemyPatrolPoint.h"
 #include "../DissertationLevelCharacter.h"
 #include "../DissertationLevelGameMode.h"
+#include "AStar.h"
 
 #include "EnemyAIController.h"
 
@@ -314,37 +315,43 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn){
  * Called when player withing AI's catching distance
  */
 void AEnemyAIController::GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> MapNodes){
-    UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
-    BehaviorComp->StopTree();
-    
-    AWinningLocation *WinningLoc = Cast<AWinningLocation>(WinLoc);
-    
-    if(WinningLoc){
-        FVector WinningPos = WinningLoc->GetActorLocation(),
-            AIPos = GetPawn()->GetActorLocation();
+    if(!bIsPathing){
+        UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
+        BehaviorComp->StopTree();
         
-        //CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), WinningPos);
-		//Get Nodes List
-		Nodes = MapNodes;
+        AWinningLocation *WinningLoc = Cast<AWinningLocation>(WinLoc);
         
-        TArray<FVector> Locations = GetAStarPath(AIPos, WinningPos);
-        
-        if(Locations.Num() > 0){
-            UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
+        if(WinningLoc){
+            FVector WinningPos = WinningLoc->GetActorLocation(),
+                AIPos = GetPawn()->GetActorLocation();
             
-			//Move AI along the A* path
-            for(int i = 0; i < Locations.Num(); i++){
-                MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);               
+            //CreateGridMap(AIPos, GetPawn()->GetActorForwardVector(), WinningPos);
+            //Get Nodes List
+            Nodes = MapNodes;
+            
+            TArray<FVector> Locations = AStar::GetAStarPath(AIPos, WinningPos, MapNodes);//GetAStarPath(AIPos, WinningPos);
+            
+            if(Locations.Num() > 0){
+                UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
+                
+                //Move AI along the A* path
+    //            for(int i = 0; i < Locations.Num(); i++){
+    //                MoveToLocation(Locations[i], 25.0f, true, true, true, true, 0, false);               
+    //            }
+                for(auto Loc : Locations){
+                    MoveToLocation(Loc, 25.0f, true, true, true, true, 0, false);
+                }
+                
+                UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
             }
-            
-            UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
+            else{
+                UE_LOG(LogClass, Log, TEXT("PATH NOT FOUND"));
+            }
         }
-        else{
-            UE_LOG(LogClass, Log, TEXT("PATH NOT FOUND"));
-        }
+        
+        BehaviorComp->RestartTree();
+        bIsPathing = true;
     }
-    
-    BehaviorComp->RestartTree();
 }
 
 

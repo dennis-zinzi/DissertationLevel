@@ -31,4 +31,5 @@ class DISSERTATIONLEVEL_API BoidFlock
 		FVector CalculateBoidAlignment(AEnemyCharacter *AI);
 		FVector CalculateBoidSeparation(AEnemyCharacter *AI);
 		void LimitVelocity(AEnemyCharacter *AI);
+        FVector MoveToLocation(AEnemyCharacter *AI, FVector pos);
 };

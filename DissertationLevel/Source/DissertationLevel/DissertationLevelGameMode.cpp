@@ -7,7 +7,7 @@
 #include "AI/EnemyCharacter.h"
 #include "Game/WorldObject.h"
 
-#define WORLD_OBJECTS_TO_SPAWN 15
+#define WORLD_OBJECTS_TO_SPAWN 25
 #define WORLD_POS_LIMIT 1400.0f
 
 #define FLOOR_Z 130.0f
@@ -16,6 +16,7 @@
 #define WORLD_MAX_X 960.0f
 #define WORLD_MIN_Y -1360.0f
 #define WORLD_MAX_Y 1360.0f
+
 #define POINT_DISTANCE 80.0f
 
 
@@ -54,6 +55,19 @@ void ADissertationLevelGameMode::BeginPlay(){
 		//Generate TargetPoint at player pos (player trail)
 		GetWorld()->SpawnActor<AWorldObject>(loc, rotation, SpawnInfo);
 	}
+    
+    //Determine Unpassable locations (where world objects are)
+    TArray<AActor*> WorldObjArr;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AWorldObject::StaticClass(), WorldObjArr);
+    
+    for(auto WorldObj : WorldObjArr){
+        AWorldObject *Obj = Cast<AWorldObject>(WorldObj);
+        
+        if(Obj){
+            //Determine nodes overlapping
+            PathNode::CheckOverlappingNodes(Obj->GetComponentsBoundingBox().Min, Obj->GetComponentsBoundingBox().Max, MapNodes);
+        }
+    }
 
 	//Get all the AIs
 	TArray<AActor*> AllAIs;
@@ -79,18 +93,6 @@ void ADissertationLevelGameMode::BeginPlay(){
         AIFlock = new BoidFlock(AIChars, WinLoc);
     }
 
-	//Determine Unpassable locations
-	TArray<AActor*> WorldObjArr;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AWorldObject::StaticClass(), WorldObjArr);
-
-	for(auto WorldObj : WorldObjArr){
-		AWorldObject *Obj = Cast<AWorldObject>(WorldObj);
-
-		if(Obj){
-			//Determine nodes overlapping 
-			PathNode::CheckOverlappingNodes(Obj->GetComponentsBoundingBox().Min, Obj->GetComponentsBoundingBox().Max, MapNodes);
-		}
-	}
 }
 
 
