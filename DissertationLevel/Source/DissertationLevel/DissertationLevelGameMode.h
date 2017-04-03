@@ -64,9 +64,6 @@ class ADissertationLevelGameMode : public AGameMode
 
 		//List of Nodes in Map
 		TArray<PathNode*> MapNodes;
-
-		//Create GridMap
-		void CreateGridMap(const FVector &StartPos, const FVector &EndPos);
 };
 
 

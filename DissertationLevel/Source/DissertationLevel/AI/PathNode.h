@@ -30,6 +30,4 @@ class DISSERTATIONLEVEL_API PathNode
 
 			return ID == rhs.ID;
 		}
-
-		static void CheckOverlappingNodes(const FVector &Start, const FVector &End, const TArray<PathNode*> &List);
 };

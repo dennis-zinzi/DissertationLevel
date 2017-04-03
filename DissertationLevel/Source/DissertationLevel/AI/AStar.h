@@ -13,6 +13,12 @@ class DISSERTATIONLEVEL_API AStar
         AStar();
         ~AStar();
     
+        //Generates Level GridMap
+        static TArray<PathNode*> CreateGridMap();
+    
+        //Determines unpassable nodes and updates the given list
+        static void CheckOverlappingNodes(const FVector &Start, const FVector &End, const TArray<PathNode*> &List);
+    
         //Get A* Vector list of locations to move through
         static TArray<FVector> GetAStarPath(const FVector &StartPos, const FVector &EndPos, TArray<PathNode*> &NodeMap);
     

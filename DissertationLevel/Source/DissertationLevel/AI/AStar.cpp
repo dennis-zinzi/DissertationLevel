@@ -9,6 +9,12 @@
 using std::vector;
 using std::reverse;
 
+#define FLOOR_Z 130.0f
+#define WORLD_MIN_X -1760.0f
+#define WORLD_MAX_X 960.0f
+#define WORLD_MIN_Y -1360.0f
+#define WORLD_MAX_Y 1360.0f
+
 #define NODE_DISTANCE 80.0f
 #define MAX_ITERATIONS 10000
 
@@ -17,6 +23,51 @@ AStar::AStar(){
 
 AStar::~AStar(){
 }
+
+
+/**
+ * Generates the Path Node Map necessary to generate a path through the environment
+ */
+TArray<PathNode*> AStar::CreateGridMap(){
+    //Array to store Path Nodes in
+    TArray<PathNode*> MapNodes;
+    
+    //PathNode ID
+    int ID = 0;
+    
+    //X Pos loop
+    for(float x = WORLD_MIN_X; x < WORLD_MAX_X + 1; x += NODE_DISTANCE){
+        //Y Pos loop
+        for(float y = WORLD_MIN_Y; y < WORLD_MAX_Y + 1; y += NODE_DISTANCE){
+            //Generate Point at these coordinates
+            FVector GridLoc = FVector(x, y, FLOOR_Z);
+            
+            //Add node to list
+            PathNode *pn = new PathNode(ID, GridLoc);
+            MapNodes.Add(pn);
+            
+            ID++;
+        }
+    }
+    
+    UE_LOG(LogClass, Log, TEXT("Nodes Created: %s"), *FString::FromInt(MapNodes.Num()));
+    return MapNodes;
+}
+
+
+/**
+ * Determines all nodes within given Vector bounds, and makes them umpassable in the list
+ */
+void AStar::CheckOverlappingNodes(const FVector &Start, const FVector &End, const TArray<PathNode*> &List){
+    for(auto Node : List){
+        if(Start.X <= Node->Position.X && Node->Position.X <= End.X
+           && Start.Y <= Node->Position.Y && Node->Position.Y <= End.Y){
+            //If checks above are true, must be overlapping, so set isPassable flag to false
+            Node->bIsPassable = false;
+        }
+    }
+}
+
 
 /**
  * Prepares and calls A* algorithm

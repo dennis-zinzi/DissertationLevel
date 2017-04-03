@@ -22,12 +22,6 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent *BehaviorComp;
 
-	UPROPERTY(EditAnywhere, Category = "GridMap")
-	float PointsDistance = 80.0f;
-
-	UPROPERTY(EditAnywhere, Category = "GridMap")
-	float RangeDistance = 1200.0f;
-
 
 	public:
 		AEnemyAIController();
@@ -42,6 +36,10 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		FORCEINLINE uint8 GetPatrolPointKeyID() const{
 			return PatrolPointKeyID;
 		}
+    
+        FORCEINLINE uint8 GetPathLocationKeyID() const{
+            return PathLocationKeyID;
+        }
 
 		FORCEINLINE TArray<AActor*> GetPatrolPoints() const{
 			return PatrolPoints;
@@ -54,6 +52,18 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		FORCEINLINE void SetCurrentPatrolPoint(int32 point){
 			CurrentPatrolPoint = point;
 		}
+    
+        FORCEINLINE TArray<FVector> GetPathLocations() const{
+            return PathLocations;
+        }
+        
+        FORCEINLINE int GetCurrentPathLocIndex() const{
+            return CurrentPathLocIndex;
+        }
+        
+        FORCEINLINE void SetCurrentPathLocIndex(int index){
+            CurrentPathLocIndex = index;
+        }
 
 		FORCEINLINE UBlackboardComponent* GetBlackboardComp() const{
 			return BlackboardComp;
@@ -63,26 +73,11 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		void StopBehavior();
 
 
-
-		FORCEINLINE void AddToNodesList(PathNode &pn){
-			Nodes.Add(&pn);
-		}
-
-		FORCEINLINE TArray<PathNode*> GetNodesList(){
-			return Nodes;
-		}
-
-		FORCEINLINE void ClearLists(){
-			Nodes.Empty();
-			OpenList.Empty();
-			ClosedList.Empty();
-		}
-
 		//Get A* Vector list of locations to move through
 		TArray<FVector> GetAStarPath(const FVector &AIPos, const FVector &PlayerPos);
 
-		void ChasePlayer(APawn *Pawn);
-        void GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> MapNodes);
+		void ChasePlayer(APawn *Pawn, TArray<PathNode*> &MapNodes);
+        void GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> &MapNodes);
 
 		//Create GridMap
 		void CreateGridMap(const FVector &AIPos, const FVector &AIForwardVec, const FVector &PlayerPos);
@@ -91,6 +86,7 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		//Blackboard keys
 		uint8 EnemyKeyID;
 		uint8 PatrolPointKeyID;
+        uint8 PathLocationKeyID;
 
 		//Patrol Points Array
 		TArray<AActor*> PatrolPoints;
@@ -98,26 +94,13 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 		//Current Patrol Point
 		int32 CurrentPatrolPoint;
 
-		//AStar Nodes List
-		TArray<PathNode*> Nodes;
-
-		//AStar Open List
-		TArray<PathNode*> OpenList;
-
-		//AStar Closed List
-		TArray<PathNode*> ClosedList;
-
-		bool AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode);
-		int HeuristicCost(const FVector &Source, const FVector &Destination);
-		int CostToMove(const FVector &Source, const FVector &Destination);
-
-		TArray<FVector> GeneratePath(PathNode *StartNode, PathNode *FinalNode);
-
-		PathNode* GetMinCostNode();
-		PathNode* GetMatchingNode(const int ID, const TArray<PathNode*> &List);
-		PathNode* GetNodeWithXY(const float x, const float y, const TArray<PathNode*> &List);
-        PathNode* GetClosestNode(const FVector &Pos, const TArray<PathNode*> &List);
-		bool FindNodeConnections(PathNode *Node);
+        //Path Locations Array
+        TArray<FVector> PathLocations;
+    
+        //Current Path Location index
+        int CurrentPathLocIndex;
+    
+    
 
 		bool bIsPathing;
 };

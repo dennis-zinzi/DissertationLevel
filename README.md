@@ -3,6 +3,5 @@ The Unreal Engine 4 level for my CSC3095 Dissertation project comparing the use 
 the use of A* pathfinding on a single Flock of AI to move through a randomly generated environment to reach the goal.
 
 ## TODO List
-- Create Single Grid map for AI's to use covering entire environment
-- Ensure AI not getting stuck on world objects
+- Make AI Flock follow A* path
 - Track performance of A* (memory use/time taken)

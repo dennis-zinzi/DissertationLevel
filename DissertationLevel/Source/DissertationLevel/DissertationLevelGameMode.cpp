@@ -6,18 +6,10 @@
 #include "AI/EnemyAIController.h"
 #include "AI/EnemyCharacter.h"
 #include "Game/WorldObject.h"
+#include "AI/AStar.h"
 
-#define WORLD_OBJECTS_TO_SPAWN 25
+#define WORLD_OBJECTS_TO_SPAWN 50
 #define WORLD_POS_LIMIT 1400.0f
-
-#define FLOOR_Z 130.0f
-
-#define WORLD_MIN_X -1760.0f
-#define WORLD_MAX_X 960.0f
-#define WORLD_MIN_Y -1360.0f
-#define WORLD_MAX_Y 1360.0f
-
-#define POINT_DISTANCE 80.0f
 
 
 ADissertationLevelGameMode::ADissertationLevelGameMode()
@@ -38,10 +30,7 @@ void ADissertationLevelGameMode::BeginPlay(){
 	CurrentState = EPlayState::EPlaying;
 
 	//Create Node Grid Map
-	FVector WorldStart(WORLD_MIN_X, WORLD_MIN_Y, FLOOR_Z),
-		WorldEnd(WORLD_MAX_X, WORLD_MAX_Y, FLOOR_Z);
-
-	CreateGridMap(WorldStart, WorldEnd);
+    MapNodes = AStar::CreateGridMap();
 
 	//Create random objects in the world
 	for(int i = 0; i < WORLD_OBJECTS_TO_SPAWN; i++){
@@ -65,7 +54,7 @@ void ADissertationLevelGameMode::BeginPlay(){
         
         if(Obj){
             //Determine nodes overlapping
-            PathNode::CheckOverlappingNodes(Obj->GetComponentsBoundingBox().Min, Obj->GetComponentsBoundingBox().Max, MapNodes);
+            AStar::CheckOverlappingNodes(Obj->GetComponentsBoundingBox().Min, Obj->GetComponentsBoundingBox().Max, MapNodes);
         }
     }
 
@@ -177,25 +166,3 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 	}
 }
 
-
-void ADissertationLevelGameMode::CreateGridMap(const FVector &StartPos, const FVector &EndPos){
-	//PathNode ID
-	int ID = 0;
-
-	//X Pos loop
-	for(float x = WORLD_MIN_X; x < WORLD_MAX_X + 1; x += POINT_DISTANCE){
-		//Y Pos loop
-		for(float y = WORLD_MIN_Y; y < WORLD_MAX_Y + 1; y += POINT_DISTANCE){
-			//Generate Point at these coordinates
-			FVector GridLoc = FVector(x, y, FLOOR_Z);
-
-			//Add node to list
-			PathNode *pn = new PathNode(ID, GridLoc);
-			MapNodes.Add(pn);
-
-			ID++;
-		}
-	}
-
-	UE_LOG(LogClass, Log, TEXT("Nodes Created: %s"), *FString::FromInt(MapNodes.Num()));
-}

@@ -34,7 +34,7 @@ EBTNodeResult::Type UBTTask_SelectPatrolPoint::ExecuteTask(UBehaviorTreeComponen
 			AIController->SetCurrentPatrolPoint(0);
 		}
 
-		BlackboardComp->SetValueAsObject("LocationToGo", NextPatrolPoint);
+		BlackboardComp->SetValueAsObject("NextPatrolPoint", NextPatrolPoint);
 
 		return EBTNodeResult::Succeeded;
 	}

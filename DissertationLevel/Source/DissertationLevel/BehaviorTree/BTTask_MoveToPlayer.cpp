@@ -46,8 +46,11 @@ EBTNodeResult::Type UBTTask_MoveToPlayer::ExecuteTask(UBehaviorTreeComponent& Ow
 		}
 		//Check if AI within "viewing" distance
 		else if(dist < IN_RANGE_DISTANCE){
+            //Get the Node Map
+            TArray<PathNode*> MapNodes = ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetMapNodes();
+            
 			//Make A* path
-			EnemyPC->ChasePlayer(Player);
+			EnemyPC->ChasePlayer(Player, MapNodes);
 
 			return EBTNodeResult::Succeeded;
 		}
