@@ -29,12 +29,12 @@ class DISSERTATIONLEVEL_API AEnemyCharacter : public ACharacter
 		UPROPERTY(EditAnywhere, Category = "AI|Behavior")
 		class UBehaviorTree *AIBehavior;
 
-		UPROPERTY(VisibleAnywhere, Category = "AI")
-		class UPawnSensingComponent *PawnSensingComp;
+//		UPROPERTY(VisibleAnywhere, Category = "AI")
+//		class UPawnSensingComponent *PawnSensingComp;
 
 	private:
-		UFUNCTION()
-		void OnPlayerCaught(APawn *Pawn);
+//		UFUNCTION()
+//		void OnPlayerCaught(APawn *Pawn);
 
 	
 };

@@ -22,6 +22,9 @@ class DISSERTATIONLEVEL_API AStar
         //Get A* Vector list of locations to move through
         static TArray<FVector> GetAStarPath(const FVector &StartPos, const FVector &EndPos, TArray<PathNode*> &NodeMap);
     
+        //Gets closest node to position
+        static PathNode* GetClosestNode(const FVector &Pos, const TArray<PathNode*> &List);
+    
     private:
     
         static bool AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode, TArray<PathNode*> &NodeList, TArray<PathNode*> &OpenList, TArray<PathNode*> &ClosedList);
@@ -33,7 +36,6 @@ class DISSERTATIONLEVEL_API AStar
         static PathNode* GetMinCostNode(const TArray<PathNode*> &List);
         static PathNode* GetMatchingNodeByID(const int ID, const TArray<PathNode*> &List);
         static PathNode* GetNodeWithXY(const float x, const float y, const TArray<PathNode*> &List);
-        static PathNode* GetClosestNode(const FVector &Pos, const TArray<PathNode*> &List);
     
         static bool FindNodeConnections(PathNode *Node, TArray<PathNode*> &List);
 };

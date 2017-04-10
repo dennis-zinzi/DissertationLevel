@@ -79,7 +79,7 @@ void ADissertationLevelGameMode::BeginPlay(){
     WinLoc = Cast<AWinningLocation>(WinLocArr[0]);
     
     if(WinLoc){
-        AIFlock = new BoidFlock(AIChars, WinLoc);
+        AIFlock = new BoidFlock(AIChars, WinLoc, MapNodes);
     }
 
 }
@@ -89,9 +89,9 @@ void ADissertationLevelGameMode::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
 
 	//COMMENT IF NOT USING FLOCK BEHAVIOR
-	//if(((int)DeltaTime % 60000) == 0){
-	//	AIFlock->UpdateAIPositions();
-	//}
+//	if(((int)DeltaTime % 60000) == 0){
+//		AIFlock->UpdateAIPositions();
+//	}
 }
 
 

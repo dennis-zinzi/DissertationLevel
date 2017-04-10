@@ -1,8 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DissertationLevel.h"
+#include "../DissertationLevel.h"
 
 #include "../AI/EnemyAIController.h"
+#include "../AI/AStar.h"
 
 #include "BoidFlock.h"
 
@@ -12,12 +13,13 @@
 #define ALIGNMENT_FACTOR 0.05f
 
 #define VELOCITY_LIMIT 350.0f
-#define LOCATION_FACTOR 0.2f
+#define LOCATION_FACTOR 0.01f
 
-BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc){
+BoidFlock::BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc, TArray<PathNode*> MapNodes){
 	//Get every AI character
 	this->AIs = AIs;
     this->WinLoc = WinLoc;
+    this->MapNodes = MapNodes;
     
     for(auto Boid : AIs){
         PerceivedCenter += Boid->GetActorLocation();
@@ -43,7 +45,7 @@ void BoidFlock::UpdateAIPositions(){
 		Cohesion = CalculateBoidCohesion(AI);
 		Allignment = CalculateBoidAlignment(AI);
 		Separation = CalculateBoidSeparation(AI);
-        GoalTendency = MoveToLocation(AI, GoalTendency);// MoveToLocation(AI, locToGo);
+        GoalTendency = CalculateGoalTendency(AI, WinLoc->GetActorLocation());
 
         AI->GetCharacterMovement()->Velocity += Cohesion + Allignment + Separation + GoalTendency;
         LimitVelocity(AI);
@@ -51,7 +53,8 @@ void BoidFlock::UpdateAIPositions(){
         AEnemyAIController *Cont = Cast<AEnemyAIController>(AI->GetController());
         
         if(Cont){
-            Cont->MoveToLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
+//            Cont->MoveToLocation(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation());
+            Cont->MoveToLocation(AStar::GetClosestNode(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation(), MapNodes)->Position);
         }
 	}
     //}
@@ -59,16 +62,17 @@ void BoidFlock::UpdateAIPositions(){
 
 FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
 //	FVector PerceivedCenter;
-//
-//	for(auto Boid : AIs){
-//		if(Boid == AI){
-//			continue;
-//		}
-//
-//		PerceivedCenter += Boid->GetActorLocation();
-//	}
-//
-//	PerceivedCenter /= AIs.Num() - 1;
+    PerceivedCenter = FVector::ZeroVector;
+
+	for(auto Boid : AIs){
+		if(Boid == AI){
+			continue;
+		}
+
+		PerceivedCenter += Boid->GetActorLocation();
+	}
+
+	PerceivedCenter /= AIs.Num() - 1;
     
     return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
 }
@@ -108,6 +112,11 @@ FVector BoidFlock::CalculateBoidSeparation(AEnemyCharacter *AI){
 }
 
 
+FVector BoidFlock::CalculateGoalTendency(AEnemyCharacter *AI, const FVector &PosToGo){
+    return (PosToGo - AI->GetActorLocation()) * LOCATION_FACTOR;
+}
+
+
 void BoidFlock::LimitVelocity(AEnemyCharacter *AI){
 	FVector Vel = AI->GetCharacterMovement()->Velocity;
     UE_LOG(LogClass, Log, TEXT("VELOCITY: %s"), *FString::SanitizeFloat(Vel.Size()));
@@ -119,8 +128,6 @@ void BoidFlock::LimitVelocity(AEnemyCharacter *AI){
 }
 
 
-FVector BoidFlock::MoveToLocation(AEnemyCharacter *AI, FVector pos){
-    return (pos - AI->GetActorLocation()) * LOCATION_FACTOR;
-}
+
 
 

@@ -3,6 +3,7 @@
 #pragma once
 
 #include "../AI/EnemyCharacter.h"
+#include "../AI/PathNode.h"
 #include "../Game/WinningLocation.h"
 
 /**
@@ -11,7 +12,7 @@
 class DISSERTATIONLEVEL_API BoidFlock
 {
 	public:
-		BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc);
+		BoidFlock(TArray<AEnemyCharacter*> AIs, AWinningLocation *WinLoc, TArray<PathNode*> MapNodes);
 		~BoidFlock();
 
 		void UpdateAIPositions();
@@ -26,10 +27,12 @@ class DISSERTATIONLEVEL_API BoidFlock
         AWinningLocation *WinLoc;
         FVector PerceivedCenter;
     
+        TArray<PathNode*> MapNodes;
+    
 
 		FVector CalculateBoidCohesion(AEnemyCharacter *AI);
 		FVector CalculateBoidAlignment(AEnemyCharacter *AI);
 		FVector CalculateBoidSeparation(AEnemyCharacter *AI);
-		void LimitVelocity(AEnemyCharacter *AI);
-        FVector MoveToLocation(AEnemyCharacter *AI, FVector pos);
+		FVector CalculateGoalTendency(AEnemyCharacter *AI, const FVector &PosToGo);
+        void LimitVelocity(AEnemyCharacter *AI);
 };

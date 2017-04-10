@@ -344,6 +344,10 @@ PathNode* AStar::GetClosestNode(const FVector &Pos, const TArray<PathNode*> &Lis
     float dist = 999999.0f;
     
     for(auto Node : List){
+        if(!Node->bIsPassable){
+            continue;
+        }
+        
         float DistToNode = FMath::Abs(FVector::Dist(Pos, Node->Position));
         
         if(DistToNode < dist){
