@@ -1,0 +1,102 @@
+CommandLine Options: 
+
+Platform Memory Stats for Mac
+Process Physical Memory: 787.93 MB used, 787.93 MB peak
+Process Virtual Memory: 7521.47 MB used, 7521.47 MB peak
+Physical Memory: 8061.78 MB used, 8192.00 MB total
+Virtual Memory: 8204.28 MB used, 9216.00 MB total
+
+Allocator Stats for TBB: (not implemented)
+Memory Stats:
+FMemStack (gamethread) current size = 0.00 MB
+FPageAllocator (all threads) allocation size [used/ unused] = [0.00 / 0.19] MB
+Nametable memory usage = 3.59 MB
+           16352  -  Light interaction memory - STAT_LightInteractionMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           38352  -  Rendering mem stack memory - STAT_RenderingMemStackMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           10816  -  ViewState memory - STAT_ViewStateMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           53552  -  Scene memory - STAT_RenderingSceneMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+
+
+Obj List: -alphasort
+Objects:
+
+ Class, Count, NumKBytes, MaxKBytes, ExclusiveResKBytes
+ 
+ AbstractNavData,      2,       3.32,       3.32,       0.00
+ AISystem,      2,       1.03,       1.03,       0.00
+ BehaviorTree,      1,       0.16,       0.23,       0.00
+ BehaviorTreeComponent,      4,       3.00,       3.00,       0.00
+ BehaviorTreeGraph,      1,       0.46,       0.46,       0.00
+ BehaviorTreeGraphNode_Composite,      4,       2.06,       2.07,       0.00
+ BehaviorTreeGraphNode_Decorator,      2,       1.01,       1.01,       0.00
+ BehaviorTreeGraphNode_Root,      1,       0.43,       0.43,       0.00
+ BehaviorTreeGraphNode_Service,      1,       0.51,       0.51,       0.00
+ BehaviorTreeGraphNode_Task,      6,       3.00,       3.04,       0.00
+ BehaviorTreeManager,      2,       0.24,       0.31,       0.00
+ BlackboardComponent,      4,       1.97,       2.50,       0.00
+ BlackboardData,      1,       0.34,       0.34,       0.00
+ BlackboardKeyType_Bool,      1,       0.06,       0.06,       0.00
+ BlackboardKeyType_Object,      5,       0.35,       0.35,       0.00
+ BlackboardKeyType_Vector,      3,       0.19,       0.19,       0.
+ Blueprint,     10,      17.97,      17.97,       0.00
+ BlueprintGeneratedClass,     25,      30.05,      30.83,       0.00
+ BTComposite_Sequence,      3,       1.11,       1.25,       0.00
+ BTDecorator_Blackboard,      4,       1.53,       1.83,       0.00
+ BTTask_MoveTo,      3,       0.75,       0.93,       0.00
+ BTTask_SelectPathLocation,      2,       0.27,       0.27,       0.00
+ BTTask_Wait,      1,       0.16,       0.23,       0.00
+ CapsuleComponent,     14,      21.72,      26.24,       9.82
+ CharacterMovementComponent,     12,      20.25,      20.25,       0.00
+ CrowdManager,      2,       0.72,       0.72,       0.00
+ DissertationLevelGameMode,      1,       1.40,       1.40,       0.00
+ EnemyAIController_BP_C,      4,       5.68,       5.68,       0.00
+ EnemyCharacter_BP_C,     10,      21.45,      21.68,       0.00
+ NavCollision,     38,      12.17,      12.17,      40.65
+ NavigationSystem,      2,       2.76,       3.57,       0.00
+ NavMeshBoundsVolume,      2,       2.38,       2.38,       0.00
+ NavMeshRenderingComponent,      2,       3.00,       3.94,       0.00
+ ObjectProperty,   2698,     379.41,     379.41,       0.00
+ PathFollowingComponent,      4,       3.25,       3.25,       0.00
+ RecastNavMesh,      2,       4.59,       4.59,       0.00
+ ThirdPerson_AnimBP_C,     12,      48.09,      52.16,       0.00
+ ThirdPersonCharacter_C,      2,       4.35,       4.35,       0.00
+ ThirdPersonExampleMap_C,      2,       2.12,       2.15,       0.00
+
+33631 Objects (28.236M / 38.825M / 48.065M)
+
+
+RHI resource memory (not tracked by our allocator)
+        46137344  -  Render target memory 3D - STAT_RenderTargetMemory3D - STATGROUP_RHI - STATCAT_Advanced
+        35351200  -  Render target memory Cube - STAT_RenderTargetMemoryCube - STATGROUP_RHI - STATCAT_Advanced
+        29376516  -  Texture memory 3D - STAT_TextureMemory3D - STATGROUP_RHI - STATCAT_Advanced
+        60538526  -  Texture memory 2D - STAT_TextureMemory2D - STATGROUP_RHI - STATCAT_Advanced
+        18864856  -  Texture memory Cube - STAT_TextureMemoryCube - STATGROUP_RHI - STATCAT_Advanced
+       515632896  -  Render target memory 2D - STAT_RenderTargetMemory2D - STATGROUP_RHI - STATCAT_Advanced
+673.200MB total
+
+
+Levels:
+->  /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+
+
+Listing spawned actors in persistent level:
+Total: 155
+TimeUnseen,TimeAlive,Distance,Class,Name,Owner
+1031.93, 31.93,    2193,AbstractNavData,AbstractNavData-Default,None
+1031.93, 31.93,    2193,CameraActor,CameraActor_0,PlayerCameraManager_0
+1031.93, 31.93,    2193,DissertationLevelGameMode,DissertationLevelGameMode_0,None
+1031.93, 31.93,    2193,EnemyAIController_BP_C,EnemyAIController_BP_C_0,None
+1031.93, 31.93,    2253,EnemyAIController_BP_C,EnemyAIController_BP_C_1,None
+1031.93, 31.93,    2669,EnemyAIController_BP_C,EnemyAIController_BP_C_2,None
+1031.93, 31.93,    2587,EnemyAIController_BP_C,EnemyAIController_BP_C_3,None
+1031.93, 31.93,    2193,GameNetworkManager,GameNetworkManager_0,None
+1031.93, 31.93,    2193,GameplayDebuggingReplicator,GameplayDebuggingReplicator_PlayerController_0,None
+1031.93, 31.93,    2193,GameSession,GameSession_0,None
+1031.93, 31.93,    2193,GameState,GameState_0,None
+1031.93, 31.93,    2193,HUD,HUD_0,PlayerController_0
+1031.93, 31.93,    2193,ParticleEventManager,ParticleEventManager_0,WorldInfo_0
+1031.93, 31.93,       0,PlayerCameraManager,PlayerCameraManager_0,PlayerController_0
+1031.93, 31.93,    1825,PlayerController,PlayerController_0,None
+1031.93, 31.93,    2193,PlayerState,PlayerState_0,PlayerController_0
+1031.93, 31.93,    2193,RecastNavMesh,RecastNavMesh-Default,None
+

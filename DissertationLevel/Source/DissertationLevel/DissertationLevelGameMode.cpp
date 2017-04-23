@@ -8,6 +8,7 @@
 #include "Game/WorldObject.h"
 #include "AI/AStar.h"
 
+
 #define WORLD_OBJECTS_TO_SPAWN 50
 #define WORLD_POS_LIMIT 1400.0f
 
@@ -65,7 +66,7 @@ void ADissertationLevelGameMode::BeginPlay(){
     }
 
 
-    /* Uncomment if using single AI */
+    /* Comment if using single AI */
 	//Get all the AIs
 	TArray<AActor*> AllAIs;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyCharacter::StaticClass(), AllAIs);
@@ -82,6 +83,9 @@ void ADissertationLevelGameMode::BeginPlay(){
 
 
     AIFlock = new BoidFlock(AIChars, WinLoc, MapNodes);
+    
+    //Start clock
+    time(&StartTime);
 
 }
 
@@ -91,6 +95,42 @@ void ADissertationLevelGameMode::Tick(float DeltaTime){
     
 //    FVector pos = UGameplayStatics::GetPlayerController(this, 0)->GetPawn()->GetActorLocation();
 //    UE_LOG(LogClass, Log, TEXT("POS: %s"), *pos.ToString());
+    
+    //Get all the AIs to check if all reached destination
+    TArray<AActor*> AllAIs;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyCharacter::StaticClass(), AllAIs);
+
+    int done = 0;
+    
+    //Cast all the AIs to EnemyCharacters
+    for(auto Actor : AllAIs){
+        AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(Actor);
+
+        if(AIChar){
+            AEnemyAIController *Cont = Cast<AEnemyAIController>(AIChar->GetInstigatorController());
+            if(Cont){
+                if(Cont->GetBlackboardComp()->GetValueAsBool(FName("Reached"))){
+                    done++;
+                }
+            }
+        }
+    }
+    
+    //If every AI has reached destination stop timer
+    if(done == AllAIs.Num()){
+        time_t EndTime;
+        time(&EndTime);
+        double ExecutionTime = difftime(EndTime, StartTime);
+        
+        FString method = AIFlock ? "crowd" : "individual";
+        
+        UE_LOG(LogClass, Log, TEXT("Took %s to reach Winloc for %s AIs (%s)"), *FString::SanitizeFloat(ExecutionTime),
+               *FString::FromInt(AllAIs.Num()), *method);
+        
+        SetCurrentState(EPlayState::EWin);
+        AIFlock = nullptr;
+    }
+    
 }
 
 

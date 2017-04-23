@@ -6,6 +6,9 @@
 #include "Game/WinningLocation.h"
 #include "AI/PathNode.h"
 
+#include <time.h>
+#include <stdio.h>
+
 #include "DissertationLevelGameMode.generated.h"
 
 UENUM(BlueprintType)
@@ -68,6 +71,8 @@ class ADissertationLevelGameMode : public AGameMode
 
 		//List of Nodes in Map
 		TArray<PathNode*> MapNodes;
+    
+        time_t StartTime;
 };
 
 

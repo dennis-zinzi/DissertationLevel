@@ -68,16 +68,14 @@ EBTNodeResult::Type UBTTask_SelectPathLocation::ExecuteTask(UBehaviorTreeCompone
             }
         }
         else{
-            UE_LOG(LogClass, Log, TEXT("Win POS: %s"), *WinLoc->GetActorLocation().ToString());
-            UE_LOG(LogClass, Log, TEXT("AI POS: %s\n"), *FullPath[CurrentIndex].ToString());
-            UE_LOG(LogClass, Log, TEXT("AI REAL POS: %s\n"), *AIController->GetPawn()->GetActorLocation().ToString());
-            
-            UE_LOG(LogClass, Log, TEXT("AI Center POS: %s\n"), *(((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetAIFlock()->GetAICenter().ToString()));
+            /* Comment if using single AI */
+//            UE_LOG(LogClass, Log, TEXT("Win POS: %s"), *WinLoc->GetActorLocation().ToString());
+//            UE_LOG(LogClass, Log, TEXT("AI POS: %s\n"), *FullPath[CurrentIndex].ToString());
+//            UE_LOG(LogClass, Log, TEXT("AI REAL POS: %s\n"), *AIController->GetPawn()->GetActorLocation().ToString());
+//            UE_LOG(LogClass, Log, TEXT("AI Center POS: %s\n"), *(((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetAIFlock()->GetAICenter().ToString()));
             
             //Reached final location, so stop moving
-            BlackboardComp->SetValueAsBool(FName("Reached"), true);// SetValueAsVector(FName("NextPathLocation"), NextPathLoc);
-//            OwnerComp.GetBlackboardComponent()->ClearValue(FName("Reached"));
-//            BlackboardComp->SetValueAsObject(FName("Reached"), AIController->GetPawn());
+            BlackboardComp->SetValueAsBool(FName("Reached"), true);
             
             return EBTNodeResult::Succeeded;
         }

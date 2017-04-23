@@ -1,0 +1,548 @@
+CommandLine Options: 
+
+Platform Memory Stats for Mac
+Process Physical Memory: 1110.51 MB used, 1110.51 MB peak
+Process Virtual Memory: 5129.58 MB used, 5129.58 MB peak
+Physical Memory: 7846.07 MB used, 8192.00 MB total
+Virtual Memory: 9224.57 MB used, 10240.00 MB total
+
+Allocator Stats for TBB: (not implemented)
+Memory Stats:
+FMemStack (gamethread) current size = 0.00 MB
+FPageAllocator (all threads) allocation size [used/ unused] = [0.00 / 0.19] MB
+Nametable memory usage = 3.49 MB
+           16352  -  Light interaction memory - STAT_LightInteractionMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           49328  -  Rendering mem stack memory - STAT_RenderingMemStackMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           10880  -  ViewState memory - STAT_ViewStateMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           34448  -  Scene memory - STAT_RenderingSceneMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+           45624  -  Static draw list memory - STAT_StaticDrawListMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+          142904  -  Primitive memory - STAT_PrimitiveInfoMemory - STATGROUP_SceneMemory - STATCAT_Advanced
+        46137344  -  Render target memory 3D - STAT_RenderTargetMemory3D - STATGROUP_RHI - STATCAT_Advanced
+        35351200  -  Render target memory Cube - STAT_RenderTargetMemoryCube - STATGROUP_RHI - STATCAT_Advanced
+        29376516  -  Texture memory 3D - STAT_TextureMemory3D - STATGROUP_RHI - STATCAT_Advanced
+        54221370  -  Texture memory 2D - STAT_TextureMemory2D - STATGROUP_RHI - STATCAT_Advanced
+        18864856  -  Texture memory Cube - STAT_TextureMemoryCube - STATGROUP_RHI - STATCAT_Advanced
+       396700644  -  Render target memory 2D - STAT_RenderTargetMemory2D - STATGROUP_RHI - STATCAT_Advanced
+          870012  -  Audio Memory Used - STAT_AudioMemory - STATGROUP_Memory - STATCAT_Advanced
+               0  -  PageAllocator Used - STAT_PageAllocatorUsed - STATGROUP_Memory - STATCAT_Advanced
+          196608  -  PageAllocator Free - STAT_PageAllocatorFree - STATGROUP_Memory - STATCAT_Advanced
+         3145680  -  Reflection Capture Texture Memory - STAT_ReflectionCaptureTextureMemory - STATGROUP_Memory - STATCAT_Advanced
+         1356814  -  Reflection Capture Memory - STAT_ReflectionCaptureMemory - STATGROUP_Memory - STATCAT_Advanced
+           14400  -  Precomputed Light Volume Memory - STAT_PrecomputedLightVolumeMemory - STATGROUP_Memory - STATCAT_Advanced
+            5040  -  Precomputed Shadow Depth Map Memory - STAT_PrecomputedShadowDepthMapMemory - STATGROUP_Memory - STATCAT_Advanced
+          745504  -  SkeletalMesh Vertex Memory - STAT_SkeletalMeshVertexMemory - STATGROUP_Memory - STATCAT_Advanced
+          246312  -  SkeletalMesh Index Memory - STAT_SkeletalMeshIndexMemory - STATGROUP_Memory - STATCAT_Advanced
+             644  -  Persistent Uber Graph Frame memory - STAT_PersistentUberGraphFrameMemory - STATGROUP_Memory - STATCAT_Advanced
+          392868  -  Navigation Memory - STAT_NavigationMemory - STATGROUP_Memory - STATCAT_Advanced
+         1698520  -  StaticMesh Total Memory - STAT_StaticMeshTotalMemory - STATGROUP_Memory - STATCAT_Advanced
+        36122654  -  Texture Memory Used - STAT_TextureMemory - STATGROUP_Memory - STATCAT_Advanced
+      1048576000  -  Texture Memory Pool [Texture] - MCR_TexturePool - STATGROUP_Memory - STATCAT_Advanced
+         6355684  -  VertexShader Memory - STAT_VertexShaderMemory - STATGROUP_Memory - STATCAT_Advanced
+        20868147  -  PixelShader Memory - STAT_PixelShaderMemory - STATGROUP_Memory - STATCAT_Advanced
+         1210138  -  ICU Data File Memory Used - STAT_MemoryICUDataFileAllocationSize - STATGROUP_Memory - STATCAT_Advanced
+               0  -  TEXTUREGROUP_HierarchicalLOD - STAT_TEXTUREGROUP_HierarchicalLOD - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_Pixels2D - STAT_TEXTUREGROUP_Pixels2D - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_IESLightProfile - STAT_TEXTUREGROUP_IESLightProfile - STATGROUP_TextureGroup - STATCAT_Advanced
+           21844  -  TEXTUREGROUP_Bokeh - STAT_TEXTUREGROUP_Bokeh - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_Terrain_Weightmap - STAT_TEXTUREGROUP_Terrain_Weightmap - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_Terrain_Heightmap - STAT_TEXTUREGROUP_Terrain_Heightmap - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_ColorLookupTable - STAT_TEXTUREGROUP_ColorLookupTable - STATGROUP_TextureGroup - STATCAT_Advanced
+          701782  -  TEXTUREGROUP_Shadowmap - STAT_TEXTUREGROUP_Shadowmap - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_ProcBuilding_LightMap - STAT_TEXTUREGROUP_ProcBuilding_LightMap - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_ProcBuilding_Face - STAT_TEXTUREGROUP_ProcBuilding_Face - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_MobileFlattened - STAT_TEXTUREGROUP_MobileFlattened - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_RenderTarget - STAT_TEXTUREGROUP_RenderTarget - STATGROUP_TextureGroup - STATCAT_Advanced
+         2110960  -  TEXTUREGROUP_Lightmap - STAT_TEXTUREGROUP_Lightmap - STATGROUP_TextureGroup - STATCAT_Advanced
+         4330104  -  TEXTUREGROUP_UI - STAT_TEXTUREGROUP_UI - STATGROUP_TextureGroup - STATCAT_Advanced
+         3145755  -  TEXTUREGROUP_Skybox - STAT_TEXTUREGROUP_Skybox - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_EffectsNotFiltered - STAT_TEXTUREGROUP_EffectsNotFiltered - STATGROUP_TextureGroup - STATCAT_Advanced
+           32764  -  TEXTUREGROUP_Effects - STAT_TEXTUREGROUP_Effects - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_Cinematic - STAT_TEXTUREGROUP_Cinematic - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_VehicleSpecular - STAT_TEXTUREGROUP_VehicleSpecular - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_VehicleNormalMap - STAT_TEXTUREGROUP_VehicleNormalMap - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_Vehicle - STAT_TEXTUREGROUP_Vehicle - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_WeaponSpecular - STAT_TEXTUREGROUP_WeaponSpecular - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_WeaponNormalMap - STAT_TEXTUREGROUP_WeaponNormalMap - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_Weapon - STAT_TEXTUREGROUP_Weapon - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_CharacterSpecular - STAT_TEXTUREGROUP_CharacterSpecular - STATGROUP_TextureGroup - STATCAT_Advanced
+         5941984  -  TEXTUREGROUP_CharacterNormalMap - STAT_TEXTUREGROUP_CharacterNormalMap - STATGROUP_TextureGroup - STATCAT_Advanced
+         1048616  -  TEXTUREGROUP_Character - STAT_TEXTUREGROUP_Character - STATGROUP_TextureGroup - STATCAT_Advanced
+               0  -  TEXTUREGROUP_WorldSpecular - STAT_TEXTUREGROUP_WorldSpecular - STATGROUP_TextureGroup - STATCAT_Advanced
+           32928  -  TEXTUREGROUP_WorldNormalMap - STAT_TEXTUREGROUP_WorldNormalMap - STATGROUP_TextureGroup - STATCAT_Advanced
+        18755917  -  TEXTUREGROUP_World - STAT_TEXTUREGROUP_World - STATGROUP_TextureGroup - STATCAT_Advanced
+
+
+Obj List: -alphasort
+Objects:
+
+ Class, Count, NumKBytes, MaxKBytes, ExclusiveResKBytes
+ AbstractNavData,      2,       3.32,       3.32,       0.00
+ ActorFactoryAmbientSound,      1,       0.12,       0.12,       0.00
+ ActorFactoryAnimationAsset,      1,       0.12,       0.12,       0.00
+ ActorFactoryAtmosphericFog,      1,       0.12,       0.12,       0.00
+ ActorFactoryBasicShape,      1,       0.12,       0.12,       0.00
+ ActorFactoryBlueprint,      1,       0.12,       0.12,       0.00
+ ActorFactoryBoxReflectionCapture,      1,       0.12,       0.12,       0.00
+ ActorFactoryBoxVolume,     22,       2.75,       2.75,       0.00
+ ActorFactoryCameraActor,      1,       0.12,       0.12,       0.00
+ ActorFactoryCharacter,      1,       0.12,       0.12,       0.00
+ ActorFactoryClass,      1,       0.12,       0.12,       0.00
+ ActorFactoryCylinderVolume,     22,       2.75,       2.75,       0.00
+ ActorFactoryDeferredDecal,      1,       0.12,       0.12,       0.00
+ ActorFactoryDestructible,      1,       0.12,       0.12,       0.00
+ ActorFactoryDirectionalLight,      1,       0.12,       0.12,       0.00
+ ActorFactoryEmitter,      1,       0.12,       0.12,       0.00
+ ActorFactoryEmptyActor,      1,       0.12,       0.12,       0.00
+ ActorFactoryExponentialHeightFog,      1,       0.12,       0.12,       0.00
+ ActorFactoryInteractiveFoliage,      1,       0.12,       0.12,       0.00
+ ActorFactoryLandscape,      2,       0.25,       0.25,       0.00
+ ActorFactoryMatineeActor,      1,       0.12,       0.12,       0.00
+ ActorFactoryMovieScene,      1,       0.12,       0.12,       0.00
+ ActorFactoryNiagara,      1,       0.12,       0.12,       0.00
+ ActorFactoryNote,      1,       0.12,       0.12,       0.00
+ ActorFactoryPawn,      1,       0.12,       0.12,       0.00
+ ActorFactoryPhysicsAsset,      1,       0.12,       0.12,       0.00
+ ActorFactoryPlanarReflection,      1,       0.12,       0.12,       0.00
+ ActorFactoryPlaneReflectionCapture,      1,       0.12,       0.12,       0.00
+ ActorFactoryPlayerStart,      1,       0.12,       0.12,       0.00
+ ActorFactoryPointLight,      1,       0.12,       0.12,       0.00
+ ActorFactoryProceduralFoliage,      1,       0.12,       0.12,       0.00
+ ActorFactorySkeletalMesh,      1,       0.12,       0.12,       0.00
+ ActorFactorySkyLight,      1,       0.12,       0.12,       0.00
+ ActorFactorySphereReflectionCapture,      1,       0.12,       0.12,       0.00
+ ActorFactorySphereVolume,     22,       2.75,       2.75,       0.00
+ ActorFactorySpotLight,      1,       0.12,       0.12,       0.00
+ ActorFactoryStaticMesh,      1,       0.12,       0.12,       0.00
+ ActorFactoryTargetPoint,      1,       0.12,       0.12,       0.00
+ ActorFactoryTextRender,      1,       0.12,       0.12,       0.00
+ ActorFactoryTriggerBox,      1,       0.12,       0.12,       0.00
+ ActorFactoryTriggerCapsule,      1,       0.12,       0.12,       0.00
+ ActorFactoryTriggerSphere,      1,       0.12,       0.12,       0.00
+ ActorFactoryVectorFieldVolume,      1,       0.12,       0.12,       0.00
+ AIPerceptionSystem,      2,       0.62,       0.62,       0.00
+ AISystem,      2,       1.03,       1.03,       0.00
+ AnimationGraph,      1,       0.38,       0.38,       0.00
+ AnimationStateGraph,      4,       1.57,       1.57,       0.00
+ AnimationStateMachineGraph,      1,       0.51,       0.51,       0.00
+ AnimationTransitionGraph,      4,       1.59,       1.59,       0.00
+ AnimBlueprint,      1,       1.74,       1.86,       0.00
+ AnimBlueprintGeneratedClass,      2,       5.51,       7.64,       0.00
+ AnimBlueprintThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ AnimCompress_RemoveLinearKeys,      6,       1.10,       1.10,       0.00
+ AnimGraphNode_BlendSpacePlayer,      1,       1.97,       3.42,       0.00
+ AnimGraphNode_Root,      1,       0.64,       0.89,       0.00
+ AnimGraphNode_SequencePlayer,      3,       4.71,       9.56,       0.00
+ AnimGraphNode_StateMachine,      1,       0.93,       1.30,       0.00
+ AnimGraphNode_StateResult,      4,       7.34,       8.38,       0.00
+ AnimGraphNode_TransitionResult,      4,       2.36,       3.75,       0.00
+ AnimSequence,      6,     151.24,     151.24,       0.00
+ AnimSequenceThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ AnimStateEntryNode,      1,       1.06,       1.06,       0.00
+ AnimStateNode,      4,       3.09,       3.09,       0.00
+ AnimStateTransitionNode,      4,       7.97,       7.97,       0.00
+ ArrayProperty,   1201,     168.89,     168.89,       0.00
+ ArrowComponent,     15,      23.91,      30.47,       0.00
+ AssetClassProperty,      3,       0.45,       0.45,       0.00
+ AssetImportData,    152,      15.44,      15.44,       0.00
+ AssetObjectProperty,     16,       2.25,       2.25,       0.00
+ AtmosphericFog,      2,       2.24,       2.24,       0.00
+ AtmosphericFogComponent,      2,       2.12,       2.16,       0.00
+ AudioComponent,      1,       1.05,       1.05,       0.00
+ AutoReimportManager,      1,       0.07,       0.07,       0.00
+ AvoidanceManager,      4,       1.03,       1.03,       0.00
+ BehaviorTree,      1,       0.16,       0.16,       0.00
+ BehaviorTreeComponent,      3,       2.25,       2.25,       0.00
+ BehaviorTreeGraph,      1,       0.46,       0.46,       0.00
+ BehaviorTreeGraphNode_Composite,      4,       2.06,       2.06,       0.00
+ BehaviorTreeGraphNode_Decorator,      2,       1.01,       1.01,       0.00
+ BehaviorTreeGraphNode_Root,      1,       0.43,       0.43,       0.00
+ BehaviorTreeGraphNode_Service,      1,       0.51,       0.51,       0.00
+ BehaviorTreeGraphNode_Task,      6,       3.00,       3.00,       0.00
+ BehaviorTreeManager,      2,       0.23,       0.31,       0.00
+ BillboardComponent,     18,      28.97,      37.41,       0.00
+ BlackboardComponent,      3,       1.48,       1.88,       0.00
+ BlackboardData,      1,       0.34,       0.34,       0.00
+ BlackboardKeyType_Bool,      1,       0.06,       0.06,       0.00
+ BlackboardKeyType_Object,      5,       0.35,       0.35,       0.00
+ BlackboardKeyType_Vector,      3,       0.19,       0.19,       0.00
+ BlendSpace1D,      1,       0.62,       0.76,       0.00
+ BlendSpaceThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ Blueprint,      9,      16.96,      16.96,       0.00
+ BlueprintGeneratedClass,     22,      26.44,      27.01,       0.00
+ BlueprintThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ BodySetup,     65,      66.53,      86.28,    1118.26
+ BookMark,      4,       0.38,       0.38,       0.00
+ BoolProperty,   4059,     570.80,     570.80,       0.00
+ BP_Sky_Sphere_C,      2,       2.57,       2.57,       0.00
+ Brush,      4,       4.50,       4.50,       0.00
+ BrushComponent,     14,      21.47,      27.78,       3.39
+ BTComposite_Selector,      2,       0.67,       0.75,       0.00
+ BTComposite_Sequence,      3,       1.11,       1.25,       0.00
+ BTDecorator_Blackboard,      3,       1.14,       1.35,       0.00
+ BTService_CheckForPlayer,      1,       0.12,       0.12,       0.00
+ BTTask_MoveTo,      3,       0.75,       0.93,       0.00
+ BTTask_MoveToPlayer,      1,       0.24,       0.32,       0.00
+ BTTask_SelectPathLocation,      2,       0.27,       0.27,       0.00
+ BTTask_SelectPatrolPoint,      1,       0.13,       0.13,       0.00
+ BTTask_Wait,      1,       0.16,       0.23,       0.00
+ ByteProperty,   1220,     171.56,     171.56,       0.00
+ CameraActor,      1,       2.04,       2.04,       0.00
+ CameraAnimInst,      8,       2.25,       2.25,       0.00
+ CameraComponent,      3,       4.84,       4.88,       0.00
+ CameraModifier_CameraShake,      1,       0.11,       0.11,       0.00
+ Canvas,      2,       1.38,       1.38,       0.00
+ CapsuleComponent,     11,      17.10,      22.64,       8.00
+ CharacterMovementComponent,      9,      15.19,      15.19,       0.00
+ CheatManager,      1,       0.13,       0.13,       0.00
+ Class,   2119,    1297.55,    1371.03,       0.00
+ ClassProperty,    277,      41.12,      41.12,       0.00
+ ClassThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ Console,      1,       2.76,       3.26,       0.00
+ CookOnTheFlyServer,      1,       1.21,       1.21,       0.00
+ CrowdManager,      2,       0.72,       0.72,       0.00
+ CubeBuilder,      6,       3.42,       3.42,       0.00
+ CurveFloat,      1,       0.29,       0.29,       0.00
+ CurveLinearColor,      3,       3.22,       3.22,       0.00
+ DefaultPhysicsVolume,      4,       4.47,       4.47,       0.00
+ DelegateFunction,    164,      33.31,      33.31,       0.00
+ DelegateProperty,     59,       8.30,       8.30,       0.00
+ DestructibleMeshThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ DeviceProfile,     62,     132.36,     194.11,       0.00
+ DeviceProfileManager,      1,       0.69,       0.84,       0.00
+ DirectionalLight,      2,       2.23,       2.23,       0.00
+ DirectionalLightComponent,      8,      13.20,      13.23,       0.00
+ DissertationLevelGameMode,      1,       1.40,       1.40,       0.00
+ DoubleProperty,     10,       1.33,       1.33,       0.00
+ DrawFrustumComponent,      4,       6.06,       7.94,       0.00
+ DrawSphereComponent,      4,       6.12,       8.00,       1.82
+ EdGraph,     44,      18.35,      18.44,       0.00
+ EdGraphNode_Comment,     17,       6.93,       6.93,       0.00
+ EdGraphPin,   1064,     435.26,     453.62,       0.00
+ EdGraphSchema_K2,      1,       0.55,       0.55,       0.00
+ EditorActorFolders,      2,       0.20,       0.22,       0.00
+ EnemyAIController_BP_C,      3,       4.26,       4.26,       0.00
+ EnemyCharacter_BP_C,      7,      15.04,      15.22,       0.00
+ Enum,    579,     110.91,     110.91,       0.00
+ EnvQueryManager,      2,       0.81,       0.81,       0.00
+ FbxAnimSequenceImportData,      6,       1.12,       1.12,       0.00
+ FbxStaticMeshImportData,     28,       5.12,       5.12,       0.00
+ FloatProperty,   3283,     436.02,     436.02,       0.00
+ FoliageType_ISMThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ Font,      7,      38.23,      38.66,     999.45
+ FontBulkData,     18,       4.22,       4.22,       0.00
+ FontThumbnailRenderer,      1,       0.05,       0.05,       0.00
+ Function,   3279,     666.05,     666.05,       0.00
+ GameInstance,      1,       0.26,       0.28,       0.00
+ GameNetworkManager,      1,       1.24,       1.24,       0.00
+ GameplayDebuggingComponent,      1,       2.30,       2.80,       0.00
+ GameplayDebuggingReplicator,      1,       1.99,       1.99,       0.00
+ GameplayTagsManager,      1,       0.55,       0.55,       0.00
+ GameplayTasksComponent,      3,       1.00,       1.17,       0.00
+ GameSession,      1,       1.15,       1.15,       0.00
+ GameState,      1,       1.20,       1.22,       0.00
+ GameUserSettings,      1,       0.19,       0.19,       0.00
+ GameViewportClient,      1,       1.11,       1.11,       0.00
+ GCObjectReferencer,      1,       0.07,       0.07,       0.00
+ HUD,      1,       1.32,       1.32,       0.00
+ InputComponent,      3,       0.98,       0.98,       0.00
+ Int16Property,      4,       0.53,       0.53,       0.00
+ Int64Property,      4,       0.53,       0.53,       0.00
+ Int8Property,      6,       0.80,       0.80,       0.00
+ InterfaceProperty,     14,       1.97,       1.97,       0.00
+ InterpGroupInst,      8,       0.69,       0.69,       0.00
+ IntProperty,   1478,     196.30,     196.30,       0.00
+ K2Node_AssignmentStatement,     30,      10.57,      10.57,       0.00
+ K2Node_CallArrayFunction,      4,       7.01,       7.02,       0.00
+ K2Node_CallFunction,     99,      49.13,      54.59,       0.00
+ K2Node_CommutativeAssociativeBinaryOperator,      7,       3.01,       3.01,       0.00
+ K2Node_Event,     12,       9.32,       9.33,       0.00
+ K2Node_ExecutionSequence,     11,       3.27,       3.35,       0.00
+ K2Node_FunctionEntry,     12,       5.63,       5.81,       0.00
+ K2Node_IfThenElse,     22,       7.22,       7.22,       0.00
+ K2Node_MacroInstance,      4,       2.94,       2.94,       0.00
+ K2Node_SetVariableOnPersistentFrame,      1,       0.30,       0.30,       0.00
+ K2Node_TemporaryVariable,     13,       6.46,       6.77,       0.00
+ K2Node_TransitionRuleGetter,      2,       0.61,       0.66,       0.00
+ K2Node_Tunnel,     38,      36.70,      37.31,       0.00
+ K2Node_VariableGet,     49,      39.88,      40.65,       0.00
+ K2Node_VariableSet,      6,       3.36,       4.16,       0.00
+ K2Node_VariableSetRef,      6,       2.02,       2.02,       0.00
+ LandscapeInfoMap,      5,       0.66,       0.66,       0.00
+ LandscapeLayerInfoObject,      1,       0.10,       0.10,       0.00
+ Layer,      2,       0.17,       0.17,       0.00
+ LazyObjectProperty,     10,       1.41,       1.41,       0.00
+ Level,      4,      29.59,      34.80,       0.00
+ LevelScriptBlueprint,      2,       2.02,       2.02,       0.00
+ LevelThumbnailRenderer,      1,       0.06,       0.06,       0.00
+ LightMapTexture2D,      6,       3.75,       3.75,    2061.48
+ LightmassImportanceVolume,      2,       2.43,       2.43,       0.00
+ LineBatchComponent,     14,      21.66,      28.22,       0.00
+ LocalPlayer,      1,       0.41,       0.41,       0.00
+ MacTargetSettings,      1,       0.29,       0.30,       0.00
+ MapProperty,     16,       3.00,       3.00,       0.00
+ Material,     88,     252.04,     254.97,      78.38
+ MaterialExpressionAbs,     19,       5.64,       9.20,       0.00
+ MaterialExpressionAdd,     48,      17.64,      26.64,       0.00
+ MaterialExpressionAppendVector,     32,      12.25,      17.50,       0.00
+ MaterialExpressionBreakMaterialAttributes,      3,       7.92,      10.71,       0.00
+ MaterialExpressionCameraPositionWS,      5,       1.29,       2.11,       0.00
+ MaterialExpressionCameraVectorWS,      3,       0.70,       1.27,       0.00
+ MaterialExpressionCeil,      2,       0.59,       0.97,       0.00
+ MaterialExpressionClamp,     35,      15.31,      21.88,       0.00
+ MaterialExpressionComment,     64,      23.84,      35.84,       0.00
+ MaterialExpressionComponentMask,     56,      18.38,      27.56,       0.00
+ MaterialExpressionConstant,    112,      27.57,      48.57,       0.00
+ MaterialExpressionConstant2Vector,      5,       1.33,       2.15,       0.00
+ MaterialExpressionConstant3Vector,     48,      13.36,      21.23,       0.00
+ MaterialExpressionConstant4Vector,      4,       1.17,       1.82,       0.00
+ MaterialExpressionConstantBiasScale,      5,       1.52,       2.46,       0.00
+ MaterialExpressionCosine,      1,       0.30,       0.49,       0.00
+ MaterialExpressionCustom,     27,      20.89,      26.19,       0.00
+ MaterialExpressionDDX,      2,       0.59,       0.97,       0.00
+ MaterialExpressionDDY,      2,       0.59,       0.97,       0.00
+ MaterialExpressionDesaturation,      6,       2.39,       3.38,       0.00
+ MaterialExpressionDistance,      4,       1.44,       2.19,       0.00
+ MaterialExpressionDivide,     36,      13.85,      20.60,       0.00
+ MaterialExpressionDotProduct,     16,       6.12,       8.75,       0.00
+ MaterialExpressionFeatureLevelSwitch,     31,      17.05,      22.87,       0.00
+ MaterialExpressionFloor,     10,       3.00,       4.88,       0.00
+ MaterialExpressionFmod,      2,       0.72,       1.09,       0.00
+ MaterialExpressionFontSampleParameter,      2,       1.03,       2.36,       0.00
+ MaterialExpressionFrac,      4,       1.24,       1.99,       0.00
+ MaterialExpressionFunctionInput,     59,      30.00,      41.06,       0.00
+ MaterialExpressionFunctionOutput,     42,      18.08,      25.95,       0.00
+ MaterialExpressionIf,     16,       9.02,      12.02,       0.00
+ MaterialExpressionLightmapUVs,      1,       0.23,       0.42,       0.00
+ MaterialExpressionLinearInterpolate,     55,      26.04,      35.07,       0.00
+ MaterialExpressionMakeMaterialAttributes,      6,      10.78,      11.91,       0.00
+ MaterialExpressionMaterialFunctionCall,     67,      46.43,      81.36,       0.00
+ MaterialExpressionMax,      2,       0.73,       1.11,       0.00
+ MaterialExpressionMin,      4,       1.52,       2.27,       0.00
+ MaterialExpressionMultiply,    156,      57.28,      86.53,       0.00
+ MaterialExpressionNormalize,      9,       2.88,       4.36,       0.00
+ MaterialExpressionObjectPositionWS,      1,       0.26,       0.42,       0.00
+ MaterialExpressionObjectRadius,      1,       0.23,       0.42,       0.00
+ MaterialExpressionOneMinus,     15,       4.45,       7.27,       0.00
+ MaterialExpressionPanner,      3,       1.12,       1.69,       0.00
+ MaterialExpressionPixelDepth,      3,       0.70,       1.27,       0.00
+ MaterialExpressionPixelNormalWS,      2,       0.52,       0.84,       0.00
+ MaterialExpressionPower,      7,       2.57,       3.88,       0.00
+ MaterialExpressionRotator,      1,       0.38,       0.56,       0.00
+ MaterialExpressionScalarParameter,     30,       8.96,      14.59,       0.00
+ MaterialExpressionSceneTexelSize,      4,       0.94,       1.69,       0.00
+ MaterialExpressionSceneTexture,     26,      11.88,      14.73,       0.00
+ MaterialExpressionScreenPosition,      5,       1.21,       2.15,       0.00
+ MaterialExpressionSine,      1,       0.30,       0.49,       0.00
+ MaterialExpressionSphereMask,      6,       2.95,       4.08,       0.00
+ MaterialExpressionSpriteTextureSampler,      1,       0.83,       1.54,       0.00
+ MaterialExpressionSquareRoot,      3,       0.89,       1.45,       0.00
+ MaterialExpressionStaticBool,      3,       0.73,       1.29,       0.00
+ MaterialExpressionStaticSwitch,      4,       1.72,       2.47,       0.00
+ MaterialExpressionStaticSwitchParameter,      1,       0.41,       0.59,       0.00
+ MaterialExpressionSubtract,     33,      13.09,      19.28,       0.00
+ MaterialExpressionTextureCoordinate,     24,       6.00,      10.50,       0.00
+ MaterialExpressionTextureObject,      2,       0.55,       0.88,       0.00
+ MaterialExpressionTextureSample,     39,      28.76,      57.40,       0.00
+ MaterialExpressionTextureSampleParameter2D,      3,       2.39,       4.52,       0.00
+ MaterialExpressionTime,      5,       1.21,       2.15,       0.00
+ MaterialExpressionTransform,      7,       2.13,       3.45,       0.00
+ MaterialExpressionTwoSidedSign,      2,       0.47,       0.84,       0.00
+ MaterialExpressionVectorParameter,     38,      17.00,      44.91,       0.00
+ MaterialExpressionVertexColor,     12,       4.69,      13.50,       0.00
+ MaterialExpressionVertexNormalWS,      1,       0.26,       0.42,       0.00
+ MaterialExpressionViewSize,      4,       0.94,       1.69,       0.00
+ MaterialExpressionWorldPosition,      8,       1.94,       3.44,       0.00
+ MaterialFunction,     31,      13.82,      15.43,       0.00
+ MaterialFunctionThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ MaterialInstanceConstant,     14,       8.79,       8.79,      15.86
+ MaterialInstanceDynamic,     32,      20.22,      25.28,      38.45
+ MaterialInstanceThumbnailRenderer,      2,       0.14,       0.14,       0.00
+ MaterialShaderQualitySettings,      1,       0.16,       0.16,       0.00
+ MetaData,    222,   13950.91,   24073.76,       0.00
+ Model,     16,      40.23,      40.23,       0.00
+ MulticastDelegateProperty,    183,      25.73,      25.73,       0.00
+ NameProperty,    715,      94.96,      94.96,       0.00
+ NavCollision,     38,      12.17,      12.17,      40.65
+ NavigationSystem,      2,       2.76,       3.57,       0.00
+ NavMeshBoundsVolume,      2,       2.38,       2.38,       0.00
+ NavMeshRenderingComponent,      2,       3.00,       3.94,       0.00
+ ObjectProperty,   2695,     378.98,     378.98,       0.00
+ OnlineSession,      1,       0.05,       0.05,       0.00
+ Package,    453,    2862.81,    2923.84,       0.00
+ PaperFlipbookActorFactory,      1,       0.12,       0.12,       0.00
+ PaperFlipbookThumbnailRenderer,      1,       0.06,       0.06,       0.00
+ PaperSprite,      1,       0.62,       0.91,       0.00
+ PaperSpriteActorFactory,      1,       0.12,       0.12,       0.00
+ PaperSpriteThumbnailRenderer,      1,       0.06,       0.06,       0.00
+ PaperTerrainMaterial,      1,       0.16,       0.16,       0.00
+ PaperTileSetThumbnailRenderer,      1,       0.06,       0.06,       0.00
+ ParticleEventManager,      3,       3.20,       3.20,       0.00
+ ParticleSystemThumbnailRenderer,      1,       0.08,       0.08,       0.00
+ PathFollowingComponent,      3,       2.44,       2.44,       0.00
+ PawnActionsComponent,      3,       0.91,       0.91,       0.00
+ PawnSensingComponent,      6,       1.69,       1.69,       0.00
+ PhysicalMaterial,      3,       0.42,       0.42,       0.00
+ PhysicsAsset,      1,       1.13,       1.13,       1.25
+ PhysicsCollisionHandler,      2,       0.16,       0.16,       0.00
+ PhysicsConstraintTemplate,     18,      10.69,      10.69,       0.00
+ PlayerCameraManager,      1,       5.49,       5.67,       0.00
+ PlayerController,      1,       1.96,       2.06,       0.00
+ PlayerInput,      1,       2.99,       2.99,       0.00
+ PlayerStart,      2,       2.34,       2.34,       0.00
+ PlayerState,      1,       1.24,       1.24,       0.00
+ Polys,     16,      19.50,      26.25,       0.00
+ PostProcessVolume,      2,       4.20,       4.20,       0.00
+ RecastNavMesh,      2,       4.59,       4.59,       0.00
+ SceneComponent,     18,       9.87,       9.94,       0.00
+ SceneThumbnailInfo,     54,       3.80,       3.80,       0.00
+ SceneThumbnailInfoWithPrimitive,    106,       9.11,       9.11,       0.00
+ ScriptStruct,   1034,     169.64,     169.64,       0.00
+ SCS_Node,      8,       3.01,       3.01,       0.00
+ Selection,      3,       0.30,       0.34,       0.00
+ ShaderPlatformQualitySettings,      6,       0.42,       0.42,       0.00
+ ShadowMapTexture2D,      2,       1.25,       1.25,     685.33
+ SimpleConstructionScript,      6,       1.30,       1.30,       0.00
+ SkeletalMesh,      1,    3552.89,    3552.89,    2113.26
+ SkeletalMeshComponent,      9,     119.04,     119.04,     226.95
+ SkeletalMeshThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ Skeleton,      1,      12.93,      13.02,       0.00
+ SkyLight,      2,       2.20,       2.20,       0.00
+ SkyLightComponent,      2,       2.06,       2.09,       0.00
+ SlateBrushThumbnailRenderer,      1,       0.06,       0.06,       0.00
+ SoundClass,      6,       0.85,       0.85,       0.00
+ SoundCue,      6,       2.57,       2.57,       0.00
+ SoundCueGraph,      6,       2.24,       2.27,       0.00
+ SoundCueGraphNode,      5,       1.05,       1.05,       0.00
+ SoundCueGraphNode_Root,      6,       1.22,       1.24,       0.00
+ SoundFactory,      1,       0.20,       0.32,       0.00
+ SoundMix,      1,       0.18,       0.18,       0.00
+ SoundNodeWavePlayer,      5,       0.62,       0.62,       0.00
+ SoundWave,      4,       3.82,       3.82,     860.19
+ SoundWaveThumbnailRenderer,      1,       0.05,       0.05,       0.00
+ SphereReflectionCapture,      2,       2.33,       2.33,       0.00
+ SphereReflectionCaptureComponent,      2,       1.44,       1.44,       0.00
+ SpringArmComponent,      2,       1.36,       1.41,       0.00
+ StaticMesh,     38,      84.05,     103.05,    1658.71
+ StaticMeshActor,     10,      10.78,      10.78,       0.00
+ StaticMeshComponent,     75,     152.73,     190.23,      81.23
+ StaticMeshThumbnailRenderer,      1,       0.07,       0.07,       0.00
+ StrProperty,    997,     132.41,     132.41,       0.00
+ StructProperty,   4684,     658.69,     658.69,       0.00
+ SubsurfaceProfileRenderer,      1,       0.05,       0.05,       0.00
+ TerrainSplineActorFactory,      1,       0.12,       0.12,       0.00
+ TexAlignerBox,      1,       0.10,       0.10,       0.00
+ TexAlignerDefault,      1,       0.12,       0.12,       0.00
+ TexAlignerFit,      1,       0.10,       0.10,       0.00
+ TexAlignerPlanar,      1,       0.11,       0.11,       0.00
+ TextProperty,    149,      19.79,      19.79,       0.00
+ Texture2D,    112,      83.65,      83.65,   16081.15
+ TextureCube,      2,       1.12,       1.12,   16448.06
+ TextureCubeThumbnailRenderer,      1,       0.05,       0.05,       0.00
+ TextureThumbnailRenderer,      5,       0.27,       0.27,       0.00
+ ThirdPerson_AnimBP_C,      9,      35.93,      39.30,       0.00
+ ThirdPersonCharacter_C,      2,       4.35,       4.35,       0.00
+ ThirdPersonExampleMap_C,      2,       2.12,       2.15,       0.00
+ ThumbnailManager,      1,       9.84,      11.49,       0.00
+ TileMapActorFactory,      1,       0.12,       0.12,       0.00
+ TireType,      1,       0.06,       0.06,       0.00
+ TransBuffer,      1,       0.48,       0.48,       0.00
+ UInt16Property,     10,       1.33,       1.33,       0.00
+ UInt32Property,     64,       8.50,       8.50,       0.00
+ UInt64Property,     11,       1.46,       1.46,       0.00
+ UnrealEdEngine,      1,      68.75,      70.27,       0.00
+ WeakObjectProperty,     39,       5.48,       5.48,       0.00
+ WinningLocation_BP_C,      2,       2.24,       2.24,       0.00
+ World,      4,      11.77,      13.10,       0.00
+ WorldObject,     50,      55.04,      55.04,       0.00
+ WorldSettings,      4,       7.51,       9.73,       0.00
+ WorldThumbnailInfo,      2,       0.14,       0.14,       0.00
+ WorldThumbnailRenderer,      1,       0.08,       0.08,       0.00
+
+33504 Objects (28.038M / 38.606M / 41.525M)
+
+
+RHI resource memory (not tracked by our allocator)
+        46137344  -  Render target memory 3D - STAT_RenderTargetMemory3D - STATGROUP_RHI - STATCAT_Advanced
+        35351200  -  Render target memory Cube - STAT_RenderTargetMemoryCube - STATGROUP_RHI - STATCAT_Advanced
+        29376516  -  Texture memory 3D - STAT_TextureMemory3D - STATGROUP_RHI - STATCAT_Advanced
+        54221370  -  Texture memory 2D - STAT_TextureMemory2D - STATGROUP_RHI - STATCAT_Advanced
+        18864856  -  Texture memory Cube - STAT_TextureMemoryCube - STATGROUP_RHI - STATCAT_Advanced
+       396700644  -  Render target memory 2D - STAT_RenderTargetMemory2D - STATGROUP_RHI - STATCAT_Advanced
+553.753MB total
+
+
+Levels:
+->  /Game/ThirdPersonCPP/Maps/UEDPIE_0_ThirdPersonExampleMap
+
+
+Listing spawned actors in persistent level:
+Total: 155
+TimeUnseen,TimeAlive,Distance,Class,Name,Owner
+1036.60, 36.60,    1809,AbstractNavData,AbstractNavData-Default,None
+1036.60, 36.60,    1809,CameraActor,CameraActor_0,PlayerCameraManager_0
+1036.60, 36.60,    1809,DissertationLevelGameMode,DissertationLevelGameMode_0,None
+1036.60, 36.60,    2316,EnemyAIController_BP_C,EnemyAIController_BP_C_0,None
+1036.60, 36.60,    2008,EnemyAIController_BP_C,EnemyAIController_BP_C_1,None
+1036.60, 36.60,    2378,EnemyAIController_BP_C,EnemyAIController_BP_C_2,None
+1036.60, 36.60,    1809,GameNetworkManager,GameNetworkManager_0,None
+1036.60, 36.60,    1809,GameplayDebuggingReplicator,GameplayDebuggingReplicator_PlayerController_0,None
+1036.60, 36.60,    1809,GameSession,GameSession_0,None
+1036.60, 36.60,    1809,GameState,GameState_0,None
+1036.60, 36.60,    1809,HUD,HUD_0,PlayerController_0
+1036.60, 36.60,    1809,ParticleEventManager,ParticleEventManager_0,WorldInfo_0
+1036.60, 36.60,       0,PlayerCameraManager,PlayerCameraManager_0,PlayerController_0
+1036.60, 36.60,    1459,PlayerController,PlayerController_0,None
+1036.60, 36.60,    1809,PlayerState,PlayerState_0,PlayerController_0
+1036.60, 36.60,    1809,RecastNavMesh,RecastNavMesh-Default,None
+  0.00, 36.60,     937,WorldObject,WorldObject_0,None
+ 20.79, 36.60,    2771,WorldObject,WorldObject_1,None
+  0.00, 36.60,    2556,WorldObject,WorldObject_10,None
+ 20.79, 36.60,    2783,WorldObject,WorldObject_11,None
+ 20.69, 36.60,    2457,WorldObject,WorldObject_12,None
+  0.00, 36.60,    2297,WorldObject,WorldObject_13,None
+ 20.51, 36.60,    1678,WorldObject,WorldObject_14,None
+  0.00, 36.60,     479,WorldObject,WorldObject_15,None
+  0.00, 36.60,     439,WorldObject,WorldObject_16,None
+ 20.79, 36.60,    3050,WorldObject,WorldObject_17,None
+1036.60, 36.60,    2794,WorldObject,WorldObject_18,None
+ 21.97, 36.60,    2157,WorldObject,WorldObject_19,None
+  0.00, 36.60,    2472,WorldObject,WorldObject_2,None
+1036.60, 36.60,    2759,WorldObject,WorldObject_20,None
+  0.00, 36.60,    1746,WorldObject,WorldObject_21,None
+  0.00, 36.60,     675,WorldObject,WorldObject_22,None
+  0.00, 36.60,    2769,WorldObject,WorldObject_23,None
+ 20.84, 36.60,    2971,WorldObject,WorldObject_24,None
+ 20.64, 36.60,    3127,WorldObject,WorldObject_25,None
+1036.60, 36.60,    2851,WorldObject,WorldObject_26,None
+  0.00, 36.60,    1967,WorldObject,WorldObject_27,None
+1036.60, 36.60,    2635,WorldObject,WorldObject_28,None
+  0.00, 36.60,    1867,WorldObject,WorldObject_29,None
+ 20.74, 36.60,    3086,WorldObject,WorldObject_3,None
+  0.00, 36.60,    1767,WorldObject,WorldObject_30,None
+ 20.64, 36.60,    3112,WorldObject,WorldObject_31,None
+  0.00, 36.60,    2278,WorldObject,WorldObject_32,None
+  0.00, 36.60,     623,WorldObject,WorldObject_33,None
+ 20.64, 36.60,    2388,WorldObject,WorldObject_34,None
+  0.00, 36.60,    1922,WorldObject,WorldObject_35,None
+ 21.97, 36.60,    2426,WorldObject,WorldObject_36,None
+ 20.84, 36.60,    2978,WorldObject,WorldObject_37,None
+  0.00, 36.60,    2431,WorldObject,WorldObject_38,None
+  0.00, 36.60,     373,WorldObject,WorldObject_39,None
+  0.00, 36.60,    1658,WorldObject,WorldObject_4,None
+  0.00, 36.60,     705,WorldObject,WorldObject_40,None
+1036.60, 36.60,    3635,WorldObject,WorldObject_41,None
+ 20.89, 36.60,    2709,WorldObject,WorldObject_42,None
+  0.00, 36.60,    1848,WorldObject,WorldObject_43,None
+ 20.79, 36.60,     965,WorldObject,WorldObject_44,None
+ 20.94, 36.60,    1380,WorldObject,WorldObject_45,None
+  0.00, 36.60,    1536,WorldObject,WorldObject_46,None
+  0.00, 36.60,    1789,WorldObject,WorldObject_47,None
+1036.60, 36.60,    2594,WorldObject,WorldObject_48,None
+1036.60, 36.60,    2647,WorldObject,WorldObject_49,None
+ 20.89, 36.60,    1228,WorldObject,WorldObject_5,None
+ 20.55, 36.60,    1624,WorldObject,WorldObject_6,None
+ 20.60, 36.60,    3030,WorldObject,WorldObject_7,None
+ 20.89, 36.60,    2010,WorldObject,WorldObject_8,None
+  0.00, 36.60,    1827,WorldObject,WorldObject_9,None
+
+
