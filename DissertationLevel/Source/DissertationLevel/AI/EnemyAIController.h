@@ -21,14 +21,17 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 
 	UPROPERTY(Transient)
 	class UBehaviorTreeComponent *BehaviorComp;
-
+    
+//    UPROPERTY()
+//    class UCrowdFollowingComponent *PathfollowingComp;
 
 	public:
-		AEnemyAIController();
+		AEnemyAIController(const FObjectInitializer &ObjInitializer);
 		virtual void Possess(APawn *InPawn) override;
 
 		void SetPlayerCaught(APawn *Pawn);
 
+        /* Blackboard key IDs */
 		FORCEINLINE uint8 GetEnemyKeyID() const{
 			return EnemyKeyID;
 		}
@@ -41,6 +44,8 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
             return PathLocationKeyID;
         }
 
+    
+        /* Patrolling getters & setters */
 		FORCEINLINE TArray<AActor*> GetPatrolPoints() const{
 			return PatrolPoints;
 		}
@@ -53,10 +58,16 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
 			CurrentPatrolPoint = point;
 		}
     
+    
+        /* Pathfinding getters & setters */
         FORCEINLINE TArray<FVector> GetPathLocations() const{
             return PathLocations;
         }
-        
+    
+        FORCEINLINE void SetPathLocations(const TArray<FVector> &PathLocs){
+            PathLocations = PathLocs;
+        }
+    
         FORCEINLINE int GetCurrentPathLocIndex() const{
             return CurrentPathLocIndex;
         }
@@ -64,23 +75,25 @@ class DISSERTATIONLEVEL_API AEnemyAIController : public AAIController
         FORCEINLINE void SetCurrentPathLocIndex(int index){
             CurrentPathLocIndex = index;
         }
+    
 
+        //Getter for Blackboard Component
 		FORCEINLINE UBlackboardComponent* GetBlackboardComp() const{
 			return BlackboardComp;
 		}
+    
 
 		//Stops BehaviorTree Execution
 		void StopBehavior();
 
 
 		//Get A* Vector list of locations to move through
-		TArray<FVector> GetAStarPath(const FVector &AIPos, const FVector &PlayerPos);
-
 		void ChasePlayer(APawn *Pawn, TArray<PathNode*> &MapNodes);
         void GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> &MapNodes);
+    
+        //Add new path location
+        void AddPathLocation(const FVector &Location, TArray<PathNode*> &MapNodes);
 
-		//Create GridMap
-		void CreateGridMap(const FVector &AIPos, const FVector &AIForwardVec, const FVector &PlayerPos);
 
 	private:
 		//Blackboard keys

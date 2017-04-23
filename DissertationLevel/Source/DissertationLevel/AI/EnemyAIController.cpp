@@ -10,6 +10,8 @@
 #include "../DissertationLevelCharacter.h"
 #include "../DissertationLevelGameMode.h"
 #include "AStar.h"
+#include "Navigation/CrowdFollowingComponent.h"
+#include "Navigation/CrowdManager.h"
 
 #include "EnemyAIController.h"
 
@@ -23,9 +25,14 @@ using std::reverse;
 #define MOVE_ITERATIONS 500
 
 
-AEnemyAIController::AEnemyAIController(){
+AEnemyAIController::AEnemyAIController(const FObjectInitializer &ObjInitializer)
+: Super(ObjInitializer.SetDefaultSubobjectClass<UCrowdFollowingComponent>(TEXT("PathFollowingComp"))){
 	BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComp"));
 	BehaviorComp = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorComp"));
+//    PathfollowingComp = CreateDefaultSubobject<UCrowdFollowingComponent>(TEXT("PathFollowingComp"));
+//    
+//    PathfollowingComp->SetCrowdAvoidanceQuality(ECrowdAvoidanceQuality::Good);
+//    UCrowdManager::
 
 	CurrentPatrolPoint = 0;
     CurrentPathLocIndex = 0;
@@ -120,40 +127,54 @@ void AEnemyAIController::ChasePlayer(APawn *Pawn, TArray<PathNode*> &MapNodes){
  * Called when player withing AI's catching distance
  */
 void AEnemyAIController::GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> &MapNodes){
-    if(!bIsPathing){
-        UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
-        BehaviorComp->StopTree();
+    //if(!bIsPathing){
+    UE_LOG(LogClass, Log, TEXT("Attempting to Start A*"));
+    BehaviorComp->StopTree();
+    
+    AWinningLocation *WinningLoc = Cast<AWinningLocation>(WinLoc);
+    
+    if(WinningLoc){
+        FVector WinningPos = WinningLoc->GetActorLocation(),
+            AIPos = GetPawn()->GetActorLocation();
         
-        AWinningLocation *WinningLoc = Cast<AWinningLocation>(WinLoc);
+        UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
         
-        if(WinningLoc){
-            FVector WinningPos = WinningLoc->GetActorLocation(),
-                AIPos = GetPawn()->GetActorLocation();
+        //Create the A* path
+        TArray<FVector> Locations = AStar::GetAStarPath(AIPos, WinningPos, MapNodes);//GetAStarPath(AIPos, WinningPos);
+        
+        if(Locations.Num() > 0){
+            //Set path
+            PathLocations = Locations;
             
-            //Create the A* path
-            TArray<FVector> Locations = AStar::GetAStarPath(AIPos, WinningPos, MapNodes);//GetAStarPath(AIPos, WinningPos);
-            
-            if(Locations.Num() > 0){
-                UE_LOG(LogClass, Log, TEXT("ATTEMPTING TO GENERATE PATH!"));
-                
-//                //Move AI along the A* path
-//                for(auto Loc : Locations){
-//                    MoveToLocation(Loc, 25.0f, true, true, true, true, 0, false);
-//                }
-                
-                //Set path
-                PathLocations = Locations;
-                
-                UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
-            }
-            else{
-                UE_LOG(LogClass, Log, TEXT("PATH NOT FOUND"));
-            }
+            UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
+            bIsPathing = true;
         }
-        
-        BehaviorComp->RestartTree();
-        bIsPathing = true;
+//        else if(Locations.Num() > 0 && Locations.Num() <= 2){
+//            //Set Game to Won
+//            ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EWin);
+//        }
+        else{
+            UE_LOG(LogClass, Log, TEXT("PATH NOT FOUND"));
+        }
     }
+    
+    BehaviorComp->RestartTree();
+    //}
 }
+
+
+/**
+ * Adds new location to path (used for crowd)
+ */
+void AEnemyAIController::AddPathLocation(const FVector &Location, TArray<PathNode*> &MapNodes){
+    PathNode *PN = AStar::GetClosestNode(Location, MapNodes);
+    
+    PathLocations.Add(PN->Position);
+}
+
+
+
+
+
 
 

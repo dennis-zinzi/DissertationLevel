@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "DissertationLevel.h"
+#include "../DissertationLevel.h"
 #include "AStar.h"
 
 #include <vector>
@@ -10,12 +10,12 @@ using std::vector;
 using std::reverse;
 
 #define FLOOR_Z 130.0f
-#define WORLD_MIN_X -1760.0f
-#define WORLD_MAX_X 960.0f
-#define WORLD_MIN_Y -1360.0f
-#define WORLD_MAX_Y 1360.0f
+#define WORLD_MIN_X -1800.0f //-1760.0f
+#define WORLD_MAX_X 1000.0f //960.0f
+#define WORLD_MIN_Y -1400.0f //-1360.0f
+#define WORLD_MAX_Y 1400.0f //1360.0f
 
-#define NODE_DISTANCE 80.0f
+#define NODE_DISTANCE 50.0f //80.0f
 #define MAX_ITERATIONS 10000
 
 AStar::AStar(){
@@ -86,6 +86,14 @@ TArray<FVector> AStar::GetAStarPath(const FVector &StartPos, const FVector &EndP
     if(!end){
         UE_LOG(LogClass, Log, TEXT("ERROR: End node not found"));
         return TArray<FVector>();
+    }
+    
+    if(start == end){
+        UE_LOG(LogClass, Log, TEXT("ERROR: Start node is end node"));
+        TArray<FVector> arr;
+        arr.Add(start->Position);
+        arr.Add(end->Position);
+        return arr;
     }
     
     //Create an Open and Closed List for the A* search
@@ -276,24 +284,43 @@ bool AStar::FindNodeConnections(PathNode *Node, TArray<PathNode*> &List){
     NodeY = Node->Position.Y;
     
     
-    for(float x = NodeX - NODE_DISTANCE; x < NodeX + NODE_DISTANCE + 1; x += NODE_DISTANCE){
-        for(float y = NodeY - NODE_DISTANCE; y < NodeY + NODE_DISTANCE + 1; y += NODE_DISTANCE){
-            //Skip if location is current node's
-            if(x == NodeX && y == NodeY){
-                continue;
-            }
-            
-            PathNode* found = GetNodeWithXY(x, y, List);
-            
-            if(found){
-                Node->Connected.push_back(found->ID);
-            }
-        }
+//    for(float x = NodeX - NODE_DISTANCE; x < NodeX + NODE_DISTANCE + 1; x += NODE_DISTANCE){
+//        for(float y = NodeY - NODE_DISTANCE; y < NodeY + NODE_DISTANCE + 1; y += NODE_DISTANCE){
+//            //Skip if location is current node's
+//            if(x == NodeX && y == NodeY){
+//                continue;
+//            }
+//            
+//            PathNode* found = GetNodeWithXY(x, y, List);
+//            
+//            if(found){
+//                Node->Connected.push_back(found->ID);
+//            }
+//        }
+//    }
+    
+    PathNode *P0 = GetNodeWithXY(NodeX - NODE_DISTANCE, NodeY, List);
+    if(P0){
+        Node->Connected.push_back(P0->ID);
     }
+    PathNode *P1 = GetNodeWithXY(NodeX + NODE_DISTANCE, NodeY, List);
+    if(P1){
+        Node->Connected.push_back(P1->ID);
+    }
+    PathNode *P2 = GetNodeWithXY(NodeX, NodeY - NODE_DISTANCE, List);
+    if(P2){
+        Node->Connected.push_back(P2->ID);
+    }
+    PathNode *P3 = GetNodeWithXY(NodeX, NodeY + NODE_DISTANCE, List);
+    if(P3){
+        Node->Connected.push_back(P3->ID);
+    }
+    
     //	UE_LOG(LogClass, Log, TEXT("%s CONNECTIONS to ID: %s"), *FString::FromInt(Node->Connected.size()),*FString::FromInt(Node->ID));
     //UE_LOG(LogClass, Log, TEXT("CONNECTIONS to ID: %s %s"), *FString::FromInt(Node->Connected.size()), Node->Connected.empty() ? *FString("DONT EXIST") : *FString("EXIST"));
     
-    return Node->Connected.empty()/*Num() > 0*/ ? false : true;
+    //Check if any connections made
+    return Node->Connected.empty() ? false : true;
 }
 
 

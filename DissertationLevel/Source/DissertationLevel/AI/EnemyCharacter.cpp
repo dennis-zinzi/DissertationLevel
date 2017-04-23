@@ -5,9 +5,14 @@
 #include "BehaviorTree/BehaviorTree.h"
 #include "EnemyAIController.h"
 #include "Perception/PawnSensingComponent.h"
+#include "../Game/WorldObject.h"
 
 #include "EnemyCharacter.h"
 
+//Sensing constants
+#define PERIPHERAL_ANGLE 40.0f
+#define SENSING_INTERVAL 0.25f
+#define SIGHT_RADIUS 500.0f //1500.0f
 
 // Sets default values
 AEnemyCharacter::AEnemyCharacter()
@@ -15,11 +20,11 @@ AEnemyCharacter::AEnemyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-//	//Initialize senses
-//	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
-//	PawnSensingComp->SetPeripheralVisionAngle(40.0f);
-//	PawnSensingComp->SensingInterval = 0.25f;
-//	PawnSensingComp->SightRadius = 1500.0f;
+	//Initialize senses
+	PawnSensingComp = CreateDefaultSubobject<UPawnSensingComponent>(TEXT("PawnSensingComp"));
+	PawnSensingComp->SetPeripheralVisionAngle(PERIPHERAL_ANGLE);
+	PawnSensingComp->SensingInterval = SENSING_INTERVAL;
+	PawnSensingComp->SightRadius = SIGHT_RADIUS;
 }
 
 // Called when the game starts or when spawned
@@ -39,8 +44,8 @@ void AEnemyCharacter::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 
-//	//Set Function to call when player in AI's view
-//	PawnSensingComp->OnSeePawn.AddDynamic(this, &AEnemyCharacter::OnPlayerCaught);
+	//Set Function to call when player in AI's view
+    PawnSensingComp->OnSeePawn.AddDynamic(this, &AEnemyCharacter::OnSeenObstacle);//&AEnemyCharacter::OnPlayerCaught);
 }
 
 // Called every frame
@@ -65,4 +70,14 @@ void AEnemyCharacter::SetupPlayerInputComponent(class UInputComponent* InputComp
 //		AIController->SetPlayerCaught(Pawn);
 //	}
 //}
+
+
+void AEnemyCharacter::OnSeenObstacle(APawn *Pawn){
+    AWorldObject *Wobj = Cast<AWorldObject>(Pawn);
+    
+    if(Wobj){
+        GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, "Obstacle in the vicinity!");
+        
+    }
+}
 

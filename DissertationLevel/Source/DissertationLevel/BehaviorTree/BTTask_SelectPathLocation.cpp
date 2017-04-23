@@ -3,6 +3,7 @@
 #include "../DissertationLevel.h"
 
 #include "../DissertationLevelGameMode.h"
+#include "../AI/EnemyCharacter.h"
 #include "../AI/EnemyAIController.h"
 #include "../Game/WinningLocation.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -31,8 +32,18 @@ EBTNodeResult::Type UBTTask_SelectPathLocation::ExecuteTask(UBehaviorTreeCompone
             //Create the path to the winning location
             AIController->GoToWinningLocation(WinLoc, NodeMap);
             
+            if(AIController->GetPathLocations().Num() == 0){
+                return EBTNodeResult::Succeeded;
+            }
+            
             //Update Full Path value
             FullPath = AIController->GetPathLocations();
+            UE_LOG(LogClass, Log, TEXT("Path Size: %s"), *FString::FromInt(FullPath.Num()));
+        }
+        else if(FullPath.Num() > 0 && FullPath.Num() <= 2){
+            //Set Game to Won
+            ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EWin);
+            return EBTNodeResult::Succeeded;
         }
 
         //Get Blackboard Component
@@ -46,9 +57,28 @@ EBTNodeResult::Type UBTTask_SelectPathLocation::ExecuteTask(UBehaviorTreeCompone
         
         if(CurrentIndex != FullPath.Num() - 1){
             AIController->SetCurrentPathLocIndex(CurrentIndex + 1);
-            NextPathLoc = FullPath[CurrentIndex + 1];
+            
+            /* Uncomment next line if single AI */
+//            NextPathLoc = FullPath[CurrentIndex + 1];
+            
+            /* Uncomment next lines if flock of AIs */
+            AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(AIController->GetPawn());
+            if(AIChar){
+                NextPathLoc = ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetAIFlock()->UpdateAI(AIChar, FullPath[CurrentIndex + 1]);
+            }
         }
         else{
+            UE_LOG(LogClass, Log, TEXT("Win POS: %s"), *WinLoc->GetActorLocation().ToString());
+            UE_LOG(LogClass, Log, TEXT("AI POS: %s\n"), *FullPath[CurrentIndex].ToString());
+            UE_LOG(LogClass, Log, TEXT("AI REAL POS: %s\n"), *AIController->GetPawn()->GetActorLocation().ToString());
+            
+            UE_LOG(LogClass, Log, TEXT("AI Center POS: %s\n"), *(((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetAIFlock()->GetAICenter().ToString()));
+            
+            //Reached final location, so stop moving
+            BlackboardComp->SetValueAsBool(FName("Reached"), true);// SetValueAsVector(FName("NextPathLocation"), NextPathLoc);
+//            OwnerComp.GetBlackboardComponent()->ClearValue(FName("Reached"));
+//            BlackboardComp->SetValueAsObject(FName("Reached"), AIController->GetPawn());
+            
             return EBTNodeResult::Succeeded;
         }
         
@@ -57,6 +87,6 @@ EBTNodeResult::Type UBTTask_SelectPathLocation::ExecuteTask(UBehaviorTreeCompone
         
         return EBTNodeResult::Succeeded;
     }
-    
+
     return EBTNodeResult::Failed;
 }

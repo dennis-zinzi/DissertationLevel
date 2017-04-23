@@ -16,16 +16,18 @@ class DISSERTATIONLEVEL_API BoidFlock
 		~BoidFlock();
 
 		void UpdateAIPositions();
+        FVector UpdateAI(AEnemyCharacter *AI, const FVector &PosToGo);
 
 		FORCEINLINE TArray<AEnemyCharacter*> GetAllAIs(){
 			return AIs;
 		}
-
+    
+        void CalculateBoidsPaths();
+        FVector GetAICenter();
 
 	private:
 		TArray<AEnemyCharacter*> AIs;
         AWinningLocation *WinLoc;
-        FVector PerceivedCenter;
     
         TArray<PathNode*> MapNodes;
     
@@ -35,4 +37,6 @@ class DISSERTATIONLEVEL_API BoidFlock
 		FVector CalculateBoidSeparation(AEnemyCharacter *AI);
 		FVector CalculateGoalTendency(AEnemyCharacter *AI, const FVector &PosToGo);
         void LimitVelocity(AEnemyCharacter *AI);
+    
+        void CollisionDetect(AEnemyCharacter *AI);
 };

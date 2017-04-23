@@ -49,6 +49,10 @@ class ADissertationLevelGameMode : public AGameMode
 		FORCEINLINE TArray<PathNode*> GetMapNodes(){
 			return MapNodes;
 		}
+    
+        FORCEINLINE BoidFlock* GetAIFlock(){
+            return AIFlock;
+        }
 
 	private:
 		//Flock of AI Characters

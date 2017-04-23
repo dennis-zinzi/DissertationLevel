@@ -37,12 +37,10 @@ void ADissertationLevelGameMode::BeginPlay(){
 		float posX = FMath::RandRange(-WORLD_POS_LIMIT, WORLD_POS_LIMIT),
 			posY = FMath::RandRange(-WORLD_POS_LIMIT, WORLD_POS_LIMIT);
 
-		FVector loc = FVector(posX, posY, 125.0f);
-		FRotator rotation(0.0f, 0.0f, 0.0f);
-		FActorSpawnParameters SpawnInfo;
-
-		//Generate TargetPoint at player pos (player trail)
-		GetWorld()->SpawnActor<AWorldObject>(loc, rotation, SpawnInfo);
+        FVector loc = FVector(posX, posY, 130.0f);//AStar::GetClosestNode(FVector(posX, posY, 130.0f), MapNodes)->Position; //FVector(posX, posY, 125.0f);
+        
+		//Generate WorldObject at random position
+		GetWorld()->SpawnActor<AWorldObject>(loc, FRotator::ZeroRotator, FActorSpawnParameters());
 	}
     
     //Determine Unpassable locations (where world objects are)
@@ -57,7 +55,17 @@ void ADissertationLevelGameMode::BeginPlay(){
             AStar::CheckOverlappingNodes(Obj->GetComponentsBoundingBox().Min, Obj->GetComponentsBoundingBox().Max, MapNodes);
         }
     }
+    
+    //Get Winning Location
+    TArray<AActor*> WinLocArr;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AWinningLocation::StaticClass(), WinLocArr);
+    
+    if(Cast<AWinningLocation>(WinLocArr[0])){
+        WinLoc = Cast<AWinningLocation>(WinLocArr[0]);
+    }
 
+
+    /* Uncomment if using single AI */
 	//Get all the AIs
 	TArray<AActor*> AllAIs;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyCharacter::StaticClass(), AllAIs);
@@ -72,26 +80,17 @@ void ADissertationLevelGameMode::BeginPlay(){
 		}
 	}
 
-    //Get Winning Location
-    TArray<AActor*> WinLocArr;
-    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AWinningLocation::StaticClass(), WinLocArr);
-    
-    WinLoc = Cast<AWinningLocation>(WinLocArr[0]);
-    
-    if(WinLoc){
-        AIFlock = new BoidFlock(AIChars, WinLoc, MapNodes);
-    }
+
+    AIFlock = new BoidFlock(AIChars, WinLoc, MapNodes);
 
 }
 
 
 void ADissertationLevelGameMode::Tick(float DeltaTime){
 	Super::Tick(DeltaTime);
-
-	//COMMENT IF NOT USING FLOCK BEHAVIOR
-//	if(((int)DeltaTime % 60000) == 0){
-//		AIFlock->UpdateAIPositions();
-//	}
+    
+//    FVector pos = UGameplayStatics::GetPlayerController(this, 0)->GetPawn()->GetActorLocation();
+//    UE_LOG(LogClass, Log, TEXT("POS: %s"), *pos.ToString());
 }
 
 
@@ -108,25 +107,29 @@ void ADissertationLevelGameMode::HandleNewState(EPlayState state){
 			//Get the AI controller
 			TArray<AActor*> AllAIs;
 			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyAIController::StaticClass(), AllAIs);
-			AEnemyAIController *ai = Cast<AEnemyAIController>(AllAIs[0]);
-
-			if(ai){
-				//Stop AI from moving anymore
-				ai->StopMovement();
-				//Kill behavior tree
-				ai->StopBehavior();
-
-				AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(ai->GetPawn());
-
-				if(AIChar){
-					//Ragdoll the AI
-					AIChar->GetMesh()->SetSimulatePhysics(true);
-					AIChar->GetMovementComponent()->MovementState.bCanJump = false;
-				}
-
-				//Unpossess the AI to stop behavior tree tasks
-				ai->UnPossess();
-			}
+            
+            for(auto AI : AllAIs){
+                AEnemyAIController *ai = Cast<AEnemyAIController>(AI);
+                
+                if(ai){
+                    //Stop AI from moving anymore
+                    ai->StopMovement();
+                    //Kill behavior tree
+                    ai->StopBehavior();
+                    
+                    AEnemyCharacter *AIChar = Cast<AEnemyCharacter>(ai->GetPawn());
+                    
+                    if(AIChar){
+                        //Ragdoll the AI
+                        AIChar->GetMesh()->SetSimulatePhysics(true);
+                        AIChar->GetMovementComponent()->MovementState.bCanJump = false;
+                    }
+                    
+                    //Unpossess the AI to stop behavior tree tasks
+                    ai->UnPossess();
+                }
+            }
+			
 
 			
 			break;
