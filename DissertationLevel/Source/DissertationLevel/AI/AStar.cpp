@@ -59,13 +59,16 @@ TArray<PathNode*> AStar::CreateGridMap(){
  * Determines all nodes within given Vector bounds, and makes them umpassable in the list
  */
 void AStar::CheckOverlappingNodes(const FVector &Start, const FVector &End, const TArray<PathNode*> &List){
+//    int n = 0;
     for(auto Node : List){
         if(Start.X <= Node->Position.X && Node->Position.X <= End.X
            && Start.Y <= Node->Position.Y && Node->Position.Y <= End.Y){
             //If checks above are true, must be overlapping, so set isPassable flag to false
             Node->bIsPassable = false;
+//            n++;
         }
     }
+//    UE_LOG(LogClass, Log, TEXT("BLOCKED NODES, %s"), *FString::FromInt(n));
 }
 
 
@@ -299,7 +302,7 @@ bool AStar::FindNodeConnections(PathNode *Node, TArray<PathNode*> &List){
 //        }
 //    }
     
-    PathNode *P0 = GetNodeWithXY(NodeX - NODE_DISTANCE, NodeY, List);
+    PathNode *P0 = GetNodeWithXY(NodeX, NodeY + NODE_DISTANCE, List);
     if(P0){
         Node->Connected.push_back(P0->ID);
     }
@@ -307,14 +310,15 @@ bool AStar::FindNodeConnections(PathNode *Node, TArray<PathNode*> &List){
     if(P1){
         Node->Connected.push_back(P1->ID);
     }
-    PathNode *P2 = GetNodeWithXY(NodeX, NodeY - NODE_DISTANCE, List);
+    PathNode *P2 = GetNodeWithXY(NodeX - NODE_DISTANCE, NodeY, List);
     if(P2){
         Node->Connected.push_back(P2->ID);
     }
-    PathNode *P3 = GetNodeWithXY(NodeX, NodeY + NODE_DISTANCE, List);
+    PathNode *P3 = GetNodeWithXY(NodeX, NodeY - NODE_DISTANCE, List);
     if(P3){
         Node->Connected.push_back(P3->ID);
     }
+    
     
     //	UE_LOG(LogClass, Log, TEXT("%s CONNECTIONS to ID: %s"), *FString::FromInt(Node->Connected.size()),*FString::FromInt(Node->ID));
     //UE_LOG(LogClass, Log, TEXT("CONNECTIONS to ID: %s %s"), *FString::FromInt(Node->Connected.size()), Node->Connected.empty() ? *FString("DONT EXIST") : *FString("EXIST"));

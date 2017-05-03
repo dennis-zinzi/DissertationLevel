@@ -53,7 +53,7 @@ void BoidFlock::UpdateAIPositions(){
     
     //Calculate A* path from Perceived Center to Goal location
     for(auto AI : AIs){
-        Cohesion = CalculateBoidCohesion(AI);
+        Cohesion = CalculateBoidCohesion(AI, FVector::ZeroVector);
         Allignment = CalculateBoidAlignment(AI);
         Separation = CalculateBoidSeparation(AI);
         GoalTendency = CalculateGoalTendency(AI, WinLoc->GetActorLocation());
@@ -80,7 +80,7 @@ FVector BoidFlock::UpdateAI(AEnemyCharacter *AI, const FVector &PosToGo){
         return FVector::ZeroVector;
     }
     
-    FVector Cohesion = CalculateBoidCohesion(AI),
+    FVector Cohesion = CalculateBoidCohesion(AI, PosToGo),
         Allignment = CalculateBoidAlignment(AI),
         Separation = CalculateBoidSeparation(AI),
         GoalTendency = CalculateGoalTendency(AI, PosToGo);
@@ -113,7 +113,7 @@ void BoidFlock::CalculateBoidsPaths(){
  *	--------------------Boid Functions------------------------
  *	----------------------------------------------------------
  */
-FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
+FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI, const FVector &Center){
 	FVector PerceivedCenter;
 
 	for(auto Boid : AIs){
@@ -127,6 +127,7 @@ FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
 	PerceivedCenter /= AIs.Num() - 1;
     
     return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
+//    return (Center - AI->GetActorLocation()) * COHESION_FACTOR;
 }
 
 

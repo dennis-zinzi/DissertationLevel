@@ -32,7 +32,7 @@ class DISSERTATIONLEVEL_API BoidFlock
         TArray<PathNode*> MapNodes;
     
 
-		FVector CalculateBoidCohesion(AEnemyCharacter *AI);
+		FVector CalculateBoidCohesion(AEnemyCharacter *AI, const FVector &Center);
 		FVector CalculateBoidAlignment(AEnemyCharacter *AI);
 		FVector CalculateBoidSeparation(AEnemyCharacter *AI);
 		FVector CalculateGoalTendency(AEnemyCharacter *AI, const FVector &PosToGo);

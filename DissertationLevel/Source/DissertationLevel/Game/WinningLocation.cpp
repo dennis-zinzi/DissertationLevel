@@ -4,6 +4,7 @@
 
 #include "../DissertationLevelCharacter.h"
 #include "../DissertationLevelGameMode.h"
+#include "../AI/EnemyAIController.h"
 
 #include "WinningLocation.h"
 
@@ -61,5 +62,10 @@ void AWinningLocation::PlayerOnTop(UPrimitiveComponent *HitComp, AActor *OtherAc
 		//Set Game to Won
 		((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->SetCurrentState(EPlayState::EWin);
 	}
-
+    
+    //Get AI Controller
+    AEnemyAIController *AIController = Cast<AEnemyAIController>(OtherActor->GetInstigatorController());
+    if(AIController){
+        AIController->GetBlackboardComp()->SetValueAsBool(FName("Reached"), true);
+    }
 }

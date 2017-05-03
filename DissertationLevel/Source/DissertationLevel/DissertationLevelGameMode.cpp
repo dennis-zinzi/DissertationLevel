@@ -38,7 +38,7 @@ void ADissertationLevelGameMode::BeginPlay(){
 		float posX = FMath::RandRange(-WORLD_POS_LIMIT, WORLD_POS_LIMIT),
 			posY = FMath::RandRange(-WORLD_POS_LIMIT, WORLD_POS_LIMIT);
 
-        FVector loc = FVector(posX, posY, 130.0f);//AStar::GetClosestNode(FVector(posX, posY, 130.0f), MapNodes)->Position; //FVector(posX, posY, 125.0f);
+        FVector loc = AStar::GetClosestNode(FVector(posX, posY, 130.0f), MapNodes)->Position;//FVector(posX, posY, 130.0f);
         
 		//Generate WorldObject at random position
 		GetWorld()->SpawnActor<AWorldObject>(loc, FRotator::ZeroRotator, FActorSpawnParameters());
@@ -65,6 +65,13 @@ void ADissertationLevelGameMode::BeginPlay(){
         WinLoc = Cast<AWinningLocation>(WinLocArr[0]);
     }
 
+    int n = 0;
+    for(auto node : MapNodes){
+        if(!node->bIsPassable){
+            n++;
+        }
+    }
+    UE_LOG(LogClass, Log, TEXT("BLOCKED NODES, %s"), *FString::FromInt(n));
 
     /* Comment if using single AI */
 	//Get all the AIs
@@ -83,6 +90,9 @@ void ADissertationLevelGameMode::BeginPlay(){
 
 
     AIFlock = new BoidFlock(AIChars, WinLoc, MapNodes);
+    
+    //Start profiling file
+    GEngine->Exec(GetWorld(), TEXT("Stat StartFile"));
     
     //Start clock
     time(&StartTime);
@@ -127,6 +137,7 @@ void ADissertationLevelGameMode::Tick(float DeltaTime){
         UE_LOG(LogClass, Log, TEXT("Took %s to reach Winloc for %s AIs (%s)"), *FString::SanitizeFloat(ExecutionTime),
                *FString::FromInt(AllAIs.Num()), *method);
         
+        GEngine->Exec(GetWorld(), TEXT("Stat StopFile"));
         SetCurrentState(EPlayState::EWin);
         AIFlock = nullptr;
     }
