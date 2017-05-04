@@ -74,10 +74,21 @@ EBTNodeResult::Type UBTTask_SelectPathLocation::ExecuteTask(UBehaviorTreeCompone
 //            UE_LOG(LogClass, Log, TEXT("AI REAL POS: %s\n"), *AIController->GetPawn()->GetActorLocation().ToString());
 //            UE_LOG(LogClass, Log, TEXT("AI Center POS: %s\n"), *(((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetAIFlock()->GetAICenter().ToString()));
             
-            if(FMath::Abs(FVector::Dist(AIController->GetPawn()->GetActorLocation(), WinLoc->GetActorLocation())) < 100.0f){
+            if(FMath::Abs(FVector::Dist(AIController->GetPawn()->GetActorLocation(), WinLoc->GetActorLocation())) < 250.0f){
                 //Reached final location, so stop moving
                 BlackboardComp->SetValueAsBool(FName("Reached"), true);
             }
+            else{
+//                //Get Level NodeMap
+//                TArray<PathNode*> NodeMap = ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetMapNodes();
+//    
+//                //Create the path to the winning location
+//                AIController->GoToWinningLocation(WinLoc, NodeMap);
+                
+                //Recalculate
+                ((ADissertationLevelGameMode *)GetWorld()->GetAuthGameMode())->GetAIFlock()->CalculateBoidsPaths();
+            }
+            
             
             return EBTNodeResult::Succeeded;
         }

@@ -145,6 +145,7 @@ void AEnemyAIController::GoToWinningLocation(AActor *WinLoc, TArray<PathNode*> &
         if(Locations.Num() > 0){
             //Set path
             PathLocations = Locations;
+            CurrentPathLocIndex = 0;
             
             UE_LOG(LogClass, Log, TEXT("PATH CREATED"));
             bIsPathing = true;

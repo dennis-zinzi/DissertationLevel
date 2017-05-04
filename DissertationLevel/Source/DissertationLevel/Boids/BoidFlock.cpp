@@ -5,11 +5,12 @@
 #include "../AI/EnemyAIController.h"
 #include "../AI/AStar.h"
 
+
 #include "BoidFlock.h"
 
 //Percentage
 #define COHESION_FACTOR 0.01f
-#define OVERLAP_DISTANCE 200.0f
+#define OVERLAP_DISTANCE 150.0f
 #define ALIGNMENT_FACTOR 0.05f
 
 #define VELOCITY_LIMIT 350.0f
@@ -53,7 +54,7 @@ void BoidFlock::UpdateAIPositions(){
     
     //Calculate A* path from Perceived Center to Goal location
     for(auto AI : AIs){
-        Cohesion = CalculateBoidCohesion(AI, FVector::ZeroVector);
+        Cohesion = CalculateBoidCohesion(AI);
         Allignment = CalculateBoidAlignment(AI);
         Separation = CalculateBoidSeparation(AI);
         GoalTendency = CalculateGoalTendency(AI, WinLoc->GetActorLocation());
@@ -80,7 +81,7 @@ FVector BoidFlock::UpdateAI(AEnemyCharacter *AI, const FVector &PosToGo){
         return FVector::ZeroVector;
     }
     
-    FVector Cohesion = CalculateBoidCohesion(AI, PosToGo),
+    FVector Cohesion = CalculateBoidCohesion(AI),
         Allignment = CalculateBoidAlignment(AI),
         Separation = CalculateBoidSeparation(AI),
         GoalTendency = CalculateGoalTendency(AI, PosToGo);
@@ -88,8 +89,8 @@ FVector BoidFlock::UpdateAI(AEnemyCharacter *AI, const FVector &PosToGo){
     AI->GetCharacterMovement()->Velocity += Cohesion + Allignment + Separation + GoalTendency;
     LimitVelocity(AI);
     
-    return AStar::GetClosestNode(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation(), MapNodes)->Position;
-//    return FVector::ZeroVector;
+    return AStar::GetClosestNeighborNode(AI->GetActorLocation(), AI->GetCharacterMovement()->Velocity + AI->GetActorLocation(), MapNodes)->Position;
+//    return AStar::GetClosestNode(AI->GetCharacterMovement()->Velocity + AI->GetActorLocation(), MapNodes)->Position;
 }
 
 
@@ -104,6 +105,7 @@ void BoidFlock::CalculateBoidsPaths(){
         
         if(Cont){
             Cont->SetPathLocations(PathLocations);
+            Cont->SetCurrentPathLocIndex(0);
         }
     }
 }
@@ -113,7 +115,7 @@ void BoidFlock::CalculateBoidsPaths(){
  *	--------------------Boid Functions------------------------
  *	----------------------------------------------------------
  */
-FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI, const FVector &Center){
+FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI){
 	FVector PerceivedCenter;
 
 	for(auto Boid : AIs){
@@ -127,7 +129,6 @@ FVector BoidFlock::CalculateBoidCohesion(AEnemyCharacter *AI, const FVector &Cen
 	PerceivedCenter /= AIs.Num() - 1;
     
     return (PerceivedCenter - AI->GetActorLocation()) * COHESION_FACTOR;
-//    return (Center - AI->GetActorLocation()) * COHESION_FACTOR;
 }
 
 
@@ -180,16 +181,5 @@ void BoidFlock::LimitVelocity(AEnemyCharacter *AI){
     AI->GetCharacterMovement()->Velocity = Vel;
 }
 
-
-void BoidFlock::CollisionDetect(AEnemyCharacter *AI){
-//    float forward = AI->GetActorForwardVector().Size() / VELOCITY_LIMIT;
-    FVector velocity = AI->GetCharacterMovement()->Velocity;
-    float dynamicLen = velocity.Size() / VELOCITY_LIMIT;
-    FVector ahead = AI->GetActorLocation() + velocity.GetSafeNormal() * dynamicLen;
-    FVector ahead2 = ahead * 0.5f;
-    
-    
-    
-}
 
 

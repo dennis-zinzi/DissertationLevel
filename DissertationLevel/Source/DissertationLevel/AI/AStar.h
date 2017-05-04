@@ -25,6 +25,9 @@ class DISSERTATIONLEVEL_API AStar
         //Gets closest node to position
         static PathNode* GetClosestNode(const FVector &Pos, const TArray<PathNode*> &List);
     
+        //Gets closest neighboring node to position
+        static PathNode* GetClosestNeighborNode(const FVector &CurPos, const FVector &GoPos, TArray<PathNode*> &List);
+    
     private:
     
         static bool AStarAlgorithm(PathNode *StartNode, PathNode *FinalNode, TArray<PathNode*> &NodeList, TArray<PathNode*> &OpenList, TArray<PathNode*> &ClosedList);

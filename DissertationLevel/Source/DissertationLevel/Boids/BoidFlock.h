@@ -5,6 +5,7 @@
 #include "../AI/EnemyCharacter.h"
 #include "../AI/PathNode.h"
 #include "../Game/WinningLocation.h"
+#include "../Game/WorldObject.h"
 
 /**
  * All based on Pseudocode from: www.kfish.org/boids/pseudocode.html
@@ -32,11 +33,9 @@ class DISSERTATIONLEVEL_API BoidFlock
         TArray<PathNode*> MapNodes;
     
 
-		FVector CalculateBoidCohesion(AEnemyCharacter *AI, const FVector &Center);
+		FVector CalculateBoidCohesion(AEnemyCharacter *AI);
 		FVector CalculateBoidAlignment(AEnemyCharacter *AI);
 		FVector CalculateBoidSeparation(AEnemyCharacter *AI);
 		FVector CalculateGoalTendency(AEnemyCharacter *AI, const FVector &PosToGo);
         void LimitVelocity(AEnemyCharacter *AI);
-    
-        void CollisionDetect(AEnemyCharacter *AI);
 };

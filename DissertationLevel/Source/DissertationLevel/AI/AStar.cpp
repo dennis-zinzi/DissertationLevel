@@ -15,7 +15,7 @@ using std::reverse;
 #define WORLD_MIN_Y -1400.0f //-1360.0f
 #define WORLD_MAX_Y 1400.0f //1360.0f
 
-#define NODE_DISTANCE 50.0f //80.0f
+#define NODE_DISTANCE 100.0f //80.0f
 #define MAX_ITERATIONS 10000
 
 AStar::AStar(){
@@ -391,3 +391,52 @@ PathNode* AStar::GetClosestNode(const FVector &Pos, const TArray<PathNode*> &Lis
     return Closest;
 }
 
+
+PathNode* AStar::GetClosestNeighborNode(const FVector &CurPos, const FVector &GoPos, TArray<PathNode*> &List){
+    PathNode *Current = GetClosestNode(CurPos, List);
+    if(!Current){
+        return nullptr;
+    }
+    
+    if(Current->Connected.empty()){
+        if(!FindNodeConnections(Current, List)){
+            UE_LOG(LogClass, Log, TEXT("NO CONNECTIONS TO NODE, ID: %s"), *FString::FromInt(Current->ID));
+            return nullptr;
+        }
+    }
+    
+    //Set large value as default smallest distance
+    float dist = 999999.0f;
+    PathNode *winner = nullptr;
+    
+    for(int i = 0; i < Current->Connected.size(); i++){
+        PathNode *Successor = GetMatchingNodeByID(Current->Connected[i], List);
+        if(!Successor){
+            continue;
+        }
+        if(!Successor->bIsPassable){
+            continue;
+        }
+        
+        float nodeDist = FMath::Abs(FVector::Dist(Successor->Position, GoPos));
+        if(nodeDist < dist){
+            dist = nodeDist;
+            winner = Successor;
+        }
+    }
+//    for(auto Node : List){
+//        if(!Node->bIsPassable){
+//            continue;
+//        }
+//        
+//        float DistToNode = FMath::Abs(FVector::Dist(Pos, Node->Position));
+//        
+//        if(DistToNode < dist){
+//            Closest = Node;
+//            dist = DistToNode;
+//        }
+//        
+//    }
+    
+    return winner;
+}

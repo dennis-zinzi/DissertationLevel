@@ -44,6 +44,13 @@ void ADissertationLevelGameMode::BeginPlay(){
 		GetWorld()->SpawnActor<AWorldObject>(loc, FRotator::ZeroRotator, FActorSpawnParameters());
 	}
     
+    
+//    //Generate WorldObject
+//    GetWorld()->SpawnActor<AWorldObject>(AStar::GetClosestNode(FVector(50.0f, 0.0f, 130.0f), MapNodes)->Position, FRotator(10.0f, 0.0f, 0.0f), FActorSpawnParameters());
+//    //Generate WorldObject
+//    GetWorld()->SpawnActor<AWorldObject>(AStar::GetClosestNode(FVector(99.0f, 0.0f, 130.0f), MapNodes)->Position, FRotator(5.0f, 0.0f, 0.0f), FActorSpawnParameters());
+
+    
     //Determine Unpassable locations (where world objects are)
     TArray<AActor*> WorldObjArr;
     UGameplayStatics::GetAllActorsOfClass(GetWorld(), AWorldObject::StaticClass(), WorldObjArr);
@@ -52,8 +59,11 @@ void ADissertationLevelGameMode::BeginPlay(){
         AWorldObject *Obj = Cast<AWorldObject>(WorldObj);
         
         if(Obj){
-            //Determine nodes overlapping
+            //Determine nodes overlapping with world objects
             AStar::CheckOverlappingNodes(Obj->GetComponentsBoundingBox().Min, Obj->GetComponentsBoundingBox().Max, MapNodes);
+            
+            //            UE_LOG(LogClass, Log, TEXT("Center : %s, Min: %s, Max: %s"), *Obj->GetActorLocation().ToString(), *Obj->GetComponentsBoundingBox().Min.ToString(), *Obj->GetComponentsBoundingBox().Max.ToString());
+
         }
     }
     
@@ -64,14 +74,6 @@ void ADissertationLevelGameMode::BeginPlay(){
     if(Cast<AWinningLocation>(WinLocArr[0])){
         WinLoc = Cast<AWinningLocation>(WinLocArr[0]);
     }
-
-    int n = 0;
-    for(auto node : MapNodes){
-        if(!node->bIsPassable){
-            n++;
-        }
-    }
-    UE_LOG(LogClass, Log, TEXT("BLOCKED NODES, %s"), *FString::FromInt(n));
 
     /* Comment if using single AI */
 	//Get all the AIs
